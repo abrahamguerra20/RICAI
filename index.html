@@ -147,6 +147,14 @@
         .academic-links a.ws { color: var(--website); }
         .academic-links a:hover { transform: scale(1.2); opacity: 0.8; }
 
+        /* Join Section Styles */
+        .join-options { background-color: var(--dark-blue); color: white; padding: 60px 0; border-radius: 20px; margin-top: 40px; }
+        .join-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; text-align: center; }
+        .join-card { padding: 30px; border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; transition: 0.3s; }
+        .join-card:hover { background: rgba(255,255,255,0.05); border-color: var(--secondary-color); }
+        .join-card i { font-size: 2.5em; color: var(--secondary-color); margin-bottom: 20px; }
+        .join-card h4 { font-family: 'Montserrat', sans-serif; font-size: 1.5em; margin-bottom: 15px; }
+
         /* Footer */
         footer { background-color: #111; color: #999; text-align: center; padding: 60px 20px; }
         footer a { color: var(--secondary-color); text-decoration: none; }
@@ -252,16 +260,31 @@
                         <a href="https://scholar.google.com/citations?hl=es&user=0zxihMgAAAAJ" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                     </div>
                 </div>
-
-<a href="https://forms.gle/enF3BPFqgbL3dywD8" target="_blank" style="text-decoration: none;">
-    <div class="member-card" style="border: 2px dashed var(--primary-color); background: rgba(0,122,204,0.05); justify-content: center; height: 100%; cursor: pointer;">
-        <i class="fas fa-user-plus" style="font-size: 3em; color: var(--primary-color); margin-bottom: 15px;"></i>
-        <h3 style="color: var(--primary-color);">Join the Network</h3>
-        <p style="color: #666; font-size: 0.9em;">Click here to submit your research profile and join our global community.</p>
-    </div>
-</a>
-
             </div>
+
+            <div class="join-options">
+                <div class="container">
+                    <h3 style="text-align: center; font-family: 'Montserrat', sans-serif; margin-bottom: 40px;">Join the Community</h3>
+                    <div class="join-grid">
+                        
+                        <div class="join-card">
+                            <i class="fas fa-microscope"></i>
+                            <h4>Associated Researcher</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 25px;">For active scientists looking to lead projects, publish collaborative papers, and feature their research profile in our network.</p>
+                            <a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.85em;">Apply as Researcher</a>
+                        </div>
+
+                        <div class="join-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Associated Member</h4>
+                            <p style="font-size: 0.9em; margin-bottom: 25px;">For students and professionals who want to support Open Science, pariticpate on scientific projects, attend our workshops, and stay updated with global opportunities.</p>
+                            <a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.85em; background-color: transparent; border: 2px solid var(--secondary-color);">Join as Member</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 

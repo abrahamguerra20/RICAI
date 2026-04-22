@@ -123,29 +123,32 @@
         .section-container { padding: 80px 0; }
         .section-container h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5em; color: var(--dark-blue); margin-bottom: 50px; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        .card { background: var(--light-gray); padding: 40px 30px; border-radius: 12px; text-align: center; transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card i { font-size: 3em; color: var(--primary-color); margin-bottom: 20px; }
 
         /* Team Section Styles */
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 40px; }
         .member-card { background: var(--light-gray); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .member-card img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--primary-color); object-fit: cover; margin-bottom: 20px; }
+        
+        .img-container { position: relative; display: inline-block; margin-bottom: 20px; }
+        .member-card img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--primary-color); object-fit: cover; }
+        
+        .flag-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 5px;
+            font-size: 1.4em;
+            background: white;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
         .member-card h3 { margin: 10px 0 5px 0; color: var(--dark-blue); font-family: 'Montserrat', sans-serif; }
         .member-card .role { color: var(--primary-color); font-weight: bold; margin-bottom: 20px; font-size: 1.1em; display: block;}
         .member-card .bio { font-size: 0.95em; color: #555; text-align: justify; line-height: 1.6; }
-
-        /* Experts Section (Dark) */
-        .experts-section { background-color: var(--dark-blue); color: var(--white); padding: 80px 0; }
-        .experts-section h2 { color: var(--white); }
-
-        /* Blog Section */
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
-        .blog-post { background: var(--white); border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
-        .blog-post img { width: 100%; height: 200px; object-fit: cover; }
-        .blog-content { padding: 20px; }
-        .tag { background: var(--secondary-color); color: white; padding: 3px 12px; border-radius: 20px; font-size: 0.8em; font-weight: bold; }
 
         /* Footer */
         footer { background-color: #111; color: #999; text-align: center; padding: 60px 20px; }
@@ -165,32 +168,10 @@
             <div class="logo"><a href="#">RICAI</a></div>
             <nav>
                 <ul>
-                    <li class="dropdown">
-                        <a href="#about">About <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#about">Our Mission</a>
-                            <a href="#team">Leadership Team</a>
-                            <a href="#methodology">Methodology</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#students">Research <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#students">For Young Scientists</a>
-                            <a href="#students">Open Projects</a>
-                            <a href="#blog">Publication Support</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#blog">Opportunities <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#blog">Grant Alerts</a>
-                            <a href="#blog">PhD & Master Calls</a>
-                            <a href="#coaching">Equipment Funding</a>
-                        </div>
-                    </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#students">Research</a></li>
+                    <li><a href="#blog">Opportunities</a></li>
                     <li><a href="#experts">For Experts</a></li>
-                    <li><a href="#coaching">Coaching</a></li>
                     <li><a href="#contact" class="cta-button" style="padding: 10px 20px; margin-left: 15px;">Join Now</a></li>
                 </ul>
             </nav>
@@ -209,8 +190,12 @@
         <div class="container">
             <h2>Our Leadership</h2>
             <div class="team-grid">
+                
                 <div class="member-card">
-                    <img src="https://via.placeholder.com/150" alt="Abraham Guerra"> 
+                    <div class="img-container">
+                        <img src="https://via.placeholder.com/150" alt="Abraham Guerra"> 
+                        <span class="flag-badge" title="Colombia">🇨🇴</span>
+                    </div>
                     <h3>Abraham Guerra</h3>
                     <span class="role">CEO & Founder</span>
                     <div class="bio">
@@ -221,7 +206,10 @@
                 </div>
 
                 <div class="member-card">
-                    <img src="https://via.placeholder.com/150" alt="Nilo Ricardo"> 
+                    <div class="img-container">
+                        <img src="https://via.placeholder.com/150" alt="Nilo Ricardo"> 
+                        <span class="flag-badge" title="Brazil">🇧🇷</span>
+                    </div>
                     <h3>Nilo Ricardo</h3>
                     <span class="role">Lead Researcher: Agricultural Sciences</span>
                     <div class="bio">
@@ -230,6 +218,7 @@
                         His work focuses on postharvest physiology, using Near-Infrared (NIR) spectroscopy and machine learning to predict fruit quality and optimal harvest timing. He develops interdisciplinary approaches that link agriculture, food science, and human nutrition to reduce postharvest losses and support sustainable production systems.
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

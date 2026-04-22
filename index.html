@@ -16,6 +16,9 @@
             --text-color: #333;
             --light-gray: #f4f7f6;
             --white: #fff;
+            --linkedin: #0077b5;
+            --researchgate: #00ccbb;
+            --scholar: #4285f4;
         }
 
         body {
@@ -103,15 +106,19 @@
         }
         .cta-button:hover { background-color: #e67e22; transform: translateY(-3px); }
 
-        /* Team Section Styles */
+        /* Section Global Styles */
         .section-container { padding: 80px 0; }
         .section-container h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5em; color: var(--dark-blue); margin-bottom: 50px; }
         .section-container h3.sub-heading { text-align: center; color: var(--primary-color); margin-top: -30px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
         
+        /* Grid Layouts */
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 40px; }
-        .member-card { background: var(--light-gray); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         
-        .img-container { position: relative; display: inline-block; margin-bottom: 20px; }
+        /* Member Card Styles */
+        .member-card { background: var(--light-gray); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; position: relative; display: flex; flex-direction: column; }
+        .member-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        
+        .img-container { position: relative; display: inline-block; margin: 0 auto 20px; }
         .member-card img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--primary-color); object-fit: cover; background-color: #eee; }
         
         .flag-badge {
@@ -130,13 +137,16 @@
         }
 
         .member-card h3 { margin: 10px 0 5px 0; color: var(--dark-blue); font-family: 'Montserrat', sans-serif; font-weight: 700; }
-        .member-card .role { color: var(--primary-color); font-weight: bold; margin-bottom: 20px; font-size: 1.1em; display: block; text-transform: uppercase; letter-spacing: 1px;}
-        .member-card .bio { font-size: 0.95em; color: #555; text-align: justify; line-height: 1.6; }
+        .member-card .role { color: var(--primary-color); font-weight: bold; margin-bottom: 15px; font-size: 0.9em; display: block; text-transform: uppercase; letter-spacing: 1px;}
+        .member-card .bio { font-size: 0.95em; color: #555; text-align: justify; line-height: 1.6; flex-grow: 1; }
 
-        /* Associated Researchers Small Cards */
-        .associates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
-        .associate-card { background: white; border: 1px solid #eee; padding: 30px; border-radius: 12px; transition: 0.3s; }
-        .associate-card:hover { border-color: var(--primary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* Social/Academic Links */
+        .academic-links { margin-top: 20px; display: flex; justify-content: center; gap: 15px; padding-top: 15px; border-top: 1px solid #ddd; }
+        .academic-links a { font-size: 1.3em; transition: 0.3s; }
+        .academic-links a.li { color: var(--linkedin); }
+        .academic-links a.rg { color: var(--researchgate); }
+        .academic-links a.gs { color: var(--scholar); }
+        .academic-links a:hover { transform: scale(1.2); opacity: 0.8; }
 
         /* Footer */
         footer { background-color: #111; color: #999; text-align: center; padding: 60px 20px; }
@@ -191,7 +201,12 @@
                     <div class="bio">
                         Abraham is a Microbiologist and Bioinformatician, and a Master’s candidate in the Genetics and Plant Breeding program at São Paulo State University (UNESP), Brazil. He is currently conducting an international research exchange at the University of Padua (UNIPD), Italy. 
                         <br><br>
-                        His research specializes in pangenomics and the study of complex microbial ecosystems, focusing on the genomic characterization of the genus <i>Utricularia</i> and its associated microbiome. He is a strong advocate for Open Science and the development of reproducible research workflows.
+                        His research specializes in pangenomics and the study of complex microbial ecosystems, focusing on the genomic characterization of the genus <i>Utricularia</i> and its associated microbiome. 
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://linkedin.com/in/tu-perfil" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://researchgate.net/profile/tu-perfil" class="rg" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=tu-id" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                     </div>
                 </div>
 
@@ -203,34 +218,45 @@
                     <h3>Nilo Corrêa de Mello Júnior Ricardo</h3>
                     <span class="role">Lead Researcher</span>
                     <div class="bio">
-                        Nilo is an Agronomist and a PhD candidate in Plant Production at UNESP, Brazil. He holds a Master’s degree in Irrigated Horticulture and has specialized in Data Science and Food Technology, combining expertise in agriculture and data-driven approaches.
+                        Nilo is an Agronomist and a PhD candidate in Plant Production at UNESP, Brazil. He holds a Master’s degree in Irrigated Horticulture and has specialized in Data Science and Food Technology.
                         <br><br>
-                        His work focuses on postharvest physiology, using Near-Infrared (NIR) spectroscopy and machine learning to predict fruit quality and optimal harvest timing. He develops interdisciplinary approaches that link agriculture, food science, and human nutrition to support more efficient and sustainable production systems.
+                        His work focuses on postharvest physiology, using Near-Infrared (NIR) spectroscopy and machine learning to predict fruit quality and optimal harvest timing.
+                    </div>
+                    <div class="academic-links">
+                        <a href="#" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="rg" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="#" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                     </div>
                 </div>
             </div>
 
             <br><br><br>
             <h3 class="sub-heading">Associated Researchers</h3>
-            <div class="associates-grid">
+            <div class="team-grid">
                 
-                <div class="associate-card">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <span style="font-size: 2em;">🇨🇴</span>
-                        <div>
-                            <h4 style="margin: 0; color: var(--dark-blue);">Lizeth Fernanda Banguero Micolta</h4>
-                            <small style="color: var(--primary-color); font-weight: bold;">One Health & Molecular Biology</small>
-                        </div>
+                <div class="member-card">
+                    <div class="img-container">
+                        <img src="lizeth.jpeg" alt="Lizeth Fernanda Banguero Micolta"> 
+                        <span class="flag-badge" title="Colombia">🇨🇴</span>
                     </div>
-                    <div class="bio" style="font-size: 0.9em;">
-                        Biologist from the University of Caldas and member of the Research Group GEBIOME. Her work integrates molecular biology, epidemiology, and the One Health framework. 
+                    <h3>Lizeth Fernanda Banguero Micolta</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="bio">
+                        Biologist from the University of Caldas and member of GEBIOME. Her work integrates molecular biology, epidemiology, and the One Health framework. 
                         <br><br>
-                        Between 2024 and 2025, she conducted research at São Paulo State University (UNESP) focusing on the molecular detection of zoonotic pathogens like <i>Bartonella spp.</i> and <i>Rickettsia spp.</i> in Northeastern Brazil. Her research aims to understand pathogen transmission dynamics at the human–animal–environment interface.
+                        Between 2024 and 2025, she conducted research at UNESP focusing on the molecular detection of zoonotic pathogens like <i>Bartonella spp.</i> and <i>Rickettsia spp.</i> in Northeastern Brazil.
+                    </div>
+                    <div class="academic-links">
+                        <a href="#" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="rg" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="#" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                     </div>
                 </div>
 
-                <div class="associate-card" style="border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; background: none;">
-                    <p style="color: #999; font-weight: bold;">Join the Network</p>
+                <div class="member-card" style="border: 2px dashed #ccc; background: none; justify-content: center;">
+                    <i class="fas fa-user-plus" style="font-size: 3em; color: #ccc; margin-bottom: 15px;"></i>
+                    <h3 style="color: #999;">Join the Network</h3>
+                    <p style="color: #999; font-size: 0.9em;">Contact us to feature your research profile here.</p>
                 </div>
 
             </div>

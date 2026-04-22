@@ -19,6 +19,7 @@
             --linkedin: #0077b5;
             --researchgate: #00ccbb;
             --scholar: #4285f4;
+            --website: #2c3e50;
         }
 
         body {
@@ -106,15 +107,12 @@
         }
         .cta-button:hover { background-color: #e67e22; transform: translateY(-3px); }
 
-        /* Section Global Styles */
+        /* Team Section Styles */
         .section-container { padding: 80px 0; }
         .section-container h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5em; color: var(--dark-blue); margin-bottom: 50px; }
         .section-container h3.sub-heading { text-align: center; color: var(--primary-color); margin-top: -30px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
         
-        /* Grid Layouts */
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 40px; }
-        
-        /* Member Card Styles */
         .member-card { background: var(--light-gray); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; position: relative; display: flex; flex-direction: column; }
         .member-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
         
@@ -146,6 +144,7 @@
         .academic-links a.li { color: var(--linkedin); }
         .academic-links a.rg { color: var(--researchgate); }
         .academic-links a.gs { color: var(--scholar); }
+        .academic-links a.ws { color: var(--website); }
         .academic-links a:hover { transform: scale(1.2); opacity: 0.8; }
 
         /* Footer */
@@ -204,6 +203,7 @@
                         His research specializes in pangenomics and the study of complex microbial ecosystems, focusing on the genomic characterization of the genus <i>Utricularia</i> and its associated microbiome. 
                     </div>
                     <div class="academic-links">
+                        <a href="https://abrahamguerra20.github.io/Science-page" class="ws" title="Personal Website"><i class="fas fa-globe"></i></a>
                         <a href="https://www.linkedin.com/in/abrahamguerrao/" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://www.researchgate.net/profile/Abraham-Guerra-3" class="rg" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
                         <a href="https://scholar.google.com/citations?user=qR2aHr8AAAAJ&hl=es&oi=ao" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>

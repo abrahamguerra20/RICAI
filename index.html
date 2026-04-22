@@ -106,6 +106,7 @@
         /* Team Section Styles */
         .section-container { padding: 80px 0; }
         .section-container h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5em; color: var(--dark-blue); margin-bottom: 50px; }
+        .section-container h3.sub-heading { text-align: center; color: var(--primary-color); margin-top: -30px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
         
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 40px; }
         .member-card { background: var(--light-gray); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
@@ -131,6 +132,11 @@
         .member-card h3 { margin: 10px 0 5px 0; color: var(--dark-blue); font-family: 'Montserrat', sans-serif; font-weight: 700; }
         .member-card .role { color: var(--primary-color); font-weight: bold; margin-bottom: 20px; font-size: 1.1em; display: block; text-transform: uppercase; letter-spacing: 1px;}
         .member-card .bio { font-size: 0.95em; color: #555; text-align: justify; line-height: 1.6; }
+
+        /* Associated Researchers Small Cards */
+        .associates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
+        .associate-card { background: white; border: 1px solid #eee; padding: 30px; border-radius: 12px; transition: 0.3s; }
+        .associate-card:hover { border-color: var(--primary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
         /* Footer */
         footer { background-color: #111; color: #999; text-align: center; padding: 60px 20px; }
@@ -170,7 +176,9 @@
 
     <section id="team" class="section-container">
         <div class="container">
-            <h2>Our Leadership</h2>
+            <h2>The Network</h2>
+            
+            <h3 class="sub-heading">Leadership</h3>
             <div class="team-grid">
                 
                 <div class="member-card">
@@ -199,6 +207,30 @@
                         <br><br>
                         His work focuses on postharvest physiology, using Near-Infrared (NIR) spectroscopy and machine learning to predict fruit quality and optimal harvest timing. He develops interdisciplinary approaches that link agriculture, food science, and human nutrition to support more efficient and sustainable production systems.
                     </div>
+                </div>
+            </div>
+
+            <br><br><br>
+            <h3 class="sub-heading">Associated Researchers</h3>
+            <div class="associates-grid">
+                
+                <div class="associate-card">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 2em;">🇨🇴</span>
+                        <div>
+                            <h4 style="margin: 0; color: var(--dark-blue);">Lizeth Fernanda Banguero Micolta</h4>
+                            <small style="color: var(--primary-color); font-weight: bold;">One Health & Molecular Biology</small>
+                        </div>
+                    </div>
+                    <div class="bio" style="font-size: 0.9em;">
+                        Biologist from the University of Caldas and member of the Research Group GEBIOME. Her work integrates molecular biology, epidemiology, and the **One Health** framework. 
+                        <br><br>
+                        Between 2024 and 2025, she conducted research at São Paulo State University (UNESP) focusing on the molecular detection of zoonotic pathogens like <i>Bartonella spp.</i> and <i>Rickettsia spp.</i> in Northeastern Brazil. Her research aims to understand pathogen transmission dynamics at the human–animal–environment interface.
+                    </div>
+                </div>
+
+                <div class="associate-card" style="border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center; background: none;">
+                    <p style="color: #999; font-weight: bold;">Join the Network</p>
                 </div>
 
             </div>

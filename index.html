@@ -116,22 +116,24 @@
         .member-card { background: var(--light-gray); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; position: relative; display: flex; flex-direction: column; }
         .member-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
         
+        /* FLAG CORRECTION HERE */
         .img-container { position: relative; display: inline-block; margin: 0 auto 20px; }
         .member-card img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--primary-color); object-fit: cover; background-color: #eee; }
         
         .flag-badge {
             position: absolute;
             bottom: 10px;
-            right: 5px;
-            font-size: 1.5em;
+            right: 10px; /* Moved slightly inside */
+            font-size: 1.3em;
             background: white;
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 10;
         }
 
         .member-card h3 { margin: 10px 0 5px 0; color: var(--dark-blue); font-family: 'Montserrat', sans-serif; font-weight: 700; }
@@ -206,9 +208,9 @@
                     <h3>Abraham David Guerra Ospino</h3>
                     <span class="role">CEO & Founder</span>
                     <div class="bio">
-                        Abraham is a Microbiologist and Bioinformatician, and a Master’s candidate in the Genetics and Plant Breeding program at São Paulo State University (UNESP), Brazil. He is currently conducting an international research exchange at the University of Padua (UNIPD), Italy. 
+                        Abraham is a Microbiologist and Bioinformatician, and a Master’s candidate at UNESP, Brazil. He is currently conducting an international research exchange at the University of Padua (UNIPD), Italy. 
                         <br><br>
-                        His research specializes in pangenomics and the study of complex microbial ecosystems, focusing on the genomic characterization of the genus <i>Utricularia</i> and its associated microbiome. 
+                        His research specializes in pangenomics and the study of complex microbial ecosystems, focusing on the genus <i>Utricularia</i>. 
                     </div>
                     <div class="academic-links">
                         <a href="https://abrahamguerra20.github.io/Science-page" class="ws" title="Personal Website"><i class="fas fa-globe"></i></a>
@@ -226,9 +228,9 @@
                     <h3>Nilo Corrêa de Mello Júnior Ricardo</h3>
                     <span class="role">Lead Researcher</span>
                     <div class="bio">
-                        Nilo is an Agronomist and a PhD candidate in Plant Production at UNESP, Brazil. He holds a Master’s degree in Irrigated Horticulture and has specialized in Data Science and Food Technology.
+                        Nilo is an Agronomist and a PhD candidate in Plant Production at UNESP, Brazil. He holds a Master’s degree in Irrigated Horticulture and has specialized in Data Science.
                         <br><br>
-                        His work focuses on postharvest physiology, using Near-Infrared (NIR) spectroscopy and machine learning to predict fruit quality and optimal harvest timing.
+                        His work focuses on postharvest physiology, using Near-Infrared (NIR) spectroscopy and machine learning to predict fruit quality.
                     </div>
                     <div class="academic-links">
                         <a href="https://www.linkedin.com/in/nilo-ricardo-j%C3%BAnior-879862b7/" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -238,88 +240,85 @@
                 </div>
             </div>
 
-<h3 class="sub-heading">Associated Researchers</h3>
-<div class="team-grid">
-    
-    <!-- Lizeth Fernanda -->
-    <div class="member-card">
-        <div class="img-container">
-            <img src="Captura de tela 2025-06-28 154810.png" alt="Lizeth Fernanda Banguero Micolta"> 
-            <span class="flag-badge" title="Colombia">🇨🇴🇧🇷</span>
-        </div>
-        <h3>Lizeth Fernanda Banguero Micolta</h3>
-        <span class="role">Associate Researcher</span>
-        <div class="bio">
-            Biologist from the University of Caldas and member of GEBIOME. Her work integrates molecular biology, epidemiology, and the One Health framework. 
-            <br><br>
-            Between 2024 and 2025, she conducted research at UNESP focusing on the molecular detection of zoonotic pathogens like <i>Bartonella spp.</i> and <i>Rickettsia spp.</i> in Northeastern Brazil.
-        </div>
-        <div class="academic-links">
-            <a href="https://www.linkedin.com/in/lizeth-fernanda-banguero-micolta-915282286/" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.researchgate.net/profile/Lizeth-Banguero-Micolta" class="rg" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-            <a href="https://scholar.google.com/citations?hl=es&user=0zxihMgAAAAJ" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        </div>
-    </div>
+            <!-- SPACING AND GRID FIX FOR ASSOCIATED RESEARCHERS -->
+            <h3 class="sub-heading" style="margin-top: 80px;">Associated Researchers</h3>
+            <div class="team-grid">
+                
+                <!-- Lizeth Fernanda -->
+                <div class="member-card">
+                    <div class="img-container">
+                        <img src="Captura de tela 2025-06-28 154810.png" alt="Lizeth Fernanda Banguero Micolta"> 
+                        <span class="flag-badge" title="Colombia">🇨🇴🇧🇷</span>
+                    </div>
+                    <h3>Lizeth Fernanda Banguero Micolta</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="bio">
+                        Biologist from the University of Caldas and member of GEBIOME. Her work integrates molecular biology, epidemiology, and the One Health framework. 
+                        <br><br>
+                        Focuses on the molecular detection of zoonotic pathogens like <i>Bartonella spp.</i> and <i>Rickettsia spp.</i> in Northeastern Brazil.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/lizeth-fernanda-banguero-micolta-915282286/" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Lizeth-Banguero-Micolta" class="rg" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?hl=es&user=0zxihMgAAAAJ" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
 
-    <!-- Natally S. Vidal Figueroa -->
-    <div class="member-card">
-        <div class="img-container">
-            <img src="1777409010064.jpeg" alt="Natally S. Vidal Figueroa"> 
-            <span class="flag-badge" title="Puerto Rico">🇵🇷🇨🇴</span>
-        </div>
-        <h3>Natally S. Vidal Figueroa</h3>
-        <span class="role">Associate Researcher</span>
-        <div class="bio">
-            Colombian biologist and Master’s student at the University of Puerto Rico, Mayagüez (UPRM). Her research integrates bioremediation and nanotechnology through a biochemical approach.
-            <br><br>
-            She specializes in the physicochemical and microbiological analysis of environments contaminated by petrochemicals and plastics, using advanced spectroscopic techniques like SERS and SEIRA.
-        </div>
-        <div class="academic-links">
-            <a href="https://www.linkedin.com/in/natally-s-vidal-figueroa-1931012a2/" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
+                <!-- Natally S. Vidal Figueroa -->
+                <div class="member-card">
+                    <div class="img-container">
+                        <img src="1777409010064.jpeg" alt="Natally S. Vidal Figueroa"> 
+                        <span class="flag-badge" title="Puerto Rico">🇵🇷🇨🇴</span>
+                    </div>
+                    <h3>Natally S. Vidal Figueroa</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="bio">
+                        Colombian biologist and Master’s student at UPRM. Her research integrates bioremediation and nanotechnology through a biochemical approach.
+                        <br><br>
+                        Specializes in microbiological analysis of environments contaminated by petrochemicals and plastics, using SERS and SEIRA techniques.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/natally-s-vidal-figueroa-1931012a2/" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
 
-    <!-- Jaqueline Cristina Galiardo -->
-    <div class="member-card">
-        <div class="img-container">
-            <img src="a6f72c43-dc7d-4684-9ab2-7c595095cce2.jpeg" alt="Jaqueline Cristina Galiardo"> 
-            <span class="flag-badge" title="Brazil">🇧🇷</span>
-        </div>
-        <h3>Jaqueline Cristina Galiardo</h3>
-        <span class="role">Associate Researcher</span>
-        <div class="bio">
-            Doctoral candidate in Food and Nutrition at UNESP, Brazil. Her research at the Probiotics Research Laboratory (LPP) focuses on personalized probiotic therapy and microbiota modulation.
-            <br><br>
-            Her work explores the consequences of exhaustive physical exercise and has demonstrated positive effects in animal models of colitis and obesity since 2014.
-        </div>
-        <div class="academic-links">
-            <a href="https://www.researchgate.net/profile/Jaqueline_Galiardo" class="rg" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-            <a href="https://scholar.google.com/citations?user=_UCpH_cAAAAJ&hl=pt-BR" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        </div>
-    </div>
+                <!-- Jaqueline Cristina Galiardo -->
+                <div class="member-card">
+                    <div class="img-container">
+                        <img src="a6f72c43-dc7d-4684-9ab2-7c595095cce2.jpeg" alt="Jaqueline Cristina Galiardo"> 
+                        <span class="flag-badge" title="Brazil">🇧🇷</span>
+                    </div>
+                    <h3>Jaqueline Cristina Galiardo</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="bio">
+                        Doctoral candidate in Food and Nutrition at UNESP, Brazil. Her research at the LPP focuses on personalized probiotic therapy and microbiota modulation.
+                        <br><br>
+                        Explores the consequences of exhaustive physical exercise, with studies in animal models of DSS-induced colitis and obesity.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://www.researchgate.net/profile/Jaqueline_Galiardo" class="rg" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=_UCpH_cAAAAJ&hl=pt-BR" class="gs" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
 
-</div> <!-- Cierre correcto del grid -->
-
+            </div> <!-- Grid End -->
 
             <div class="join-options">
                 <div class="container">
                     <h3 style="text-align: center; font-family: 'Montserrat', sans-serif; margin-bottom: 40px;">Join the Community</h3>
                     <div class="join-grid">
-                        
                         <div class="join-card">
                             <i class="fas fa-microscope"></i>
                             <h4>Associated Researcher</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 25px;">For active scientists looking to lead projects, publish collaborative papers, and feature their research profile in our network.</p>
+                            <p style="font-size: 0.9em; margin-bottom: 25px;">For active scientists looking to lead projects and feature their research profile.</p>
                             <a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.85em;">Apply as Researcher</a>
                         </div>
-
                         <div class="join-card">
                             <i class="fas fa-users"></i>
                             <h4>Associated Member</h4>
-                            <p style="font-size: 0.9em; margin-bottom: 25px;">For students and professionals who want to support Open Science, pariticpate on scientific projects, attend our workshops, and stay updated with global opportunities.</p>
+                            <p style="font-size: 0.9em; margin-bottom: 25px;">For students and professionals who want to support Open Science and attend workshops.</p>
                             <a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.85em;">Join as Member</a>
                         </div>
-
                     </div>
                 </div>
             </div>

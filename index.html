@@ -57,23 +57,38 @@
         /* Header & Navigation */
         header {
             background: var(--white);
-            padding: 10px 0;
+            padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.8em;
-            color: var(--primary-color);
-            text-decoration: none;
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo img {
+            height: 55px;
+            width: auto;
+            vertical-align: middle;
         }
 
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
-        nav ul li { margin-left: 20px; position: relative; }
+        .network-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.8em;
+            color: var(--dark-blue);
+            text-align: right;
+            max-width: 250px;
+            line-height: 1.2;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
+        nav ul li { margin: 0 15px; position: relative; }
         nav ul li a {
             color: var(--dark-blue);
             text-decoration: none;
@@ -98,7 +113,7 @@
             display: inline-block;
             background-color: var(--secondary-color);
             color: var(--white);
-            padding: 15px 35px;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
@@ -159,7 +174,14 @@
         footer { background-color: #111; color: #999; text-align: center; padding: 60px 20px; }
         footer a { color: var(--secondary-color); text-decoration: none; }
 
-        @media (max-width: 768px) { nav ul { display: none; } .hero h1 { font-size: 2.5em; } }
+        @media (max-width: 992px) { 
+            .network-name { display: none; } 
+            nav ul li { margin: 0 10px; }
+        }
+        @media (max-width: 768px) { 
+            nav ul { display: none; } 
+            .hero h1 { font-size: 2.5em; } 
+        }
     </style>
 </head>
 <body>
@@ -170,16 +192,28 @@
 
     <header>
         <div class="container navbar">
-            <div class="logo"><a href="#">RICAI</a></div>
+            <!-- Left Side: Logo Image -->
+            <div class="logo">
+                <a href="#">
+                    <img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#team">The Network</a></li>
                     <li><a href="#blog">Opportunities</a></li>
                     <li><a href="#experts">For Experts</a></li>
-                    <li><a href="#contact" class="cta-button" style="padding: 10px 20px; margin-left: 15px;">Join Now</a></li>
+                    <li><a href="#contact" class="cta-button">Join Now</a></li>
                 </ul>
             </nav>
+
+            <!-- Right Side: Full Name -->
+            <div class="network-name">
+                The Independent and Open Science Research Network
+            </div>
         </div>
     </header>
 
@@ -187,7 +221,7 @@
         <div class="container">
             <h1>Empowering the Next Generation of Open Science</h1>
             <p>A global network where talent meets expertise. Turn your research into publications and your skills into a worldwide career.</p>
-            <a href="#team" class="cta-button">Start Your Journey</a>
+            <a href="#team" class="cta-button" style="padding: 15px 40px; font-size: 1.1em;">Start Your Journey</a>
         </div>
     </section>
 
@@ -211,7 +245,7 @@
                     <div class="bio">
                         Abraham is a Microbiologist and Bioinformatician, and a Master’s candidate at UNESP, Brazil. He is currently conducting an international research exchange at the University of Padua (UNIPD), Italy. 
                         <br><br>
-                        His research specializes in pangenomics and the study of complex microbial ecosystems, focusing on the genomic characterization of the genus <i>Utricularia</i>. 
+                        His research specializes in pangenomics and the study of complex microbial ecosystems, focusing on the genus <i>Utricularia</i>. 
                     </div>
                     <div class="academic-links">
                         <a href="https://abrahamguerra20.github.io/Science-page" class="ws" title="Personal Website"><i class="fas fa-globe"></i></a>
@@ -363,9 +397,9 @@
                         <span>🇵🇰</span><span>🇮🇩</span><span>🇰🇷</span><span>🇧🇷</span>
                     </div>
                     <div class="bio">
-                        Doctoral researcher at CAUNESP, Brazil. His research at the Laboratory of Microbiology and Parasitology of Aquatic Organisms (LAPOA) focuses on vaccines for Columnaris-causing bacteria in Nile Tilapia.
+                        Doctoral researcher at CAUNESP, Brazil. His research at the Laboratory of Microbiology and Parasitology of Aquatic Organisms (LAPOA) focuses on vaccines for Tilapia.
                         <br><br>
-                        With international experience across Pakistan, Indonesia, and South Korea, he specializes in microbiology and aquatic health within global scientific networks.
+                        With international experience across Pakistan, Indonesia, and South Korea, he specializes in immunology within global scientific networks.
                     </div>
                     <div class="academic-links">
                         <a href="https://www.linkedin.com/in/shahzad-shoukat-b4014014a/" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>

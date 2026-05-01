@@ -9,17 +9,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 
         :root {
-            /* Palette extracted from RICAI Logo */
-            --ricai-blue: #1d3a61;       /* Deep blue - Authority & Science */
-            --ricai-yellow: #fdd835;     /* Yellow - Intelligence */
-            --ricai-turquoise: #26c6da;  /* Turquoise - Innovation */
-            --ricai-magenta: #ec407a;    /* Magenta - Diversity */
-            --ricai-green: #66bb6a;      /* Green - Growth */
-            --ricai-orange: #ffa726;     /* Orange - Creativity & Success */
+            --ricai-blue: #1d3a61;
+            --ricai-yellow: #fdd835;
+            --ricai-turquoise: #26c6da;
+            --ricai-magenta: #ec407a;
+            --ricai-green: #66bb6a;
+            --ricai-orange: #ffa726;
             
             --primary-color: var(--ricai-blue);
             --secondary-color: var(--ricai-turquoise); 
-            --accent-color: var(--ricai-orange); /* Switched to Orange for psychology of success */
+            --accent-color: var(--ricai-orange);
             --dark-blue: #102542;
             --text-color: #333;
             --light-gray: #f8f9fa;
@@ -38,7 +37,6 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Top Alert Bar - New Philosophy Message */
         .grant-alert-bar {
             background-color: var(--ricai-yellow);
             color: var(--ricai-blue);
@@ -52,7 +50,6 @@
         .grant-alert-bar i { margin-right: 10px; }
         .grant-alert-bar a { color: var(--ricai-blue); font-weight: 800; text-decoration: underline; }
 
-        /* Header & Navigation */
         header {
             background: var(--white);
             padding: 15px 0;
@@ -87,15 +84,15 @@
         }
         nav ul li a:hover { color: var(--ricai-orange); }
 
-        /* Hero Section */
+        /* Hero Section with New Background and Blue Filter */
         .hero {
-            background: linear-gradient(rgba(29, 58, 97, 0.85), rgba(29, 58, 97, 0.85)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            background: linear-gradient(rgba(29, 58, 97, 0.85), rgba(29, 58, 97, 0.85)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
-            padding: 140px 20px;
+            padding: 160px 20px;
         }
-        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5em; margin-bottom: 20px; }
-        .hero p { font-size: 1.4em; max-width: 800px; margin: 0 auto 40px; }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.4em; max-width: 800px; margin: 0 auto 40px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
 
         .cta-button {
             display: inline-block;
@@ -110,11 +107,9 @@
         }
         .cta-button:hover { background-color: var(--ricai-blue); transform: translateY(-3px); border: 2px solid var(--ricai-orange); }
 
-        /* Team Section Titles */
         .section-container h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5em; color: var(--ricai-blue); margin-bottom: 50px; }
         .section-container h3.sub-heading { text-align: center; color: var(--ricai-orange); margin-top: -30px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 2px; }
         
-        /* Grid and Member Cards */
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 40px; }
         .member-card { 
             background: var(--white); 
@@ -146,18 +141,15 @@
         .member-card .role { color: var(--ricai-orange); font-weight: 800; margin-bottom: 15px; font-size: 0.85em; display: block; text-transform: uppercase; letter-spacing: 1px;}
         .member-card .bio { font-size: 0.95em; color: #555; text-align: justify; line-height: 1.6; }
 
-        /* Social Links */
         .academic-links { margin-top: 20px; display: flex; justify-content: center; gap: 15px; padding-top: 15px; border-top: 1px solid #eee; }
         .academic-links a { font-size: 1.4em; color: var(--ricai-blue); transition: 0.3s; }
         .academic-links a:hover { color: var(--ricai-orange); transform: scale(1.2); }
 
-        /* Join Options */
         .join-options { background-color: var(--ricai-blue); color: white; padding: 80px 0; border-radius: 30px; margin-top: 60px; }
         .join-card { padding: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: 0.3s; }
         .join-card:hover { background: rgba(255,255,255,0.05); border-color: var(--ricai-orange); }
         .join-card i { font-size: 3em; color: var(--ricai-orange); margin-bottom: 25px; }
 
-        /* Footer */
         footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 60px 20px; }
         footer a { color: var(--ricai-turquoise); font-weight: bold; }
 
@@ -167,7 +159,6 @@
 </head>
 <body>
 
-    <!-- Top Alert Bar - New Concept -->
     <div class="grant-alert-bar">
         <i class="fas fa-lightbulb"></i> DO YOU BELIEVE OPEN SCIENCE IS THE KEY TO GLOBAL PROGRESS? <a href="#contact" style="margin-left: 10px;">Join the RICAI community today</a>
     </div>
@@ -179,7 +170,6 @@
                     <img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo">
                 </a>
             </div>
-
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -189,10 +179,7 @@
                     <li><a href="#contact" class="cta-button" style="padding: 10px 20px; margin-left: 15px; box-shadow: none;">Join Now</a></li>
                 </ul>
             </nav>
-
-            <div class="network-name">
-                The Independent and Open Science Research Network
-            </div>
+            <div class="network-name">The Independent and Open Science Research Network</div>
         </div>
     </header>
 
@@ -207,10 +194,9 @@
     <section id="team" class="section-container" style="padding: 80px 0;">
         <div class="container">
             <h2>The Network</h2>
-            
             <h3 class="sub-heading">Leadership</h3>
             <div class="team-grid">
-                
+                <!-- Abraham Guerra -->
                 <div class="member-card">
                     <img src="0.jpeg" alt="Abraham Guerra"> 
                     <h3>Abraham David Guerra Ospino</h3>
@@ -218,16 +204,14 @@
                     <div class="flag-container" title="Colombia, Brazil, Italy">
                         <span>🇨🇴</span><span>🇧🇷</span><span>🇮🇹</span>
                     </div>
-                    <div class="bio">
-                        Abraham is a Microbiologist and Bioinformatician, and a Master’s candidate at UNESP, Brazil. He is currently conducting an international research exchange at the University of Padua (UNIPD), Italy. 
-                    </div>
+                    <div class="bio">Abraham is a Microbiologist and Bioinformatician, and a Master’s candidate at UNESP, Brazil. He is currently conducting an international research exchange at the University of Padua (UNIPD), Italy.</div>
                     <div class="academic-links">
                         <a href="https://abrahamguerra20.github.io/Science-page"><i class="fas fa-globe"></i></a>
                         <a href="https://www.linkedin.com/in/abrahamguerrao/"><i class="fab fa-linkedin"></i></a>
                         <a href="https://www.researchgate.net/profile/Abraham-Guerra-3"><i class="fab fa-researchgate"></i></a>
                     </div>
                 </div>
-
+                <!-- Nilo Ricardo -->
                 <div class="member-card">
                     <img src="00.jpeg" alt="Nilo Ricardo"> 
                     <h3>Nilo Corrêa de Mello Júnior Ricardo</h3>
@@ -243,7 +227,6 @@
 
             <h3 class="sub-heading" style="margin-top: 80px;">Associated Researchers</h3>
             <div class="team-grid">
-                
                 <div class="member-card">
                     <img src="1.png" alt="Lizeth Fernanda"> 
                     <h3>Lizeth Fernanda Banguero Micolta</h3>
@@ -254,7 +237,6 @@
                         <a href="https://www.linkedin.com/in/lizeth-fernanda-banguero-micolta-915282286/"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-
                 <div class="member-card">
                     <img src="2.jpeg" alt="Natally S. Vidal"> 
                     <h3>Natally S. Vidal Figueroa</h3>
@@ -262,7 +244,6 @@
                     <div class="flag-container"><span>🇵🇷</span><span>🇨🇴</span></div>
                     <div class="bio">Colombian biologist and Master’s student at UPRM. Integrates bioremediation and nanotechnology to analyze environmental pollutants.</div>
                 </div>
-
                 <div class="member-card">
                     <img src="3.jpeg" alt="Jaqueline Cristina"> 
                     <h3>Jaqueline Cristina Galiardo</h3>
@@ -270,7 +251,6 @@
                     <div class="flag-container"><span>🇧🇷</span></div>
                     <div class="bio">Doctoral candidate in Food and Nutrition at UNESP. Focuses on personalized probiotic therapy and gut microbiota modulation.</div>
                 </div>
-
                 <div class="member-card">
                     <img src="4.jpg" alt="Dana Páez"> 
                     <h3>Dana Páez Niño</h3>
@@ -278,7 +258,6 @@
                     <div class="flag-container"><span>🇨🇴</span></div>
                     <div class="bio">Microbiologist expert in DNA extraction via nanotechnology. Focuses on nutrient-solubilizing bacteria for sustainable agriculture.</div>
                 </div>
-
                 <div class="member-card">
                     <img src="5.png" alt="Elisângela Pulcini"> 
                     <h3>Elisângela Pulcini Jacob</h3>
@@ -286,15 +265,13 @@
                     <div class="flag-container"><span>🇧🇷</span></div>
                     <div class="bio">Master's student in Business Administration at UNESP. Specialist in Supply Chain Management and Agribusiness Branding.</div>
                 </div>
-
                 <div class="member-card">
                     <img src="6.jpeg" alt="Shahzad Shoukat"> 
                     <h3>Shahzad Shoukat</h3>
                     <span class="role">Associate Researcher</span>
                     <div class="flag-container"><span>🇵🇰</span><span>🇮🇩</span><span>🇰🇷</span><span>🇧🇷</span></div>
-                    <div class="bio">Doctoral researcher at CAUNESP. Expert in aquatic microbiology, immunology, and fish vaccine development in the Latin American region.</div>
+                    <div class="bio">Doctoral researcher at CAUNESP. Expert in aquatic microbiology, immunology, and fish vaccine development.</div>
                 </div>
-
             </div>
         </div>
     </section>

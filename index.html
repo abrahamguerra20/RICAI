@@ -116,28 +116,26 @@
         .member-card { background: var(--light-gray); padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; position: relative; display: flex; flex-direction: column; }
         .member-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
         
-        /* FLAG CORRECTION HERE */
         .img-container { position: relative; display: inline-block; margin: 0 auto 20px; }
         .member-card img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--primary-color); object-fit: cover; background-color: #eee; }
         
-        .flag-badge {
-            position: absolute;
-            bottom: 10px;
-            right: 10px; /* Moved slightly inside */
-            font-size: 1.3em;
-            background: white;
-            width: 40px;
-            height: 40px;
+        /* New Flag Box Style */
+        .flag-container {
             display: flex;
-            align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            z-index: 10;
+            gap: 8px;
+            margin-bottom: 15px;
+            background: rgba(0, 122, 204, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
         }
+        .flag-container span { font-size: 1.4em; }
 
         .member-card h3 { margin: 10px 0 5px 0; color: var(--dark-blue); font-family: 'Montserrat', sans-serif; font-weight: 700; }
-        .member-card .role { color: var(--primary-color); font-weight: bold; margin-bottom: 15px; font-size: 0.9em; display: block; text-transform: uppercase; letter-spacing: 1px;}
+        .member-card .role { color: var(--primary-color); font-weight: bold; margin-bottom: 10px; font-size: 0.9em; display: block; text-transform: uppercase; letter-spacing: 1px;}
         .member-card .bio { font-size: 0.95em; color: #555; text-align: justify; line-height: 1.6; flex-grow: 1; }
 
         /* Social/Academic Links */
@@ -203,10 +201,12 @@
                 <div class="member-card">
                     <div class="img-container">
                         <img src="WhatsApp Image 2025-09-09 at 11.01.28.jpeg" alt="Abraham Guerra"> 
-                        <span class="flag-badge" title="Colombia">🇨🇴🇧🇷🇮🇹</span>
                     </div>
                     <h3>Abraham David Guerra Ospino</h3>
                     <span class="role">CEO & Founder</span>
+                    <div class="flag-container" title="Colombia, Brazil, Italy">
+                        <span>🇨🇴</span><span>🇧🇷</span><span>🇮🇹</span>
+                    </div>
                     <div class="bio">
                         Abraham is a Microbiologist and Bioinformatician, and a Master’s candidate at UNESP, Brazil. He is currently conducting an international research exchange at the University of Padua (UNIPD), Italy. 
                         <br><br>
@@ -223,10 +223,12 @@
                 <div class="member-card">
                     <div class="img-container">
                         <img src="WhatsApp Image 2026-04-22 at 19.47.14.jpeg" alt="Nilo Ricardo"> 
-                        <span class="flag-badge" title="Brazil">🇧🇷</span>
                     </div>
                     <h3>Nilo Corrêa de Mello Júnior Ricardo</h3>
                     <span class="role">Lead Researcher</span>
+                    <div class="flag-container" title="Brazil">
+                        <span>🇧🇷</span>
+                    </div>
                     <div class="bio">
                         Nilo is an Agronomist and a PhD candidate in Plant Production at UNESP, Brazil. He holds a Master’s degree in Irrigated Horticulture and has specialized in Data Science.
                         <br><br>
@@ -240,18 +242,18 @@
                 </div>
             </div>
 
-<!-- SPACING AND GRID FIX FOR ASSOCIATED RESEARCHERS -->
             <h3 class="sub-heading" style="margin-top: 80px;">Associated Researchers</h3>
             <div class="team-grid">
                 
-                <!-- Lizeth Fernanda -->
                 <div class="member-card">
                     <div class="img-container">
                         <img src="Captura de tela 2025-06-28 154810.png" alt="Lizeth Fernanda Banguero Micolta"> 
-                        <span class="flag-badge" title="Colombia">🇨🇴🇧🇷</span>
                     </div>
                     <h3>Lizeth Fernanda Banguero Micolta</h3>
                     <span class="role">Associate Researcher</span>
+                    <div class="flag-container" title="Colombia, Brazil">
+                        <span>🇨🇴</span><span>🇧🇷</span>
+                    </div>
                     <div class="bio">
                         Biologist from the University of Caldas and member of GEBIOME. Her work integrates molecular biology, epidemiology, and the One Health framework. 
                         <br><br>
@@ -264,14 +266,15 @@
                     </div>
                 </div>
 
-                <!-- Natally S. Vidal Figueroa -->
                 <div class="member-card">
                     <div class="img-container">
                         <img src="1777409010064.jpeg" alt="Natally S. Vidal Figueroa"> 
-                        <span class="flag-badge" title="Puerto Rico">🇵🇷🇨🇴</span>
                     </div>
                     <h3>Natally S. Vidal Figueroa</h3>
                     <span class="role">Associate Researcher</span>
+                    <div class="flag-container" title="Puerto Rico, Colombia">
+                        <span>🇵🇷</span><span>🇨🇴</span>
+                    </div>
                     <div class="bio">
                         Colombian biologist and Master’s student at UPRM. Her research integrates bioremediation and nanotechnology through a biochemical approach.
                         <br><br>
@@ -282,14 +285,15 @@
                     </div>
                 </div>
 
-                <!-- Jaqueline Cristina Galiardo -->
                 <div class="member-card">
                     <div class="img-container">
                         <img src="a6f72c43-dc7d-4684-9ab2-7c595095cce2.jpeg" alt="Jaqueline Cristina Galiardo"> 
-                        <span class="flag-badge" title="Brazil">🇧🇷</span>
                     </div>
                     <h3>Jaqueline Cristina Galiardo</h3>
                     <span class="role">Associate Researcher</span>
+                    <div class="flag-container" title="Brazil">
+                        <span>🇧🇷</span>
+                    </div>
                     <div class="bio">
                         Doctoral candidate in Food and Nutrition at UNESP, Brazil. Her research at the LPP focuses on personalized probiotic therapy and microbiota modulation.
                         <br><br>
@@ -301,14 +305,15 @@
                     </div>
                 </div>
 
-                <!-- Dana Páez Niño -->
                 <div class="member-card">
                     <div class="img-container">
                         <img src="foto-dana.jpg" alt="Dana Páez Niño"> 
-                        <span class="flag-badge" title="Colombia">🇨🇴</span>
                     </div>
                     <h3>Dana Páez Niño</h3>
                     <span class="role">Associate Researcher</span>
+                    <div class="flag-container" title="Colombia">
+                        <span>🇨🇴</span>
+                    </div>
                     <div class="bio">
                         Microbiologist from Universidad Simón Bolívar with emphasis on Biotechnology. Expert in DNA extraction protocols using nanotechnology and microbial characterization.
                         <br><br>
@@ -319,14 +324,15 @@
                     </div>
                 </div>
 
-                <!-- Elisângela Pulcini Jacob -->
                 <div class="member-card">
                     <div class="img-container">
                         <img src="foto-elisangela.jpg" alt="Elisângela Pulcini Jacob"> 
-                        <span class="flag-badge" title="Brazil">🇧🇷</span>
                     </div>
                     <h3>Elisângela Pulcini Jacob</h3>
                     <span class="role">Associate Researcher</span>
+                    <div class="flag-container" title="Brazil">
+                        <span>🇧🇷</span>
+                    </div>
                     <div class="bio">
                         Master's student in Business Administration at UNESP/FCAV. Specialist in Supply Chain Management in Agribusiness, Marketing, and Branding.
                         <br><br>
@@ -339,18 +345,19 @@
                     </div>
                 </div>
 
-                <!-- Shahzad Shoukat -->
                 <div class="member-card">
                     <div class="img-container">
                         <img src="foto-shahzad.jpg" alt="Shahzad Shoukat"> 
-                        <span class="flag-badge" title="Pakistan, Indonesia, South Korea, Brazil">🇵🇰🇮🇩🇰🇷🇧🇷</span>
                     </div>
                     <h3>Shahzad Shoukat</h3>
                     <span class="role">Associate Researcher</span>
+                    <div class="flag-container" title="Pakistan, Indonesia, South Korea, Brazil">
+                        <span>🇵🇰</span><span>🇮🇩</span><span>🇰🇷</span><span>🇧🇷</span>
+                    </div>
                     <div class="bio">
-                        Doctoral researcher at the Aquaculture Center of UNESP (CAUNESP), Brazil. His research at the Laboratory of Microbiology and Parasitology of Aquatic Organisms (LAPOA) focuses on immersion and injection vaccines for Columnaris-causing bacteria in Nile Tilapia.
+                        Doctoral researcher at the Aquaculture Center of UNESP (CAUNESP), Brazil. His research at the Laboratory of Microbiology and Parasitology of Aquatic Organisms (LAPOA) focuses on vaccines for Columnaris-causing bacteria in Nile Tilapia.
                         <br><br>
-                        With an international trajectory across Pakistan, Indonesia, and South Korea, he specializes in microbiology, immunology, and aquatic health, contributing to global scientific networks in aquaculture and infectious diseases.
+                        With an international trajectory across Pakistan, Indonesia, and South Korea, he specializes in microbiology and immunology.
                     </div>
                     <div class="academic-links">
                         <a href="https://www.linkedin.com/in/shahzad-shoukat-b4014014a/" class="li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>

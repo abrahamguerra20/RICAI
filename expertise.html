@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Expertise | RICAI Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+        :root {
+            --ricai-blue: #1d3a61;
+            --ricai-yellow: #fdd835;
+            --ricai-turquoise: #26c6da;
+            --ricai-magenta: #ec407a;
+            --ricai-green: #66bb6a;
+            --ricai-orange: #ffa726;
+            --primary-color: var(--ricai-blue);
+            --secondary-color: var(--ricai-turquoise); 
+            --accent-color: var(--ricai-orange);
+            --text-color: #333;
+            --light-gray: #f8f9fa;
+            --white: #fff;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: var(--text-color);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .grant-alert-bar {
+            background-color: var(--ricai-yellow);
+            color: var(--ricai-blue);
+            text-align: center;
+            padding: 12px 0;
+            font-weight: 700;
+            font-size: 0.95em;
+            position: relative;
+            z-index: 1001;
+        }
+        .grant-alert-bar i { margin-right: 10px; }
+        .grant-alert-bar a { color: var(--ricai-blue); font-weight: 800; text-decoration: underline; }
+
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(29, 58, 97, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 65px; width: auto; }
+
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: var(--ricai-blue); text-decoration: none; font-weight: 700; transition: 0.3s; }
+        nav ul li a:hover { color: var(--ricai-orange); }
+
+        .expertise-hero {
+            background: linear-gradient(rgba(29, 58, 97, 0.9), rgba(29, 58, 97, 0.9)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        .expertise-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3em; margin-bottom: 10px; }
+        
+        .section-padding { padding: 80px 0; }
+        
+        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 60px; font-size: 1.15em; color: #555; }
+
+        /* Grid de Áreas Técnicas */
+        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        
+        .expertise-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(29, 58, 97, 0.08);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .expertise-card:hover { transform: translateY(-5px); border-color: var(--ricai-orange); }
+        
+        .expertise-card i { font-size: 2.5em; margin-bottom: 20px; display: block; }
+        .expertise-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.4em; }
+        
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+        .tech-tags span { background: var(--light-gray); color: var(--ricai-blue); padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: 600; border: 1px solid rgba(29, 58, 97, 0.1); }
+
+        /* Banner de Enfoque Metodológico */
+        .methodology-section { background-color: var(--light-gray); padding: 80px 0; margin-top: 60px; border-radius: 30px; }
+        .methodology-section h2 { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-bottom: 40px; }
+        
+        .methodology-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+        .methodology-item i { font-size: 2em; color: var(--ricai-orange); margin-bottom: 15px; }
+        .methodology-item h4 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-bottom: 10px; font-size: 1.1em; }
+        .methodology-item p { font-size: 0.95em; color: #666; margin: 0; padding: 0 15px; }
+
+        footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
+    </style>
+</head>
+<body>
+
+    <div class="grant-alert-bar">
+        <i class="fas fa-lightbulb"></i> DO YOU BELIEVE OPEN SCIENCE IS THE KEY TO GLOBAL PROGRESS? <a href="index.html#contact" style="margin-left: 10px;">Join the RICAI community today</a>
+    </div>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#team">Our Team</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="expertise.html">Expertise</a></li>
+                    <li><a href="consultancy.html">Consultancy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="expertise-hero">
+        <div class="container">
+            <h1>Scientific Expertise</h1>
+            <p>Advanced computational biology and molecular tools driving decentralized innovation.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <p class="intro-text">
+                RICAI maps top-tier technical proficiency across multi-omic frameworks, agricultural genetics, and translational immunology. We transform complex data matrices into actionable biological discoveries.
+            </p>
+
+            <div class="expertise-grid">
+                
+                <div class="expertise-card" style="border-top: 4px solid var(--ricai-turquoise);">
+                    <i class="fas fa-dna" style="color: var(--ricai-turquoise);"></i>
+                    <h3>Bioinformatics & Multi-Omics</h3>
+                    <p>High-throughput genomic pipelines optimized for ecosystem modeling and evolutionary microbiology. We decode high-dimensional sequencing data to answer complex biological questions.</p>
+                    <div class="tech-tags">
+                        <span>Pangenomics</span>
+                        <span>Metagenomics</span>
+                        <span>Metatranscriptomics</span>
+                        <span>scRNA-seq</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" style="border-top: 4px solid var(--ricai-magenta);">
+                    <i class="fas fa-shield-virus" style="color: var(--ricai-magenta);"></i>
+                    <h3>Translational Immunology</h3>
+                    <p>Advanced molecular analysis of innate immune regulation, barrier defenses, and epithelial-immune circuits. Focused on therapeutic discovery and functional cellular heterogeneity during infection paths.</p>
+                    <div class="tech-tags">
+                        <span>Flow Cytometry</span>
+                        <span>CRISPR/Cas9</span>
+                        <span>In Vivo Models</span>
+                        <span>Cell Signaling</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" style="border-top: 4px solid var(--ricai-orange);">
+                    <i class="fas fa-seedling" style="color: var(--ricai-orange);"></i>
+                    <h3>Agrobiotechnology & Breeding</h3>
+                    <p>Precision plant-microorganism interaction profiling and functional marker identification. Enhancing agricultural performance, stress tolerance, and bioinoculant design using smart analytical tools.</p>
+                    <div class="tech-tags">
+                        <span>Bioprospecting</span>
+                        <span>NIR Spectroscopy</span>
+                        <span>Post-Harvest Biochemistry</span>
+                        <span>Phylogenetics</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="methodology-section">
+                <h2>The RICAI Methodological Approach</h2>
+                <div class="methodology-grid">
+                    <div class="methodology-item">
+                        <i class="fas fa-terminal"></i>
+                        <h4>Reproducible Workflows</h4>
+                        <p>Standardizing pipelines using R, Python, and open-access infrastructure to ensure absolute research data compliance.</p>
+                    </div>
+                    <div class="methodology-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>Data Democratization</h4>
+                        <p>Leveraging public bio-repositories to maximize functional metadata interpretation without resource limits.</p>
+                    </div>
+                    <div class="methodology-item">
+                        <i class="fas fa-network-wired"></i>
+                        <h4>Cross-Disciplinary Power</h4>
+                        <p>Fusing computational intelligence directly with bench-work molecular dynamics across international hubs.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 RICAI. All rights reserved. | The Independent and Open Science Research Network</p>
+        </div>
+    </footer>
+
+</body>
+</html>

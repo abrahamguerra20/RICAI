@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Advisory &amp; Language Services | RICAI Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+        :root {
+            --ricai-blue: #1d3a61;
+            --ricai-yellow: #fdd835;
+            --ricai-turquoise: #26c6da;
+            --ricai-magenta: #ec407a;
+            --ricai-green: #66bb6a;
+            --ricai-orange: #ffa726;
+            --primary-color: var(--ricai-blue);
+            --secondary-color: var(--ricai-turquoise); 
+            --accent-color: var(--ricai-orange);
+            --text-color: #333;
+            --light-gray: #f8f9fa;
+            --white: #fff;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: var(--text-color);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .grant-alert-bar {
+            background-color: var(--ricai-yellow);
+            color: var(--ricai-blue);
+            text-align: center;
+            padding: 12px 0;
+            font-weight: 700;
+            font-size: 0.95em;
+            position: relative;
+            z-index: 1001;
+        }
+        .grant-alert-bar i { margin-right: 10px; }
+        .grant-alert-bar a { color: var(--ricai-blue); font-weight: 800; text-decoration: underline; }
+
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(29, 58, 97, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 65px; width: auto; }
+
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: var(--ricai-blue); text-decoration: none; font-weight: 700; transition: 0.3s; }
+        nav ul li a:hover { color: var(--ricai-orange); }
+
+        .advisory-hero {
+            background: linear-gradient(rgba(29, 58, 97, 0.9), rgba(29, 58, 97, 0.9)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        .advisory-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3em; margin-bottom: 10px; }
+        
+        .section-padding { padding: 80px 0; }
+        
+        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.15em; color: #555; }
+
+        /* Unified Grid for 6 Cards (Perfect 3-column layout) */
+        .advisory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
+        
+        .advisory-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(29, 58, 97, 0.08);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .advisory-card:hover { transform: translateY(-5px); border-color: var(--ricai-orange); }
+        
+        .advisory-card i { font-size: 2.5em; margin-bottom: 20px; display: block; }
+        .advisory-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.3em; min-height: 50px; display: flex; align-items: center; }
+        .advisory-card p { font-size: 0.95em; color: #555; text-align: justify; margin-bottom: 20px; }
+        
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 20px; border-top: 1px solid #eee; }
+        .tech-tags span { background: var(--light-gray); color: var(--ricai-blue); padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: 600; border: 1px solid rgba(29, 58, 97, 0.1); }
+
+        /* Call to Action Section */
+        .cta-banner-section { background-color: #f1f5f9; border-top: 4px dashed var(--ricai-orange); padding: 50px 40px; border-radius: 25px; margin-top: 60px; text-align: center; }
+        .cta-banner-section h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.6em; margin-top: 0; margin-bottom: 15px; }
+        .cta-banner-section p { max-width: 850px; margin: 0 auto 30px; color: #555; font-size: 1.05em; }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--ricai-orange);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 167, 38, 0.3);
+        }
+        .cta-button:hover { background-color: var(--ricai-blue); transform: translateY(-2px); }
+
+        footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
+        footer a { color: var(--ricai-turquoise); font-weight: bold; text-decoration: none; }
+        
+        @media (max-width: 768px) { nav ul { display: none; } .advisory-hero h1 { font-size: 2.2em; } }
+    </style>
+</head>
+<body>
+
+    <div class="grant-alert-bar">
+        <i class="fas fa-lightbulb"></i> ADVOCATING FOR DECENTRALIZED KNOWLEDGE AND INDEPENDENT SCIENTIFIC PROGRESS. <a href="index.html#contact" style="margin-left: 10px;">Join the RICAI community today</a>
+    </div>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#team">Our Team</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="expertise.html">Expertise</a></li>
+                    <li><a href="consultancy.html">Consultancy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="advisory-hero">
+        <div class="container">
+            <h1>Advisory &amp; Language Services</h1>
+            <p>Peer-to-peer strategic mentoring, academic profile building, and specialized scientific communication.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <p class="intro-text">
+                Navigating the global academic ecosystem requires more than technical talent; it demands strategic placement. RICAI leverages the international trajectory of its researchers to offer specialized advisory pathways, helping candidates optimize their scientific footprint, secure funding, and communicate across borders with absolute clarity.
+            </p>
+
+            <!-- Grid Container: 6 Perfectly Balanced Cards -->
+            <div class="advisory-grid">
+                
+                <!-- 1. Admissions & Funding Advisory -->
+                <div class="advisory-card" style="border-top: 4px solid var(--ricai-turquoise);">
+                    <div>
+                        <i class="fas fa-passport" style="color: var(--ricai-turquoise);"></i>
+                        <h3>Admissions &amp; Funding Advisory</h3>
+                        <p>Strategic guidance for navigating academic applications across multiple institutional levels. Work in this line provides specialized counseling for undergraduate mobility, international master’s or doctoral admissions, and the identification of global scholarships, grants, and fellowships tailored to each academic stage.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>Scholarship Search</span><span>Global Mobility</span><span>Admission Strategy</span><span>Fellowship Grants</span>
+                    </div>
+                </div>
+
+                <!-- 2. Academic Branding & CV Design -->
+                <div class="advisory-card" style="border-top: 4px solid var(--ricai-blue);">
+                    <div>
+                        <i class="fas fa-id-card" style="color: var(--ricai-blue);"></i>
+                        <h3>Academic Branding &amp; CV Design</h3>
+                        <p>Structuring high-impact academic curricula vitae and digital professional profiles adapted to international institutional standards. This service focuses on organizing research metrics, technical skills, and publications effectively to capture the attention of graduate committees and global principal investigators.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>CV Formatting</span><span>ORCID &amp; Scholar</span><span>Research Metrics</span><span>Academic Identity</span>
+                    </div>
+                </div>
+
+                <!-- 3. Scientific Writing & Correspondence -->
+                <div class="advisory-card" style="border-top: 4px solid var(--ricai-magenta);">
+                    <div>
+                        <i class="fas fa-pen-nib" style="color: var(--ricai-magenta);"></i>
+                        <h3>Writing &amp; Correspondence</h3>
+                        <p>Refining Cover Letters, Statements of Purpose, and professional academic communication templates. This line assists applicants in articulating their scientific vision cleanly, aligning personal milestones with institutional goals, and drafting precise inquiries for targeting potential advisors abroad.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>Motivation Letters</span><span>Cold Emailing</span><span>Statement of Purpose</span><span>Cover Letters</span>
+                    </div>
+                </div>
+
+                <!-- 4. Academic Language & Translation -->
+                <div class="advisory-card" style="border-top: 4px solid var(--ricai-orange);">
+                    <div>
+                        <i class="fas fa-language" style="color: var(--ricai-orange);"></i>
+                        <h3>Language &amp; Translation Services</h3>
+                        <p>Specialized translation, technical proofreading, and language support customized for rigorous scientific outputs. This domain encompasses multi-language abstract refinement, pre-submission manuscript reviews, and terminology localization to ensure seamless communication in global journals.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>Technical Translation</span><span>Proofreading</span><span>Abstract Refinement</span><span>Manuscript Polish</span>
+                    </div>
+                </div>
+
+                <!-- 5. Research Proposal Structuring -->
+                <div class="advisory-card" style="border-top: 4px solid var(--ricai-yellow);">
+                    <div>
+                        <i class="fas fa-file-alt" style="color: var(--ricai-yellow);"></i>
+                        <h3>Research Proposal Structuring</h3>
+                        <p>Methodological guidance for drafting, refining, and structuring competitive scientific research proposals. This service assists applicants in defining clear research questions, aligning objectives with international benchmarks, and organizing solid methodological frameworks to meet evaluation criteria.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>Proposal Design</span><span>Methodology Setup</span><span>Literature Alignment</span><span>Project Scoping</span>
+                    </div>
+                </div>
+
+                <!-- 6. Mock Interviews & Academic Defense -->
+                <div class="advisory-card" style="border-top: 4px solid var(--ricai-green);">
+                    <div>
+                        <i class="fas fa-comments" style="color: var(--ricai-green);"></i>
+                        <h3>Mock Interviews &amp; Defense</h3>
+                        <p>Interactive simulation sessions designed to prepare candidates for intensive graduate admission panels, funding interviews, and research proposal defenses. We provide structured peer feedback on technical communication, clarity of delivery, and strategies for articulating academic arguments under pressure.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>Interview Coaching</span><span>Oral Defense</span><span>Technical Delivery</span><span>Panel Preparation</span>
+                    </div>
+                </div>
+
+            </div> <!-- End of grid -->
+
+            <!-- Call to Action Section -->
+            <div class="cta-banner-section">
+                <h3>Ready to Accelerate Your Academic Journey?</h3>
+                <p>Get in touch with our researchers to schedule a personalized advisory session or request technical translation support for your upcoming scientific submissions.</p>
+                <a href="mailto:ricaiscience@gmail.com" class="cta-button"><i class="fas fa-envelope" style="margin-right: 8px;"></i> Contact Our Advisors</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3 style="color: white; font-family: 'Montserrat'; margin: 0 0 10px 0;">RICAI</h3>
+            <p style="margin: 5px 0;">The Independent and Open Science Research Network</p>
+            <p style="margin: 5px 0;">Contact us: <a href="mailto:ricaiscience@gmail.com">ricaiscience@gmail.com</a></p>
+            <p style="margin: 20px 0 0 0; font-size: 0.85em; color: #cbd5e0;">&copy; 2026 RICAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

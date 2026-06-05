@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Expertise | RICAI Network</title>
+    <title>RICAI | Independent and Open Science Research Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
@@ -15,9 +15,11 @@
             --ricai-magenta: #ec407a;
             --ricai-green: #66bb6a;
             --ricai-orange: #ffa726;
+            
             --primary-color: var(--ricai-blue);
             --secondary-color: var(--ricai-turquoise); 
             --accent-color: var(--ricai-orange);
+            --dark-blue: #102542;
             --text-color: #333;
             --light-gray: #f8f9fa;
             --white: #fff;
@@ -30,6 +32,7 @@
             padding: 0;
             background-color: var(--white);
             color: var(--text-color);
+            scroll-behavior: smooth;
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -58,199 +61,377 @@
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .logo img { height: 65px; width: auto; }
 
+        .network-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.8em;
+            color: var(--ricai-blue);
+            text-align: right;
+            max-width: 250px;
+            line-height: 1.2;
+            border-left: 3px solid var(--ricai-orange);
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
         nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
         nav ul li { margin: 0 15px; }
-        nav ul li a { color: var(--ricai-blue); text-decoration: none; font-weight: 700; transition: 0.3s; }
+        nav ul li a {
+            color: var(--ricai-blue);
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
         nav ul li a:hover { color: var(--ricai-orange); }
 
-        .expertise-hero {
-            background: linear-gradient(rgba(29, 58, 97, 0.9), rgba(29, 58, 97, 0.9)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
+        .hero {
+            background: linear-gradient(rgba(29, 58, 97, 0.85), rgba(29, 58, 97, 0.85)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
             color: var(--white);
-            padding: 100px 0 60px;
             text-align: center;
+            padding: 160px 20px;
         }
-        .expertise-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3em; margin-bottom: 10px; }
-        
-        .section-padding { padding: 80px 0; }
-        
-        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 60px; font-size: 1.15em; color: #555; }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.4em; max-width: 800px; margin: 0 auto 40px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
 
-        /* Grid de Áreas Técnicas - 3 Columnas principales */
-        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        
-        .expertise-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid rgba(29, 58, 97, 0.08);
+        .cta-button {
+            display: inline-block;
+            background-color: var(--ricai-orange);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
             transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(255, 167, 38, 0.4);
         }
-        .expertise-card:hover { transform: translateY(-5px); border-color: var(--ricai-orange); }
-        
-        .expertise-card i { font-size: 2.5em; margin-bottom: 20px; display: block; }
-        .expertise-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.4em; }
-        
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
-        .tech-tags span { background: var(--light-gray); color: var(--ricai-blue); padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: 600; border: 1px solid rgba(29, 58, 97, 0.1); }
+        .cta-button:hover { background-color: var(--ricai-blue); transform: translateY(-3px); border: 2px solid var(--ricai-orange); }
 
-        /* Banner de Innovación y Negocios */
-        .business-section { background: linear-gradient(135deg, var(--ricai-blue), var(--dark-blue)); color: white; padding: 60px; border-radius: 30px; margin-top: 40px; }
-        .business-container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; }
-        .business-text { flex: 1; min-width: 300px; }
-        .business-text h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-orange); font-size: 1.8em; margin-top: 0; }
-        .business-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
-        .business-tags span { background: rgba(255,255,255,0.1); color: var(--ricai-yellow); border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.85em; font-weight: bold; }
-
-        /* Banner de Enfoque Metodológico */
-        .methodology-section { background-color: var(--light-gray); padding: 80px 0; margin-top: 60px; border-radius: 30px; }
-        .methodology-section h2 { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-bottom: 40px; }
+        .section-container h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5em; color: var(--ricai-blue); margin-bottom: 50px; }
+        .section-container h3.sub-heading { text-align: center; color: var(--ricai-orange); margin-top: -30px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 2px; }
         
-        .methodology-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-        .methodology-item i { font-size: 2em; color: var(--ricai-orange); margin-bottom: 15px; }
-        .methodology-item h4 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-bottom: 10px; font-size: 1.1em; }
-        .methodology-item p { font-size: 0.95em; color: #666; margin: 0; padding: 0 15px; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 40px; }
+        .member-card { 
+            background: var(--white); 
+            padding: 40px 30px; 
+            border-radius: 20px; 
+            text-align: center; 
+            border: 1px solid rgba(29, 58, 97, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s; 
+        }
+        .member-card:hover { transform: translateY(-10px); border-color: var(--ricai-orange); }
+        .member-card img { width: 160px; height: 160px; border-radius: 50%; border: 5px solid var(--ricai-blue); object-fit: cover; margin-bottom: 20px; }
+        
+        .flag-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            background: var(--light-gray);
+            padding: 8px 15px;
+            border-radius: 30px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid var(--ricai-turquoise);
+        }
 
-        footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
+        .member-card h3 { margin: 10px 0 5px 0; color: var(--ricai-blue); font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        .member-card .role { color: var(--ricai-orange); font-weight: 800; margin-bottom: 15px; font-size: 0.85em; display: block; text-transform: uppercase; letter-spacing: 1px;}
+        .member-card .bio { font-size: 0.95em; color: #555; text-align: justify; line-height: 1.6; }
+
+        .academic-links { margin-top: 20px; display: flex; justify-content: center; gap: 15px; padding-top: 15px; border-top: 1px solid #eee; }
+        .academic-links a { font-size: 1.4em; transition: 0.3s; }
+        .academic-links a:hover { transform: scale(1.2); }
+
+        .join-options { background-color: var(--ricai-blue); color: white; padding: 80px 0; border-radius: 30px; margin-top: 60px; }
+        .join-card { padding: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; transition: 0.3s; }
+        .join-card:hover { background: rgba(255,255,255,0.05); border-color: var(--ricai-orange); }
+        .join-card i { font-size: 3em; color: var(--ricai-orange); margin-bottom: 25px; }
+
+        footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 60px 20px; }
+        footer a { color: var(--ricai-turquoise); font-weight: bold; }
+
+        @media (max-width: 992px) { .network-name { display: none; } }
+        @media (max-width: 768px) { nav ul { display: none; } .hero h1 { font-size: 2.5em; } }
     </style>
 </head>
 <body>
 
     <div class="grant-alert-bar">
-        <i class="fas fa-lightbulb"></i> DO YOU BELIEVE OPEN SCIENCE IS THE KEY TO GLOBAL PROGRESS? <a href="index.html#contact" style="margin-left: 10px;">Join the RICAI community today</a>
+        <i class="fas fa-lightbulb"></i> DO YOU BELIEVE OPEN SCIENCE IS THE KEY TO GLOBAL PROGRESS? <a href="#contact" style="margin-left: 10px;">Join the RICAI community today</a>
     </div>
 
     <header>
         <div class="container navbar">
             <div class="logo">
-                <a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a>
+                <a href="#">
+                    <img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo">
+                </a>
             </div>
             <nav>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#team">Our Team</a></li>
+                    <li><a href="team.html">Our Team</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="expertise.html">Expertise</a></li>
                     <li><a href="consultancy.html">Consultancy</a></li>
+                    <li><a href="Journal.html">Journal</a></li>
+                    <li><a href="#contact" class="cta-button" style="padding: 10px 20px; margin-left: 15px; box-shadow: none;">Join Now</a></li>
                 </ul>
             </nav>
+            <div class="network-name">The Independent and Open Science Research Network</div>
         </div>
     </header>
 
-    <section class="expertise-hero">
+    <section class="hero">
         <div class="container">
-            <h1>Scientific Expertise</h1>
-            <p>A multi-disciplinary ecosystem driving independent research, advanced analytics, and strategic growth.</p>
+            <h1>Empowering the next generation of open science</h1>
+            <p>What if we reinvented the way we collaborate in science? A global network where talent translate into real potential.</p>
+            <p>While talent is equally distributed throughout the world, opportunities are not.........</p>
+            <a href="#contact" class="cta-button" style="padding: 18px 45px; font-size: 1.2em;">Start Your Journey</a>
         </div>
     </section>
 
-    <section class="section-padding">
+    <!-- Our Team Section -->
+    <section id="team" class="section-container" style="padding: 80px 0;">
         <div class="container">
-            <p class="intro-text">
-                RICAI blurs the traditional lines of academic segmentation. We bridge specialized computational power with agrosciences, molecular medicine, nanotechnology, and administrative strategy to deliver scalable scientific solutions.
-            </p>
+            <h2>Our Team</h2>
+            <h3 class="sub-heading">Leadership</h3>
+            
+            <!-- Row 1: Abraham & Nilo Together -->
+            <div class="team-grid">
+                <div class="member-card">
+                    <img src="0.jpeg" alt="Abraham Guerra"> 
+                    <h3>Abraham David Guerra Ospino</h3>
+                    <span class="role">CEO &amp; Founder</span>
+                    <div class="flag-container" title="Colombia, Brazil, Italy">
+                        <span>🇨🇴</span><span>🇧🇷</span><span>🇮🇹</span>
+                    </div>
+                    <div class="bio">
+                        Specialist in bioinformatics and microbial biotechnology who integrates high-throughput sequencing data with ecological modeling. Currently conducting advanced research on metagenomics and metatranscriptomics through an international exchange at the University of Padua (UNIPD), Italy, while completing a Master’s at UNESP, Brazil. Dedicated to establishing decentralized networks for global scientific collaboration.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://abrahamguerra20.github.io/Science-page" title="Website" style="color: var(--ricai-magenta);"><i class="fas fa-globe"></i></a>
+                        <a href="https://www.linkedin.com/in/abrahamguerrao/" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Abraham-Guerra-3" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=qR2aHr8AAAAJ" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://orcid.org/0000-0003-4684-9440" title="ORCID" style="color: var(--ricai-green);"><i class="fab fa-orcid"></i></a>
+                    </div>
+                </div>
 
-            <div class="expertise-grid">
+                <div class="member-card">
+                    <img src="00.jpeg" alt="Nilo Ricardo"> 
+                    <h3>Nilo Corrêa de Mello Júnior Ricardo</h3>
+                    <span class="role">Lead Researcher</span>
+                    <div class="flag-container"><span>🇧🇷</span></div>
+                    <div class="bio">
+                        Agronomist and PhD candidate in Plant Production at UNESP specializing in Data Science and postharvest physiology. His expertise lies in using Near-Infrared (NIR) spectroscopy and machine learning algorithms to predict fruit quality and optimize harvest timing, bridging the gap between agriculture and advanced computational analytics.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://orcid.org/0000-0002-5786-231X" title="ORCID" style="color: var(--ricai-green);"><i class="fab fa-orcid"></i></a>
+                        <a href="https://www.linkedin.com/in/nilo-ricardo-j%C3%BAnior-879862b7/" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Nilo-Ricardo" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=tJkU1OEAAAAJ" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Maria & Samanta Together -->
+            <div class="team-grid" style="margin-top: 40px;">
+                <div class="member-card">
+                    <img src="000.jpeg" alt="Maria Velez-Brochero"> 
+                    <h3>Maria Velez-Brochero</h3>
+                    <span class="role">Lead Researcher</span>
+                    <div class="flag-container" title="Colombia, United States"><span>🇨🇴</span><span>🇺🇸</span></div>
+                    <div class="bio">
+                        Ph.D. candidate in Biomedical Sciences at Rutgers Medical School specializing in translational immunology. Her work investigates innate immune regulation during fungal and viral lung infections using single-cell transcriptomics and CRISPR systems. ASM Future Leaders Fellow (2026) and founder of BiotecScience platform.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/mariavelez0310" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Maria-Velez-Brochero" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=o4HpAuAAAAAJ&amp;hl=en" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://orcid.org/0000-0003-4684-9440" title="ORCID" style="color: var(--ricai-green);"><i class="fab fa-orcid"></i></a>
+                        <a href="#" title="BiotecScience" style="color: var(--ricai-magenta);"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="0000.jpeg" alt="Samanta Carvalho"> 
+                    <h3>Samanta Gabriela Medeiros Carvalho</h3>
+                    <span class="role">Lead Researcher</span>
+                    <div class="flag-container" title="Brazil, Poland"><span>🇧🇷</span><span>🇵🇱</span></div> 
+                    <div class="bio">
+                        PhD in Genetics and Plant Breeding with extensive expertise in molecular biology, genomics, and plant-pathogen interactions. Specialist in standardizing bioinformatics pipelines for DNA sequencing and phylogenetic analysis, she integrates morphoanatomical studies with advanced genomic tools to decode plant resilience.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/samanta-carvalho-b9685277" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=GZ7A_S8AAAAJ" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="sub-heading" style="margin-top: 80px;">Associated Researchers</h3>
+
+            <!-- Grid Único para Asociados (3 columnas automáticas) -->
+            <div class="team-grid">
                 
-                <!-- 1. Bioinformatics (Procariotas y Eucariotas) -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-turquoise);">
-                    <div>
-                        <i class="fas fa-terminal" style="color: var(--ricai-turquoise);"></i>
-                        <h3>Bioinformatics</h3>
-                        <p>Design, execution, and standardization of customized genomic pipelines. We process massive datasets to evaluate complex sequence maps across both prokaryotic and complex eukaryotic organisms.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Pangenomics</span>
-                        <span>Metagenomics</span>
-                        <span>Metatranscriptomics</span>
-                        <span>scRNA-seq</span>
-                        <span>Phylogenetics</span>
-                        <span>Gene Families</span>
+                <!-- 1. Lizeth Fernanda -->
+                <div class="member-card">
+                    <img src="1.png" alt="Lizeth Fernanda"> 
+                    <h3>Lizeth Fernanda Banguero Micolta</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇨🇴</span><span>🇧🇷</span></div>
+                    <div class="bio">Biologist from the University of Caldas and active member of GEBIOME. Her work focuses on the intersection of molecular biology and epidemiology within the One Health framework...</div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/lizeth-fernanda-banguero-micolta-915282286/" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Lizeth-Banguero-Micolta" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?hl=es&amp;user=0zxihMgAAAAJ" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
                     </div>
                 </div>
 
-                <!-- 2. Agricultural & Aquatic Sciences -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-green);">
-                    <div>
-                        <i class="fas fa-seedling" style="color: var(--ricai-green);"></i>
-                        <h3>Agricultural & Aquatic Sciences</h3>
-                        <p>Data science, machine learning models, and biochemistry applied directly to harvest prediction, plant production, and aquatic vaccine designs. Fusing ecosystem modeling with commercial farming and postharvest systems.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>NIR Spectroscopy</span>
-                        <span>Postharvest Physiology</span>
-                        <span>Bioprospecting</span>
-                        <span>Aquatic Immunology</span>
-                        <span>Bioremediation</span>
+                <!-- 2. Natally S. Vidal -->
+                <div class="member-card">
+                    <img src="2.jpeg" alt="Natally S. Vidal"> 
+                    <h3>Natally S. Vidal Figueroa</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇵🇷</span><span>🇨🇴</span></div>
+                    <div class="bio">Biologist and Master’s student at UPRM whose research integrates bioremediation and nanotechnology. She applies biochemical approaches to microbiological analysis...</div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/natally-s-vidal-figueroa-1931012a2/" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
 
-                <!-- 3. Molecular Biology & Nanotechnology -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-magenta);">
-                    <div>
-                        <i class="fas fa-flask" style="color: var(--ricai-magenta);"></i>
-                        <h3>Molecular Biology & Nanotechnology</h3>
-                        <p>Deep cellular diagnostics and translation-ready pathogen screenings. We design nanoscale extraction protocols and investigate cellular-immune heterogeneity across diverse biological systems.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>CRISPR/Cas9</span>
-                        <span>One Health Systems</span>
-                        <span>Iron Nanoparticles</span>
-                        <span>SERS & SEIRA</span>
-                        <span>Probiotic Therapy</span>
+                <!-- 3. Jaqueline Cristina -->
+                <div class="member-card">
+                    <img src="3.jpeg" alt="Jaqueline Cristina"> 
+                    <h3>Jaqueline Cristina Galiardo</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇧🇷</span></div>
+                    <div class="bio">Doctoral candidate in Food and Nutrition at UNESP investigating personalized probiotic therapy and microbiota modulation. Her research at the LPP explores metabolic models...</div>
+                    <div class="academic-links">
+                        <a href="https://www.researchgate.net/profile/Jaqueline_Galiardo" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=_UCpH_cAAAAJ" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
                     </div>
                 </div>
 
+                <!-- 4. Dana Páez -->
+                <div class="member-card">
+                    <img src="4.jpg" alt="Dana Páez"> 
+                    <h3>Dana Páez Niño</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇨🇴</span></div>
+                    <div class="bio">Microbiologist specialized in biotechnology and DNA extraction protocols via iron nanoparticles. Her research focuses on nutrient-solubilizing bacteria associated with Utricularia gibba...</div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/dana-p%C3%A1ez-ni%C3%B1o-3aaa37225" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- 5. Elisângela Pulcini -->
+                <div class="member-card">
+                    <img src="5.png" alt="Elisângela Pulcini"> 
+                    <h3>Elisângela Pulcini Jacob</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇧🇷</span></div>
+                    <div class="bio">Master's candidate in Business Administration at UNESP/FCAV and specialist in Supply Chain Management within Agribusiness. She integrates multidisciplinary strategies in marketing...</div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/elisangela-pulcini-jacob" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Elisangela-Jacob" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com.br/citations?user=06SsKuIAAAAJ" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
+
+                <!-- 6. Shahzad Shoukat -->
+                <div class="member-card">
+                    <img src="6.jpeg" alt="Shahzad Shoukat"> 
+                    <h3>Shahzad Shoukat</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇵🇰</span><span>🇮🇩</span><span>🇰🇷</span><span>🇧🇷</span><span>🇺🇸</span></div>
+                    <div class="bio">Doctoral researcher at CAUNESP with an international trajectory across Pakistan, Indonesia, United States, South Korea and Brazil. He specializes in aquatic microbiology...</div>
+                    <div class="academic-links">
+                        <a href="https://orcid.org/0000-0002-0663-0615" title="ORCID" style="color: var(--ricai-green);"><i class="fab fa-orcid"></i></a>
+                        <a href="https://www.linkedin.com/in/shahzad-shoukat-b4014014a/" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://scholar.google.com/citations?user=thouIqwAAAAJ" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://www.researchgate.net/profile/Shahzad-Shoukat-4" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                </div>
+
+                <!-- 7. Susana Ospina -->
+                <div class="member-card">
+                    <img src="7.jpeg" alt="Susana Ospina"> 
+                    <h3>Susana Ospina</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇨🇴</span></div>
+                    <div class="bio">Microbiologist with a solid academic background and experience in applied research in the agricultural and biotechnology sectors...</div>
+                    <div class="academic-links">
+                        <a href="https://orcid.org/0000-0002-6848-8634" title="ORCID" style="color: var(--ricai-green);"><i class="fab fa-orcid"></i></a>
+                        <a href="https://www.linkedin.com/in/susana-ospina-768003207/" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Susana-Maldonado-3" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=O-Ypp5gAAAAJ&amp;hl=es" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
+
+                <!-- 8. Jamiles Carvalho -->
+                <div class="member-card">
+                    <img src="8.jpeg" alt="Jamiles Carvalho"> 
+                    <h3>Jamiles Carvalho Gonçalves de Souza Henrique</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇧🇷</span></div>
+                    <div class="bio">Agricultural Engineer and Doctoral Researcher at the Federal University of Paraíba (UFPB), specializing in post-harvest biochemistry and physiology.</div>
+                    <div class="academic-links">
+                        <a href="https://orcid.org/0000-0002-0999-2478" title="ORCID" style="color: var(--ricai-green);"><i class="fab fa-orcid"></i></a>
+                        <a href="https://www.linkedin.com/in/jamiles-carvalho-05a120192/" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Jamiles-Henrique" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=MNEh5-oAAAAJ&amp;hl=pt-BR" title="Google Scholar" style="color: var(--ricai-orange);"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
+
+                <!-- 9. Luis Angel Chicoma Rojas -->
+                <div class="member-card">
+                    <img src="9.jpg" alt="Luis Angel Chicoma Rojas"> 
+                    <h3>Luis Angel Chicoma Rojas</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇵🇪</span><span>🇧🇷</span><span>🇪🇸</span></div>
+                    <div class="bio">
+                        Ph.D. candidate in Genetics and Plant Breeding at UNESP and CBGP collaborator. He integrates bioinformatics with molecular bioprospecting to identify microbial traits that promote plant growth and stress tolerance, aiming to enhance productivity and sustainability in global agricultural systems.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://orcid.org/0000-0002-1244-0316" title="ORCID" style="color: var(--ricai-green);"><i class="fab fa-orcid"></i></a>
+                        <a href="https://www.linkedin.com/in/luis-angel-chicoma-rojas-985b26167" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.researchgate.net/profile/Luis-Angel-Chicoma-Rojas" title="ResearchGate" style="color: var(--ricai-turquoise);"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                </div>
+
+            </div> <!-- Cierre del team-grid único -->
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="join-options">
+            <h3 style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2em; margin-bottom: 40px;">Join the Community</h3>
+            <div class="join-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 0 40px;">
+                <div class="join-card">
+                    <i class="fas fa-microscope"></i>
+                    <h4>Associated Researcher</h4>
+                    <p>For active scientists looking to lead projects and feature their research profile in our network.</p>
+                    <a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank" class="cta-button">Apply as Researcher</a>
+                </div>
+                <div class="join-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Associated Member</h4>
+                    <p>For students and professionals who want to support Open Science and participate in our projects.</p>
+                    <a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank" class="cta-button">Join as Member</a>
+                </div>
             </div>
-
-            <!-- 4. NUEVA SECCIÓN: Administration & Agribusiness Strategy (Fideliza a Elisângela y el Branding de RICAI) -->
-            <div class="business-section">
-                <div class="business-container">
-                    <div class="business-text">
-                        <h3>Strategic Management & Agribusiness Branding</h3>
-                        <p>Science cannot scale without structural market adaptation. At RICAI, we integrate industrial supply chain analytics, multidisciplinary corporate management, and branding frameworks to drive value creation, ensuring that technological and biological discoveries successfully navigate complex global markets.</p>
-                    </div>
-                    <div class="business-tags">
-                        <span>Supply Chain Analytics</span>
-                        <span>Agribusiness Marketing</span>
-                        <span>Branding & Identity</span>
-                        <span>Value Creation Systems</span>
-                        <span>Strategic Competitiveness</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sección de Enfoque Metodológico -->
-            <div class="methodology-section">
-                <h2>The RICAI Methodological Approach</h2>
-                <div class="methodology-grid">
-                    <div class="methodology-item">
-                        <i class="fas fa-unlock-alt"></i>
-                        <h4>Open Source Frameworks</h4>
-                        <p>Standardizing pipelines using R, Python, and linux-based environments to make scientific logic shareable and fully audible.</p>
-                    </div>
-                    <div class="methodology-item">
-                        <i class="fas fa-project-diagram"></i>
-                        <h4>Democratized Infrastructures</h4>
-                        <p>Leveraging public bio-repositories and remote pipelines to allow high-level modeling outside high-resource labs.</p>
-                    </div>
-                    <div class="methodology-item">
-                        <i class="fas fa-network-wired"></i>
-                        <h4>Cross-Border Synergy</h4>
-                        <p>Connecting hubs across Colombia, Brazil, Italy, Spain, the US, and Poland under an independent, agile workflow layout.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 RICAI. All rights reserved. | The Independent and Open Science Research Network</p>
+            <h3 style="color: white; font-family: 'Montserrat';">RICAI</h3>
+            <p>The Independent and Open Science Research Network</p>
+            <p>Contact us: <a href="mailto:ricaiscience@gmail.com">ricaiscience@gmail.com</a></p>
+            <p>&copy; 2026 RICAI. All rights reserved.</p>
         </div>
     </footer>
 

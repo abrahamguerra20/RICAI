@@ -109,7 +109,10 @@
         .section-container h2 { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5em; color: var(--ricai-blue); margin-bottom: 50px; }
         .section-container h3.sub-heading { text-align: center; color: var(--ricai-orange); margin-top: -30px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 2px; }
         
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 40px; }
+        /* Sistema de Grids Estructurados */
+        .team-grid-single { display: grid; grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        .team-grid-double { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 40px; }
+        
         .member-card { 
             background: var(--white); 
             padding: 40px 30px; 
@@ -153,7 +156,11 @@
         footer a { color: var(--ricai-turquoise); font-weight: bold; }
 
         @media (max-width: 992px) { .network-name { display: none; } }
-        @media (max-width: 768px) { nav ul { display: none; } .hero h1 { font-size: 2.5em; } }
+        @media (max-width: 768px) { 
+            nav ul { display: none; } 
+            .hero h1 { font-size: 2.5em; } 
+            .team-grid-double { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -198,8 +205,8 @@
             <h2>Our Team</h2>
             <h3 class="sub-heading">Leadership</h3>
             
-            <!-- Row 1: Abraham & Nilo Together -->
-            <div class="team-grid">
+            <!-- Nivel 1: CEO Solo en el tope central -->
+            <div class="team-grid-single">
                 <div class="member-card">
                     <img src="0.jpeg" alt="Abraham Guerra"> 
                     <h3>Abraham David Guerra Ospino</h3>
@@ -218,11 +225,14 @@
                         <a href="https://orcid.org/0000-0003-4684-9440" title="ORCID" style="color: var(--ricai-green);"><i class="fab fa-orcid"></i></a>
                     </div>
                 </div>
+            </div>
 
+            <!-- Nivel 2: Nilo solo abajo del CEO como Lead Researcher & Coordinator -->
+            <div class="team-grid-single" style="margin-top: 40px;">
                 <div class="member-card">
                     <img src="00.jpeg" alt="Nilo Ricardo"> 
                     <h3>Nilo Corrêa de Mello Júnior Ricardo</h3>
-                    <span class="role">Lead Researcher</span>
+                    <span class="role">Lead Researcher &amp; Coordinator</span>
                     <div class="flag-container"><span>🇧🇷</span></div>
                     <div class="bio">
                         Agronomist and PhD candidate in Plant Production at UNESP specializing in Data Science and postharvest physiology. His expertise lies in using Near-Infrared (NIR) spectroscopy and machine learning algorithms to predict fruit quality and optimize harvest timing, bridging the gap between agriculture and advanced computational analytics.
@@ -236,8 +246,8 @@
                 </div>
             </div>
 
-            <!-- Row 2: Maria & Samanta Together -->
-            <div class="team-grid" style="margin-top: 40px;">
+            <!-- Nivel 3: Otras investigadoras principales en parejas (2 columnas fijas) -->
+            <div class="team-grid-double">
                 <div class="member-card">
                     <img src="000.jpeg" alt="Maria Velez-Brochero"> 
                     <h3>Maria Velez-Brochero</h3>
@@ -272,8 +282,8 @@
             
             <h3 class="sub-heading" style="margin-top: 80px;">Associated Researchers</h3>
 
-            <!-- Grid Único para Asociados (3 columnas automáticas) -->
-            <div class="team-grid">
+            <!-- Grid de Asociados Configurado de 2 en 2 (team-grid-double) -->
+            <div class="team-grid-double" style="margin-top: 0;">
                 
                 <!-- 1. Lizeth Fernanda -->
                 <div class="member-card">
@@ -401,7 +411,21 @@
                     </div>
                 </div>
 
-            </div> <!-- Cierre del team-grid único -->
+                <!-- 10. Fabio Andrés Guzmán Viloria -->
+                <div class="member-card">
+                    <img src="10.jpeg" alt="Fabio Andrés Guzmán Viloria"> 
+                    <h3>Fabio Andrés Guzmán Viloria</h3>
+                    <span class="role">Associate Researcher</span>
+                    <div class="flag-container"><span>🇨🇴</span></div>
+                    <div class="bio">
+                        Microbiologist and independent researcher specializing in environmental microbiology and microbial ecology. His work integrates structural bioinformatics approaches to examine the operational dynamics of microbial communities, targeting downstream applications in biotechnology and ecosystem conservation research.
+                    </div>
+                    <div class="academic-links">
+                        <a href="https://www.linkedin.com/in/fabio-guzman-v" title="LinkedIn" style="color: var(--ricai-blue);"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div> <!-- Cierre del team-grid-double -->
         </div>
     </section>
 

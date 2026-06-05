@@ -73,9 +73,22 @@
         
         .section-padding { padding: 80px 0; }
         
-        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 60px; font-size: 1.15em; color: #555; }
+        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.15em; color: #555; }
 
-        /* Grid de Áreas Técnicas - 3 Columnas principales */
+        /* Bloque de Banderas de Colaboración Global */
+        .global-reach-box {
+            text-align: center;
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 50px;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            border: 1px solid rgba(29, 58, 97, 0.1);
+        }
+        .global-reach-box h4 { font-family: 'Montserrat', sans-serif; margin: 0 0 15px 0; color: var(--ricai-blue); text-transform: uppercase; font-size: 0.85em; letter-spacing: 1px; }
+        .flag-cluster { display: flex; justify-content: center; gap: 20px; font-size: 2.2em; }
+
+        /* Grid de Áreas Técnicas layout */
         .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         
         .expertise-card {
@@ -105,14 +118,10 @@
         .business-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
         .business-tags span { background: rgba(255,255,255,0.1); color: var(--ricai-yellow); border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.85em; font-weight: bold; }
 
-        /* Banner de Enfoque Metodológico */
-        .methodology-section { background-color: var(--light-gray); padding: 80px 0; margin-top: 60px; border-radius: 30px; }
-        .methodology-section h2 { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-bottom: 40px; }
-        
-        .methodology-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-        .methodology-item i { font-size: 2em; color: var(--ricai-orange); margin-bottom: 15px; }
-        .methodology-item h4 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-bottom: 10px; font-size: 1.1em; }
-        .methodology-item p { font-size: 0.95em; color: #666; margin: 0; padding: 0 15px; }
+        /* Nueva sección de Horizontes Abiertos (Crecimiento de la red) */
+        .open-horizons-section { background-color: #f1f5f9; border-top: 4px dashed var(--ricai-orange); padding: 50px 40px; border-radius: 25px; margin-top: 50px; text-align: center; }
+        .open-horizons-section h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.6em; margin-top: 0; }
+        .open-horizons-section p { max-width: 850px; margin: 0 auto; color: #555; font-size: 1.05em; }
 
         footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
     </style>
@@ -150,12 +159,18 @@
     <section class="section-padding">
         <div class="container">
             <p class="intro-text">
-                RICAI blurs the traditional lines of academic segmentation. We bridge specialized computational power with agrosciences, molecular medicine, nanotechnology, and administrative strategy to deliver scalable scientific solutions.
+                RICAI operates as a deeply collaborative, multi-disciplinary ecosystem that transcends traditional academic boundaries. Scientific excellence is not centralized in a single geographic location; rather, it is a borderless synergy driven by experts collaborating from diverse institutions worldwide.
             </p>
+
+            <div class="global-reach-box">
+                <h4>Cross-Border Scientific Clusters</h4>
+                <div class="flag-cluster" title="Colombia, Brazil, Italy, Spain, United States, Poland">
+                    <span>🇨🇴</span><span>🇧🇷</span><span>🇮🇹</span><span>🇪🇸</span><span>🇺🇸</span><span>🇵🇱</span>
+                </div>
+            </div>
 
             <div class="expertise-grid">
                 
-                <!-- 1. Bioinformatics (Procariotas y Eucariotas) -->
                 <div class="expertise-card" style="border-top: 4px solid var(--ricai-turquoise);">
                     <div>
                         <i class="fas fa-terminal" style="color: var(--ricai-turquoise);"></i>
@@ -163,86 +178,70 @@
                         <p>Design, execution, and standardization of customized genomic pipelines. We process massive datasets to evaluate complex sequence maps across both prokaryotic and complex eukaryotic organisms.</p>
                     </div>
                     <div class="tech-tags">
-                        <span>Pangenomics</span>
-                        <span>Metagenomics</span>
-                        <span>Metatranscriptomics</span>
-                        <span>scRNA-seq</span>
-                        <span>Phylogenetics</span>
-                        <span>Gene Families</span>
+                        <span>Pangenomics</span><span>Metagenomics</span><span>Metatranscriptomics</span><span>scRNA-seq</span><span>Phylogenetics</span><span>Gene Families</span>
                     </div>
                 </div>
 
-                <!-- 2. Agricultural & Aquatic Sciences -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-green);">
+                <div class="expertise-card" style="border-top: 4px solid var(--ricai-blue);">
                     <div>
-                        <i class="fas fa-seedling" style="color: var(--ricai-green);"></i>
-                        <h3>Agricultural & Aquatic Sciences</h3>
-                        <p>Data science, machine learning models, and biochemistry applied directly to harvest prediction, plant production, and aquatic vaccine designs. Fusing ecosystem modeling with commercial farming and postharvest systems.</p>
+                        <i class="fas fa-code" style="color: var(--ricai-blue);"></i>
+                        <h3>Computational &amp; Data Sciences</h3>
+                        <p>Development of robust workflows, computational infrastructure management, and automated pipelines. Fusing code efficiency with multi-dimensional biological or agricultural datasets.</p>
                     </div>
                     <div class="tech-tags">
-                        <span>NIR Spectroscopy</span>
-                        <span>Postharvest Physiology</span>
-                        <span>Bioprospecting</span>
-                        <span>Aquatic Immunology</span>
-                        <span>Bioremediation</span>
+                        <span>Pipeline Design</span><span>Machine Learning</span><span>R Programming</span><span>Python Analytics</span><span>Linux Workflows</span>
                     </div>
                 </div>
 
-                <!-- 3. Molecular Biology & Nanotechnology -->
                 <div class="expertise-card" style="border-top: 4px solid var(--ricai-magenta);">
                     <div>
                         <i class="fas fa-flask" style="color: var(--ricai-magenta);"></i>
-                        <h3>Molecular Biology & Nanotechnology</h3>
-                        <p>Deep cellular diagnostics and translation-ready pathogen screenings. We design nanoscale extraction protocols and investigate cellular-immune heterogeneity across diverse biological systems.</p>
+                        <h3>Biomedical &amp; Molecular Sciences</h3>
+                        <p>Investigation of cellular mechanics, pathogen dynamics, and translational barriers. The network's synergy encompasses molecular diagnostics, immune response analysis across diverse biological systems, and epidemiological frameworks.</p>
                     </div>
                     <div class="tech-tags">
-                        <span>CRISPR/Cas9</span>
-                        <span>One Health Systems</span>
-                        <span>Iron Nanoparticles</span>
-                        <span>SERS & SEIRA</span>
-                        <span>Probiotic Therapy</span>
+                        <span>CRISPR Systems</span><span>One Health Frameworks</span><span>Nanoparticles</span><span>Optical Spectroscopy</span><span>Microbiota Modulation</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" style="border-top: 4px solid var(--ricai-green);">
+                    <div>
+                        <i class="fas fa-seedling" style="color: var(--ricai-green);"></i>
+                        <h3>Agricultural Sciences &amp; Biotech</h3>
+                        <p>Application of data science, predictive modeling, and biochemical analysis to optimize agricultural systems. Research lines focus on enhancing plant production, exploring plant-microorganism dynamics, and postharvest physiology.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>NIR Spectroscopy</span><span>Postharvest Physiology</span><span>Bioprospecting</span><span>Aquatic Production</span><span>Bioremediation</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" style="border-top: 4px solid var(--ricai-yellow);">
+                    <div>
+                        <i class="fas fa-globe-americas" style="color: var(--ricai-yellow);"></i>
+                        <h3>Environmental &amp; Ecological Sciences</h3>
+                        <p>Assessment of ecosystem dynamics, microbial ecology, and environmental biotechnology. Exploring community-level interactions, biological responses to contamination, and ecological systems modeling.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>Microbial Ecology</span><span>Environmental Biotech</span><span>Ecosystem Modeling</span><span>Biochemical Assays</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card" style="border-top: 4px solid var(--ricai-orange);">
+                    <div>
+                        <i class="fas fa-chart-line" style="color: var(--ricai-orange);"></i>
+                        <h3>Strategic Management &amp; Economics</h3>
+                        <p>Scientific discovery reaches true scalability through structural market integration. Embracing supply chain analytics, corporate management systems, and strategic identity frameworks to drive value creation.</p>
+                    </div>
+                    <div class="tech-tags">
+                        <span>Supply Chain</span><span>Agribusiness Marketing</span><span>Branding Systems</span><span>Value Creation</span><span>Competitiveness</span>
                     </div>
                 </div>
 
             </div>
 
-            <!-- 4. NUEVA SECCIÓN: Administration & Agribusiness Strategy (Fideliza a Elisângela y el Branding de RICAI) -->
-            <div class="business-section">
-                <div class="business-container">
-                    <div class="business-text">
-                        <h3>Strategic Management & Agribusiness Branding</h3>
-                        <p>Science cannot scale without structural market adaptation. At RICAI, we integrate industrial supply chain analytics, multidisciplinary corporate management, and branding frameworks to drive value creation, ensuring that technological and biological discoveries successfully navigate complex global markets.</p>
-                    </div>
-                    <div class="business-tags">
-                        <span>Supply Chain Analytics</span>
-                        <span>Agribusiness Marketing</span>
-                        <span>Branding & Identity</span>
-                        <span>Value Creation Systems</span>
-                        <span>Strategic Competitiveness</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sección de Enfoque Metodológico -->
-            <div class="methodology-section">
-                <h2>The RICAI Methodological Approach</h2>
-                <div class="methodology-grid">
-                    <div class="methodology-item">
-                        <i class="fas fa-unlock-alt"></i>
-                        <h4>Open Source Frameworks</h4>
-                        <p>Standardizing pipelines using R, Python, and linux-based environments to make scientific logic shareable and fully audible.</p>
-                    </div>
-                    <div class="methodology-item">
-                        <i class="fas fa-project-diagram"></i>
-                        <h4>Democratized Infrastructures</h4>
-                        <p>Leveraging public bio-repositories and remote pipelines to allow high-level modeling outside high-resource labs.</p>
-                    </div>
-                    <div class="methodology-item">
-                        <i class="fas fa-network-wired"></i>
-                        <h4>Cross-Border Synergy</h4>
-                        <p>Connecting hubs across Colombia, Brazil, Italy, Spain, the US, and Poland under an independent, agile workflow layout.</p>
-                    </div>
-                </div>
+            <div class="open-horizons-section">
+                <h3>Expanding Horizons: Uncharted Fields of Knowledge</h3>
+                <p>The boundaries of science are ever-evolving, and so is RICAI. The areas highlighted above reflect our current expertise clusters, but they do not represent our final limits. We believe that independent and open science grows when new minds challenge established paradigms. Scientists and independent researchers who join our network bring their own specialized directions, unlocking new fields of exploration and expanding the collective impact of our ecosystem.</p>
             </div>
 
         </div>

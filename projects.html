@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Projects &amp; Calls | RICAI Network</title>
+    <title>Research Projects | RICAI Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
@@ -75,7 +75,7 @@
         
         .intro-text { text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.15em; color: #555; }
 
-        /* Coming Soon/Calls Launch Box */
+        /* Core Projects / Launch Status Box */
         .launch-status-box {
             background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
             border-left: 6px solid var(--ricai-orange);
@@ -102,7 +102,7 @@
             margin-bottom: 20px;
         }
 
-        /* Targeted Pipeline Tracks */
+        /* Projects Grid */
         .tracks-heading { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.8em; margin-bottom: 40px; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         
@@ -114,6 +114,9 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.03);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .track-card::before {
             content: '';
@@ -125,13 +128,25 @@
             background: var(--ricai-turquoise);
         }
         .track-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.25em; }
-        .track-card p { font-size: 0.95em; color: #64748b; text-align: justify; margin-bottom: 0; }
+        .track-card p { font-size: 0.95em; color: #64748b; text-align: justify; margin-bottom: 20px; }
         
-        .track-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid #f1f5f9; font-size: 0.85em; font-weight: 600; color: var(--ricai-blue); }
+        .track-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px; border-top: 1px solid #f1f5f9; font-size: 0.85em; font-weight: 600; color: var(--ricai-blue); }
         .track-meta span.indicator { color: var(--ricai-orange); display: flex; align-items: center; gap: 5px; }
 
+        /* External Submissions Box (Moved to bottom) */
+        .external-submissions-section { 
+            background-color: var(--light-gray); 
+            border: 1px solid rgba(29, 58, 97, 0.1); 
+            padding: 40px; 
+            border-radius: 25px; 
+            margin-top: 60px; 
+            text-align: center; 
+        }
+        .external-submissions-section h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.4em; margin-top: 0; }
+        .external-submissions-section p { max-width: 750px; margin: 10px auto 0; color: #555; font-size: 1em; }
+
         /* Footer Action */
-        .notify-section { text-align: center; margin-top: 60px; padding: 40px; background-color: var(--ricai-blue); color: white; border-radius: 25px; }
+        .notify-section { text-align: center; margin-top: 40px; padding: 40px; background-color: var(--ricai-blue); color: white; border-radius: 25px; }
         .notify-section h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5em; margin-top: 0; }
         .notify-section p { max-width: 600px; margin: 10px auto 25px; color: #cbd5e0; }
         
@@ -179,67 +194,72 @@
 
     <section class="projects-hero">
         <div class="container">
-            <h1>Research Projects &amp; Frameworks</h1>
-            <p>Decentralized coordination models, public genomic data storage, and collaborative scientific designs.</p>
+            <h1>Research Projects</h1>
         </div>
     </section>
 
     <section class="section-padding">
         <div class="container">
             <p class="intro-text">
-                RICAI's operational model relies on structured, peer-reviewed projects led by independent investigators worldwide. We do not restrict exploration; instead, we build the open workflows required to integrate complex datasets into public knowledge pools.
+                RICAI's operational model relies on structured, peer-reviewed projects led by independent investigators worldwide. The network functions by establishing open workflows required to integrate complex datasets into public digital repositories.
             </p>
 
-            <!-- Active Status / Launching Box (SOON) -->
+            <!-- ENFOQUE CORREGIDO: Proyectos Propios de RICAI por Lanzar -->
             <div class="launch-status-box">
                 <span class="status-badge">Opening Soon</span>
-                <h2><i class="fas fa-bullhorn" style="color: var(--ricai-orange);"></i> Upcoming Call for Independent Projects</h2>
+                <h2><i class="fas fa-rocket" style="color: var(--ricai-orange);"></i> Core Institutional Projects &amp; Open Calls</h2>
                 <p>
-                    The collaborative submission platform is currently preparing its launch infrastructure. RICAI will soon open formal evaluation tracks for investigators to submit decentralized project protocols, establish workflow architectures, and link data structures within our scientific ecosystem.
+                    The network is preparing the final deployment phase for its internal research initiatives. RICAI will soon launch recruitment and open collaboration windows for researchers, students, and analysts wishing to join these established tracks as active project members.
                 </p>
-                <a href="mailto:ricaiscience@gmail.com" class="cta-button"><i class="fas fa-envelope" style="margin-right: 8px;"></i> Inquire About Frameworks</a>
+                <a href="mailto:ricaiscience@gmail.com" class="cta-button"><i class="fas fa-envelope" style="margin-right: 8px;"></i> Inquire About Core Projects</a>
             </div>
 
-            <!-- Targeted Tracks Grid -->
-            <h2 class="tracks-heading">Targeted Project Tracks</h2>
+            <!-- Grid de las líneas específicas de nuestros proyectos -->
+            <h2 class="tracks-heading">Upcoming Research Lines</h2>
             <div class="projects-grid">
                 
-                <!-- Track 1 -->
+                <!-- Project Line 1 -->
                 <div class="track-card" style="border-top-color: var(--ricai-turquoise);">
                     <h3>Open Genomes &amp; Metagenomics</h3>
-                    <p>Submission tracks for workflows managing massive sequencing datasets, comparative genomic mappings, and prokaryotic taxonomy reclassification projects optimized for public access repositories.</p>
+                    <p>Core framework targeting the integration of massive sequencing datasets, comparative genomic mappings, and prokaryotic taxonomy reclassification workflows designed for public-access infrastructure.</p>
                     <div class="track-meta">
-                        <span>Pipeline Integration</span>
+                        <span>Bioinformatics</span>
                         <span class="indicator"><i class="fas fa-clock"></i> Launching Soon</span>
                     </div>
                 </div>
 
-                <!-- Track 2 -->
+                <!-- Project Line 2 -->
                 <div class="track-card" style="border-top-color: var(--ricai-green);">
                     <h3>Sustainable Agrosystems</h3>
-                    <p>Methodological frameworks focused on plant genetic modeling, spectral analytic applications for crop evaluation, postharvest behavior patterns, and bio-based systems targeting food safety.</p>
+                    <p>Internal research line focused on plant genetic modeling, spectral analytic applications for fruit quality, postharvest physiology analysis, and bio-based tools for modern crop systems.</p>
                     <div class="track-meta">
-                        <span>Agroecosystems</span>
+                        <span>Agricultural Biotech</span>
                         <span class="indicator"><i class="fas fa-clock"></i> Launching Soon</span>
                     </div>
                 </div>
 
-                <!-- Track 3 -->
+                <!-- Project Line 3 -->
                 <div class="track-card" style="border-top-color: var(--ricai-magenta);">
                     <h3>Translational Bio-Discovery</h3>
-                    <p>Operational lines designed to link molecular mechanics, cellular analysis, data visualization, and epidemiological tracking models under an integrated One Health research matrix.</p>
+                    <p>Collaborative project structure focused on linking molecular diagnostics, cellular analysis, and population-level health data trends under a comprehensive One Health matrix.</p>
                     <div class="track-meta">
-                        <span>One Health</span>
+                        <span>Biomedical &amp; Health</span>
                         <span class="indicator"><i class="fas fa-clock"></i> Launching Soon</span>
                     </div>
                 </div>
 
             </div> <!-- End of grid -->
 
+            <!-- SECCIÓN SECUNDARIA AL FINAL: Para cuando otras personas quieran proponer -->
+            <div class="external-submissions-section">
+                <h3>Independent Project Proposals</h3>
+                <p>In later phases, RICAI will deploy formal evaluation protocols to allow external independent scientists to host, structure, and link their own project methodologies within the network's digital ecosystem.</p>
+            </div>
+
             <!-- Bottom Notifications -->
             <div class="notify-section">
-                <h3>Stay Updated on Submission Windows</h3>
-                <p>Formal project guidelines, data sharing compliance criteria, and evaluation timelines will be dispatched directly to our registered network associates.</p>
+                <h3>Stay Updated on Call Openings</h3>
+                <p>Formal project profiles, task assignments, and collaboration guidelines will be dispatched directly to registered network associates as soon as the launch phase completes.</p>
                 <a href="index.html#contact" class="cta-button">Join the RICAI Network</a>
             </div>
 

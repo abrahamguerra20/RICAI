@@ -102,8 +102,10 @@
             margin-bottom: 20px;
         }
 
-        /* Projects Grid Fixed to 2 Columns for symmetry */
-        .tracks-heading { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.8em; margin-bottom: 40px; }
+        /* Dynamic Grid Layouts */
+        .tracks-heading { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.8em; margin-bottom: 30px; margin-top: 50px; }
+        
+        .projects-grid-triple { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
         .projects-grid-double { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
         
         .track-card {
@@ -127,10 +129,10 @@
             height: 4px;
             background: var(--ricai-turquoise);
         }
-        .track-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.25em; line-height: 1.4; min-height: 60px; }
-        .track-card p { font-size: 0.95em; color: #64748b; text-align: justify; margin-bottom: 20px; line-height: 1.6; }
+        .track-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.2em; line-height: 1.4; min-height: 70px; }
+        .track-card p { font-size: 0.9em; color: #64748b; text-align: justify; margin-bottom: 20px; line-height: 1.6; }
         
-        .track-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px; border-top: 1px solid #f1f5f9; font-size: 0.85em; font-weight: 600; color: var(--ricai-blue); }
+        .track-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px; border-top: 1px solid #f1f5f9; font-size: 0.8em; font-weight: 600; color: var(--ricai-blue); }
         .track-meta span.indicator { color: var(--ricai-orange); display: flex; align-items: center; gap: 5px; }
         .track-meta span.indicator.active { color: var(--ricai-green); }
 
@@ -143,7 +145,7 @@
             max-width: 850px; 
             margin: 60px auto 0;
         }
-        .external-submissions-section h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.4em; margin-top: 0; }
+        .external-submissions-section h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.6em; margin-top: 0; }
         .external-submissions-section p { max-width: 750px; margin: 10px auto 0; color: #555; font-size: 1em; }
 
         /* Footer Action */
@@ -167,7 +169,7 @@
         footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
         footer a { color: var(--ricai-turquoise); font-weight: bold; text-decoration: none; }
         
-        @media (max-width: 992px) { .projects-grid-double { grid-template-columns: 1fr; } }
+        @media (max-width: 992px) { .projects-grid-triple, .projects-grid-double { grid-template-columns: 1fr; } }
         @media (max-width: 768px) { nav ul { display: none; } .projects-hero h1 { font-size: 2.2em; } }
     </style>
 </head>
@@ -216,27 +218,39 @@
                 <a href="mailto:ricaiscience@gmail.com" class="cta-button"><i class="fas fa-envelope" style="margin-right: 8px;"></i> Request Project Guidelines</a>
             </div>
 
-            <h2 class="tracks-heading">Current &amp; Upcoming Research Lines</h2>
-            <div class="projects-grid-double">
+            <h2 class="tracks-heading">Current and Upcoming Research Projects</h2>
+            <div class="projects-grid-triple">
                 
                 <div class="track-card" style="border-top-color: var(--ricai-magenta);">
-                    <h3>The Unexplored Microbial Diversity of Latin America: A Critical Review of Research Gaps and Biotechnological Potential</h3>
-                    <p>A systematic meta-analysis assessing the critical knowledge gaps, regional funding deficits, and biotechnological horizons of Latin American microbial biodiversity. Mapping meta-analysis matrices from the NCBI Assembly Database across diverse geochemical environments—including high-altitude wetlands and mangrove systems—this study contrasts regional genomic footprint metrics with commercial patent distribution trends to build a strategic bioeconomic roadmap for regional scientific autonomy.</p>
+                    <h3>Microbial Diversity in Latin America: Underexploration and Opportunities for the Biotechnological Industry</h3>
+                    <p>Uma revisão sistemática voltada para mapear as lacunas críticas de conhecimento e o subfinanciamento da pesquisa microbiológica na América Latina. O projeto utiliza matrizes de metadados do NCBI Assembly Database para contrastar os indicadores de sequenciamento genômico e depósitos de patentes regionais frente aos ecossistemas globais, fornecendo um roteiro bioeconômico focado no avanço da autonomia científica regional.</p>
                     <div class="track-meta">
-                        <span>Microbial Ecology &amp; Biotech</span>
+                        <span>Microbial Ecology</span>
+                        <span class="indicator active"><i class="fas fa-check-circle"></i> Active Project</span>
+                    </div>
+                </div>
+
+                <div class="track-card" style="border-top-color: var(--ricai-yellow);">
+                    <h3>Cannabinoids as a Harm Reduction Strategy: Clinical Implications and Public Health Perspectives</h3>
+                    <p>Uma revisão narrativa que analisa criticamente as evidências neurobiológicas e epidemiológicas do uso de canabinoides (com ênfase no CBD) como ferramentas terapêuticas para transtornos por uso de álcool e estimulantes. O estudo avalia os padrões de substituição versus efeitos complementares de substâncias psicoativas, mapeando as limitações metodológicas atuais para fundamentar intervenções de saúde pública em cenários de vulnerabilidade social.</p>
+                    <div class="track-meta">
+                        <span>Neuropharmacology</span>
                         <span class="indicator active"><i class="fas fa-check-circle"></i> Active Project</span>
                     </div>
                 </div>
 
                 <div class="track-card" style="border-top-color: var(--ricai-green);">
                     <h3>Agrotech Horizons: Technological Transformations from Cultivation to Commercialization</h3>
-                    <p>An active collaborative publishing workflow structuring a comprehensive, multi-chapter reference textbook on digital agriculture, agrotech modeling, and applied microbiology. Geared toward the entire agricultural value chain—from pre-planting climate risk analytics to non-destructive postharvest physiology indices (NIR) and digital supply chain marketing—each chapter integrates mandatory cross-examinations of localized connectivity frameworks, economic viability metrics, and structural operational limitations.</p>
+                    <p>Um fluxo editorial colaborativo focado na estruturação de um livro de referência sobre agricultura digital e microbiologia aplicada. Organizado com base nas etapas da cadeia de valor agrícola—do planejamento climático pré-plantio aos índices de fisiologia pós-colheita baseados em NIR—cada capítulo integra seções obrigatórias voltadas para análise de requisitos de conectividade, viabilidade econômica e riscos estruturais.</p>
                     <div class="track-meta">
-                        <span>Agricultural Biotech &amp; ML</span>
+                        <span>Agricultural Biotech</span>
                         <span class="indicator active"><i class="fas fa-check-circle"></i> Active Project</span>
                     </div>
                 </div>
 
+            </div> <h2 class="tracks-heading">Upcoming Institutional Projects</h2>
+            <div class="projects-grid-double">
+                
                 <div class="track-card" style="border-top-color: var(--ricai-turquoise);">
                     <h3>Genome-Based Taxonomic Revision of the Order Chroococcales</h3>
                     <p>A comprehensive systematic revision of 513 cyanobacterial genomes resolving widespread polyphyly through Overall Genome Relatedness Indices (OGRI), including ANI, AAI, and advanced phylogenomics. Using the nitrogen-fixing endosymbiont <i>Candidatus</i> Atelocyanobacterium (UCYN-A) as a biological model, this initiative explores the metabolic streamlining behind the evolutionary transition into nitroplasts. The established genomic backbone opens the door to potentially describing more than 4 new families, 7 new genera, and over 60 novel species.</p>
@@ -246,7 +260,7 @@
                     </div>
                 </div>
 
-                <div class="track-card" style="border-top-color: var(--ricai-yellow);">
+                <div class="track-card" style="border-top-color: var(--ricai-blue);">
                     <h3>Exploring the <i>Candidatus</i> Liberibacter asiaticus pangenome</h3>
                     <p>A large-scale comparative genomic framework leveraging 178 high-quality genomes of <i>Ca.</i> Liberibacter asiaticus (CLas), the unculturable agent behind Huanglongbing (HLB) in global citriculture. This study models core evolutionary strategies, flagellar motility apparatus, and accessory virulence traits, mapping genomic islands and low-fluidity adaptive loops. Since traditional microbiology faces severe barriers with this obligate intracellular pathogen, this pangenomic blueprint targets novel diagnostic and therapeutic biomarkers.</p>
                     <div class="track-meta">

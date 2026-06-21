@@ -77,17 +77,19 @@
 
         /* Core Projects / Launch Status Box */
         .launch-status-box {
-            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-            border-left: 6px solid var(--ricai-orange);
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-left: 6px solid var(--ricai-turquoise);
             border-radius: 20px;
             padding: 50px 40px;
-            text-align: center;
-            max-width: 850px;
+            text-align: left;
+            max-width: 900px;
             margin: 0 auto 60px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.02);
         }
-        .launch-status-box h2 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 2em; display: flex; align-items: center; justify-content: center; gap: 15px; }
-        .launch-status-box p { font-size: 1.1em; color: #475569; max-width: 700px; margin: 15px auto 30px; }
+        .launch-status-box h2 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.8em; display: flex; align-items: center; gap: 15px; }
+        .launch-status-box p { font-size: 1.05em; color: #475569; margin: 15px 0; text-align: justify; }
+        .launch-status-box ul { color: #475569; font-size: 0.95em; padding-left: 20px; margin-bottom: 25px; }
+        .launch-status-box ul li { margin-bottom: 8px; }
         
         .status-badge {
             display: inline-block;
@@ -101,12 +103,13 @@
             letter-spacing: 1px;
             margin-bottom: 20px;
         }
+        .status-badge.open { background-color: var(--ricai-turquoise); color: var(--ricai-blue); }
 
-        /* Dynamic Grid Layouts */
+        /* Fixed Grid Layouts for Symmetry (2 columns) */
         .tracks-heading { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.8em; margin-bottom: 30px; margin-top: 50px; }
         
-        .projects-grid-triple { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
         .projects-grid-double { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        .projects-grid-single { display: grid; grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
         
         .track-card {
             background: var(--white);
@@ -135,6 +138,7 @@
         .track-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px; border-top: 1px solid #f1f5f9; font-size: 0.8em; font-weight: 600; color: var(--ricai-blue); }
         .track-meta span.indicator { color: var(--ricai-orange); display: flex; align-items: center; gap: 5px; }
         .track-meta span.indicator.active { color: var(--ricai-green); }
+        .track-meta span.indicator.selection { color: var(--ricai-turquoise); }
 
         /* External Submissions Box */
         .external-submissions-section { 
@@ -164,12 +168,12 @@
             transition: 0.3s;
             box-shadow: 0 4px 15px rgba(255, 167, 38, 0.3);
         }
-        .cta-button:hover { background-color: var(--white); color: var(--ricai-blue); transform: translateY(-2px); }
+        .cta-button:hover { background-color: var(--ricai-blue); color: var(--white); border: 2px solid var(--ricai-orange); transform: translateY(-2px); }
 
         footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
         footer a { color: var(--ricai-turquoise); font-weight: bold; text-decoration: none; }
         
-        @media (max-width: 992px) { .projects-grid-triple, .projects-grid-double { grid-template-columns: 1fr; } }
+        @media (max-width: 992px) { .projects-grid-double { grid-template-columns: 1fr; } }
         @media (max-width: 768px) { nav ul { display: none; } .projects-hero h1 { font-size: 2.2em; } }
     </style>
 </head>
@@ -210,27 +214,41 @@
             </p>
 
             <div class="launch-status-box">
-                <span class="status-badge">Opening Soon</span>
-                <h2><i class="fas fa-rocket" style="color: var(--ricai-orange);"></i> Institutional Projects &amp; Calls</h2>
+                <span class="status-badge open">Active Open Call</span>
+                <h2><i class="fas fa-bullhorn" style="color: var(--ricai-turquoise);"></i> Project Recruitment: Order Chroococcales</h2>
                 <p>
-                    The network is preparing the final deployment phase for its upcoming internal research initiatives. RICAI will soon open formal applications for investigators, specialists, and students to join these planned tracks, establish standardized workflow architectures, and integrate collaborative data structures.
+                    RICAI has officially launched the application phase for its genome-based restructuring of the cyanobacterial order Chroococcales. Traditional morphological features often hinder evolutionary tracking due to structural convergence. This initiative leverages Overall Genome Relatedness Indices (OGRIs) across 513 processed genomes to build a definitive taxonomic framework, exploring the metabolic streamlining behind the organelle transition into nitroplasts using <i>Candidatus</i> Atelocyanobacterium (UCYN-A) as a biological model.
                 </p>
-                <a href="mailto:ricaiscience@gmail.com" class="cta-button"><i class="fas fa-envelope" style="margin-right: 8px;"></i> Request Project Guidelines</a>
+                <p style="font-weight: 700; color: var(--ricai-blue); margin-bottom: 5px;">Collaboration Requirements:</p>
+                <ul>
+                    <li>Applicants must complete the general RICAI Membership onboarding form.</li>
+                    <li>Submit a specific technical expression of interest via the Project Application portal.</li>
+                    <li>Accepted investigators gain direct co-authorship credit and advanced phylogenomics training.</li>
+                </ul>
+                <a href="index.html#contact" class="cta-button"><i class="fas fa-file-signature" style="margin-right: 8px;"></i> Access Application Forms</a>
             </div>
 
-            <!-- FILA 1: Core Research Projects (Active) -->
-            <h2 class="tracks-heading">Active Projects</h2>
-            <div class="projects-grid-triple">
+            <h2 class="tracks-heading">Core Research Projects</h2>
+            <div class="projects-grid-double">
                 
-<div class="track-card" style="border-top-color: var(--ricai-magenta);">
+                <div class="track-card" style="border-top-color: var(--ricai-turquoise);">
+                    <h3>Genome-Based Taxonomic Revision of the Order Chroococcales</h3>
+                    <p>A comprehensive systematic revision of 513 cyanobacterial genomes resolving widespread polyphyly through Overall Genome Relatedness Indices (OGRI), including ANI, AAI, and advanced phylogenomics. Using the nitrogen-fixing endosymbiont <i>Candidatus</i> Atelocyanobacterium (UCYN-A) as a biological model, this initiative explores the metabolic streamlining behind the evolutionary transition into nitroplasts. The established genomic backbone opens the door to potentially describing more than 4 new families, 7 new genera, and over 60 novel species.</p>
+                    <div class="track-meta">
+                        <span>Phylogenomics &amp; Taxonomy</span>
+                        <span class="indicator selection"><i class="fas fa-user-check"></i> Selection Process</span>
+                    </div>
+                </div>
+
+                <div class="track-card" style="border-top-color: var(--ricai-magenta);">
                     <h3>Microbial Diversity in Latin America: Underexploration and Opportunities for the Biotechnological Industry</h3>
-<p>A comprehensive critical review compiling global repository metrics to expose severe gaps in regional microbiology tracking. The initiative maps species submission data and compiled genomes isolated from Latin American environments within the NCBI Assembly Database, directly contrasting these geographical statistics against North American, European, and Asian public scientific funding and international patent registries to highlight unexplored biotechnological horizons.</p>                    <div class="track-meta">
+                    <p>A comprehensive critical review compiling global repository metrics to expose severe gaps in regional microbiology tracking. The initiative maps species submission data and compiled genomes isolated from Latin American environments within the NCBI Assembly Database, directly contrasting these geographical statistics against North American, European, and Asian public scientific funding and international patent registries to highlight unexplored biotechnological horizons.</p>
+                    <div class="track-meta">
                         <span>Bioinformatics &amp; Ecology</span>
                         <span class="indicator active"><i class="fas fa-check-circle"></i> Active Project</span>
                     </div>
                 </div>
 
-                <!-- Project 2: Cannabinoids (Reducción de Daos) -->
                 <div class="track-card" style="border-top-color: var(--ricai-yellow);">
                     <h3>Cannabinoids as a Harm Reduction Strategy: Clinical Implications and Public Health Perspectives</h3>
                     <p>A systematic narrative review evaluating the neuromodulatory mechanisms and pharmacology of cannabinoids (specifically CBD) within the context of substance use disorders. This project uncovers structural interactions within host endocannabinoid receptors to benchmark substitution parameters against complementary effects, aiming to structure evidence-based operational guidelines for territorialized social care interventions.</p>
@@ -240,7 +258,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Livro Agronomia -->
                 <div class="track-card" style="border-top-color: var(--ricai-green);">
                     <h3>Agrotech Horizons: Technological Transformations from Cultivation to Commercialization</h3>
                     <p>An active collaborative publishing pipeline structuring a multi-chapter reference textbook mapping advanced data analytics and microbial applications across the agricultural value chain. Moving systematically from pre-planting climate modeling to non-destructive NIR postharvest physiological profiling, each chapter establishes standardized baselines for localized connectivity networks, economics, and risk limits.</p>
@@ -250,23 +267,9 @@
                     </div>
                 </div>
 
-            </div> <!-- Fin Fila 1 -->
-
-            <!-- FILA 2: Upcoming Projects -->
-            <h2 class="tracks-heading">Upcoming Institutional Projects</h2>
-            <div class="projects-grid-double">
+            </div> <h2 class="tracks-heading">Upcoming Institutional Projects</h2>
+            <div class="projects-grid-single">
                 
-                <!-- Project 4: Chroococcales -->
-                <div class="track-card" style="border-top-color: var(--ricai-turquoise);">
-                    <h3>Genome-Based Taxonomic Revision of the Order Chroococcales</h3>
-                    <p>A comprehensive systematic revision of 513 cyanobacterial genomes resolving widespread polyphyly through Overall Genome Relatedness Indices (OGRI), including ANI, AAI, and advanced phylogenomics. Using the nitrogen-fixing endosymbiont <i>Candidatus</i> Atelocyanobacterium (UCYN-A) as a biological model, this initiative explores the metabolic streamlining behind the evolutionary transition into nitroplasts. The established genomic backbone opens the door to potentially describing more than 4 new families, 7 new genera, and over 60 novel species.</p>
-                    <div class="track-meta">
-                        <span>Phylogenomics &amp; Taxonomy</span>
-                        <span class="indicator"><i class="fas fa-clock"></i> Launching Soon</span>
-                    </div>
-                </div>
-
-                <!-- Project 5: CLas Pangenome -->
                 <div class="track-card" style="border-top-color: var(--ricai-blue);">
                     <h3>Exploring the <i>Candidatus</i> Liberibacter asiaticus pangenome</h3>
                     <p>A large-scale comparative genomic framework leveraging 178 high-quality genomes of <i>Ca.</i> Liberibacter asiaticus (CLas), the unculturable agent behind Huanglongbing (HLB) in global citriculture. This study models core evolutionary strategies, flagellar motility apparatus, and accessory virulence traits, mapping genomic islands and low-fluidity adaptive loops. Since traditional microbiology faces severe barriers with this obligate intracellular pathogen, this pangenomic blueprint targets novel diagnostic and therapeutic biomarkers.</p>
@@ -276,10 +279,7 @@
                     </div>
                 </div>
 
-            </div> <!-- Fin Fila 2 -->
-
-            <!-- SECCIÓN SECUNDARIA AL FINAL: Propuestas externas -->
-            <div class="external-submissions-section" style="border-left: 6px solid var(--ricai-turquoise);">
+            </div> <div class="external-submissions-section" style="border-left: 6px solid var(--ricai-turquoise);">
                 <span class="status-badge" style="background-color: #cbd5e1; color: #334155; margin-bottom: 15px;">Upcoming call</span>
                 <h3 style="font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.6em; margin-top: 0; margin-bottom: 10px;">Independent Project Proposals</h3>
                 <p style="color: #475569; font-size: 1.05em; margin: 0; text-align: justify;">
@@ -287,7 +287,6 @@
                 </p>
             </div>
 
-            <!-- Bottom Notifications -->
             <div class="notify-section">
                 <h3>Stay updated on call openings</h3>
                 <p>Formal project profiles, task assignments, and collaboration guidelines will be dispatched directly to registered network associates as soon as the launch phase completes.</p>

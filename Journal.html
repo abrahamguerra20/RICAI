@@ -1,213 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RICAI Journal | Open Science Publishing</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RICAI Journal | Diamond Open Access Publishing</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --blue:#1d3a61;--blue-dark:#102542;--blue-mid:#1e4a80;
+  --teal:#26c6da;--orange:#ffa726;--yellow:#fdd835;
+  --magenta:#ec407a;--green:#66bb6a;--white:#fff;
+  --off:#f6f8fb;--gray-light:#eef1f6;--text:#1a2233;--muted:#556070;
+}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-        :root {
-            --ricai-blue: #1d3a61;
-            --ricai-yellow: #fdd835;
-            --ricai-turquoise: #26c6da;
-            --ricai-magenta: #ec407a;
-            --ricai-green: #66bb6a;
-            --ricai-orange: #ffa726;
-            --primary-color: var(--ricai-blue);
-            --secondary-color: var(--ricai-turquoise); 
-            --accent-color: var(--ricai-orange);
-            --text-color: #333;
-            --light-gray: #f8f9fa;
-            --white: #fff;
-        }
+.top-bar{background:var(--yellow);color:var(--blue-dark);text-align:center;padding:10px 20px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem}
+.top-bar a{color:var(--blue-dark);text-decoration:underline;margin-left:10px;font-weight:800}
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: var(--white);
-            color: var(--text-color);
-        }
+header{background:var(--white);position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--gray-light);box-shadow:0 2px 12px rgba(29,58,97,.07)}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo img{height:58px;width:auto;display:block}
+.net-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;border-left:3px solid var(--orange);padding-left:14px;line-height:1.3;max-width:220px}
+nav ul{list-style:none;display:flex;align-items:center;gap:2px}
+nav ul li a{color:var(--blue);text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.82rem;padding:7px 12px;border-radius:7px;transition:background .18s;letter-spacing:.2px}
+nav ul li a:hover{background:var(--gray-light)}
+nav ul li a.active{background:var(--gray-light);color:var(--orange)}
+.btn-join{background:var(--orange)!important;color:var(--white)!important;border-radius:50px!important;margin-left:8px;padding:8px 20px!important;box-shadow:0 3px 14px rgba(255,167,38,.38)}
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.breadcrumb{background:var(--off);border-bottom:1px solid var(--gray-light);padding:12px 0}
+.breadcrumb ul{list-style:none;display:flex;align-items:center;gap:8px;font-size:.8rem}
+.breadcrumb li{color:var(--muted)}
+.breadcrumb li a{color:var(--blue);text-decoration:none;font-weight:600}
+.breadcrumb li a:hover{color:var(--orange)}
+.breadcrumb li.sep{color:var(--gray-light);font-size:.7rem}
 
-        .grant-alert-bar {
-            background-color: var(--ricai-yellow);
-            color: var(--ricai-blue);
-            text-align: center;
-            padding: 12px 0;
-            font-weight: 700;
-            font-size: 0.95em;
-            position: relative;
-            z-index: 1001;
-        }
-        .grant-alert-bar i { margin-right: 10px; }
-        .grant-alert-bar a { color: var(--ricai-blue); font-weight: 800; text-decoration: underline; }
+/* HERO — special for journal, more editorial */
+.page-hero{position:relative;background:linear-gradient(135deg,rgba(10,25,47,.98) 0%,rgba(16,37,66,.95) 60%,rgba(30,74,128,.9) 100%),url('RICAI_IA_WALLPAPER.png') center/cover no-repeat;color:var(--white);padding:90px 0 72px;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(38,198,218,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(38,198,218,.05) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.hero-inner{position:relative;z-index:2;text-align:center}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:.7rem;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:22px;padding:6px 16px;border:1px solid rgba(38,198,218,.28);border-radius:50px;background:rgba(38,198,218,.07)}
+.page-hero h1{font-family:'Lora',serif;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:600;line-height:1.15;margin-bottom:16px;letter-spacing:-.2px}
+.page-hero h1 .t{color:var(--teal);font-style:italic}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.78);max-width:580px;margin:0 auto 28px}
+.hero-badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.hero-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:50px;padding:7px 18px;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:7px}
+.hero-badge i{color:var(--teal);font-size:.8rem}
 
-        header {
-            background: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 15px rgba(29, 58, 97, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { height: 65px; width: auto; }
+/* COMMONS */
+.sec{padding:88px 0}
+.sec-alt{background:var(--off)}
+.sec-label{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--orange);display:block;margin-bottom:10px}
+.sec-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.7rem,3vw,2.45rem);font-weight:800;color:var(--blue);line-height:1.15;margin-bottom:14px;letter-spacing:-.3px}
+.sec-lead{font-size:1rem;color:var(--muted);line-height:1.82}
 
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
-        nav ul li { margin: 0 15px; }
-        nav ul li a { color: var(--ricai-blue); text-decoration: none; font-weight: 700; transition: 0.3s; }
-        nav ul li a:hover { color: var(--ricai-orange); }
+/* PROBLEM — NEWSPAPER GRID */
+.problem-intro{text-align:center;max-width:680px;margin:0 auto 52px}
+.problem-intro p{font-size:1rem;color:var(--muted);line-height:1.88}
+.crisis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:0}
+.crisis-card{background:var(--white);border:1px solid var(--gray-light);border-radius:16px;padding:30px 26px;position:relative;overflow:hidden;transition:box-shadow .2s,border-color .2s}
+.crisis-card:hover{box-shadow:0 10px 30px rgba(29,58,97,.1);border-color:var(--magenta)}
+.crisis-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--magenta)}
+.crisis-num{font-family:'Montserrat',sans-serif;font-size:3rem;font-weight:800;color:var(--gray-light);line-height:1;margin-bottom:12px}
+.crisis-card i{font-size:1.6rem;color:var(--magenta);display:block;margin-bottom:14px}
+.crisis-card h3{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;color:var(--blue);margin-bottom:10px}
+.crisis-card p{font-size:.865rem;color:var(--muted);line-height:1.72}
+.crisis-stat{margin-top:14px;padding-top:12px;border-top:1px solid var(--gray-light);font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;color:var(--magenta);text-transform:uppercase;letter-spacing:.8px}
 
-        .journal-hero {
-            background: linear-gradient(rgba(29, 58, 97, 0.9), rgba(29, 58, 97, 0.9)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
-            color: var(--white);
-            padding: 100px 0 60px;
-            text-align: center;
-        }
-        .journal-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3em; margin-bottom: 10px; }
-        
-        .section-padding { padding: 80px 0; }
-        
-        /* Problem Statement Grid */
-        .problem-heading { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 2em; margin-bottom: 40px; }
-        .publishing-crisis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        
-        .crisis-card {
-            background: var(--light-gray);
-            border-radius: 20px;
-            padding: 35px;
-            border: 1px solid rgba(29, 58, 97, 0.05);
-        }
-        .crisis-card i { font-size: 2em; color: var(--ricai-magenta); margin-bottom: 15px; display: block; }
-        .crisis-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.2em; }
-        .crisis-card p { font-size: 0.95em; color: #475569; text-align: justify; margin: 0; }
+/* SOLUTION — ANNOUNCEMENT BLOCK */
+.solution-wrap{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue-mid) 100%);border-radius:24px;padding:0;overflow:hidden;position:relative}
+.solution-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(38,198,218,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(38,198,218,.05) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+.solution-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.solution-left{padding:52px 48px;border-right:1px solid rgba(255,255,255,.08)}
+.solution-right{padding:52px 40px;display:flex;flex-direction:column;justify-content:center}
+.solution-badge{display:inline-block;background:rgba(255,220,0,.15);border:1px solid rgba(255,220,0,.3);color:var(--yellow);padding:5px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+.solution-left h2{font-family:'Lora',serif;font-size:2rem;font-weight:600;color:var(--white);line-height:1.3;margin-bottom:18px}
+.solution-left h2 em{color:var(--teal);font-style:italic}
+.solution-left p{font-size:.92rem;color:rgba(255,255,255,.75);line-height:1.82}
+.feature-list{display:flex;flex-direction:column;gap:14px}
+.feature-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 18px}
+.feature-item-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.feature-item h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;color:var(--white);margin-bottom:3px}
+.feature-item p{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.55;margin:0}
 
-        /* Future Journal Announcement Box */
-        .journal-status-box {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            border-left: 6px solid var(--ricai-turquoise);
-            border-radius: 20px;
-            padding: 50px 40px;
-            max-width: 850px;
-            margin: 0 auto;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-        }
-        .journal-status-box h2 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 2em; display: flex; align-items: center; gap: 15px; }
-        .journal-status-box p { font-size: 1.05em; color: #334155; text-align: justify; line-height: 1.8; margin-bottom: 25px; }
-        
-        .status-badge {
-            display: inline-block;
-            background-color: var(--ricai-blue);
-            color: var(--ricai-yellow);
-            padding: 6px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
+/* PRINCIPLES OF THE JOURNAL */
+.principles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.principle-card{background:var(--white);border:1px solid var(--gray-light);border-radius:16px;padding:28px 26px;display:flex;gap:18px;align-items:flex-start;transition:box-shadow .2s,border-color .2s}
+.principle-card:hover{box-shadow:0 8px 26px rgba(29,58,97,.09);border-color:var(--teal)}
+.principle-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.principle-card h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;color:var(--blue);margin-bottom:6px}
+.principle-card p{font-size:.858rem;color:var(--muted);line-height:1.7}
 
-        .journal-features { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
-        .journal-features span { background: var(--white); color: var(--ricai-blue); padding: 6px 16px; border-radius: 20px; font-size: 0.85em; font-weight: 600; border: 1px solid rgba(29, 58, 97, 0.1); }
+/* TIMELINE */
+.timeline{max-width:680px;margin:44px auto 0;display:flex;flex-direction:column;gap:0;position:relative}
+.timeline::before{content:'';position:absolute;left:26px;top:0;bottom:0;width:2px;background:var(--gray-light)}
+.tl-item{display:flex;gap:28px;align-items:flex-start;padding-bottom:38px;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;position:relative;z-index:2;border:3px solid var(--white);box-shadow:0 0 0 2px var(--gray-light);font-family:'Montserrat',sans-serif;font-weight:800;color:var(--white)}
+.tl-content{padding-top:10px}
+.tl-content h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--blue);margin-bottom:6px}
+.tl-content p{font-size:.868rem;color:var(--muted);line-height:1.72}
+.tl-tag{display:inline-block;margin-top:8px;font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:50px}
 
-        footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
-        footer a { color: var(--ricai-turquoise); font-weight: bold; text-decoration: none; }
-        
-        @media (max-width: 768px) { nav ul { display: none; } .journal-hero h1 { font-size: 2.2em; } .journal-status-box h2 { font-size: 1.6em; } }
-    </style>
+/* WAITLIST */
+.waitlist-box{background:var(--blue-dark);border-radius:22px;padding:52px 48px;text-align:center;position:relative;overflow:hidden}
+.waitlist-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(38,198,218,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(38,198,218,.05) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+.waitlist-inner{position:relative;z-index:2}
+.waitlist-box h3{font-family:'Lora',serif;font-size:1.8rem;font-weight:600;color:var(--white);margin-bottom:14px}
+.waitlist-box p{font-size:.95rem;color:rgba(255,255,255,.7);max-width:580px;margin:0 auto 32px;line-height:1.82}
+.waitlist-options{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:680px;margin:0 auto}
+.waitlist-option{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:24px 22px;text-align:center;transition:background .2s,border-color .2s}
+.waitlist-option:hover{background:rgba(255,255,255,.1);border-color:var(--teal)}
+.waitlist-option i{font-size:1.6rem;display:block;margin-bottom:12px}
+.waitlist-option h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.92rem;color:var(--white);margin-bottom:8px}
+.waitlist-option p{font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:16px;line-height:1.6}
+
+.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:var(--white);padding:13px 28px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;box-shadow:0 4px 18px rgba(255,167,38,.4);transition:transform .2s,box-shadow .2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,167,38,.5)}
+.btn-teal{display:inline-flex;align-items:center;gap:9px;background:rgba(38,198,218,.15);color:var(--teal);padding:13px 24px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;border:1px solid rgba(38,198,218,.3);transition:background .18s}
+.btn-teal:hover{background:rgba(38,198,218,.25)}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);color:var(--white);padding:12px 22px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.88rem;border:1px solid rgba(255,255,255,.2);transition:background .18s}
+.btn-ghost-w:hover{background:rgba(255,255,255,.18)}
+
+footer{background:#07111f;color:rgba(255,255,255,.58);padding:58px 0 34px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:58px;margin-bottom:46px}
+.footer-brand img{height:46px;margin-bottom:14px;display:block}
+.footer-brand p{font-size:.855rem;line-height:1.8;max-width:270px}
+.footer-col h5{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:1.3px;margin-bottom:14px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.855rem;transition:color .18s}
+.footer-col ul li a:hover{color:var(--teal)}
+.footer-social{display:flex;gap:11px;margin-top:18px}
+.footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:.9rem;text-decoration:none;transition:background .18s,color .18s}
+.footer-social a:hover{background:var(--teal);color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;text-align:center;font-size:.78rem}
+
+@media(max-width:960px){
+  .crisis-grid{grid-template-columns:1fr 1fr}
+  .solution-inner{grid-template-columns:1fr}
+  .solution-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:40px 32px}
+  .solution-right{padding:36px 32px}
+  .principles-grid{grid-template-columns:1fr}
+  .waitlist-options{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:680px){
+  nav ul{display:none}
+  .net-name{display:none}
+  .crisis-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .waitlist-box{padding:36px 24px}
+}
+</style>
 </head>
 <body>
 
-    <div class="grant-alert-bar">
-        <i class="fas fa-lightbulb"></i> ADVOCATING FOR DECENTRALIZED KNOWLEDGE AND INDEPENDENT SCIENTIFIC PROGRESS. <a href="index.html#contact" style="margin-left: 10px;">Join the RICAI community today</a>
+<div class="top-bar">
+  <i class="fas fa-flask" style="margin-right:8px"></i>
+  Open call: Genome-Based Revision of Chroococcales —
+  <a href="projects.html#open-call">Apply now →</a>
+</div>
+
+<header>
+  <div class="container navbar">
+    <div class="logo"><a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a></div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="advisory.html">Advisory</a></li>
+        <li><a href="Journal.html" class="active">Journal</a></li>
+        <li><a href="index.html#contact" class="btn-join">Join Now</a></li>
+      </ul>
+    </nav>
+    <div class="net-name">The Independent and Open Science Research Network</div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home" style="font-size:.75rem"></i> Home</a></li>
+      <li class="sep">›</li>
+      <li>RICAI Journal</li>
+    </ul>
+  </div>
+</div>
+
+<!-- HERO — more editorial, serif font -->
+<section class="page-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-pill"><i class="fas fa-book-open" style="font-size:.75rem"></i> Publishing Initiative</div>
+    <h1>Science published<br>the way it should be — <span class="t">free</span></h1>
+    <p>A Diamond Open Access journal with zero fees for authors and zero paywalls for readers. Rigorous peer review, fully independent of commercial publishers.</p>
+    <div class="hero-badges">
+      <div class="hero-badge"><i class="fas fa-check-circle"></i> Zero APC</div>
+      <div class="hero-badge"><i class="fas fa-check-circle"></i> No paywalls</div>
+      <div class="hero-badge"><i class="fas fa-check-circle"></i> Transparent peer review</div>
+      <div class="hero-badge"><i class="fas fa-check-circle"></i> Decentralized editorial board</div>
     </div>
+  </div>
+</section>
 
-    <header>
-        <div class="container navbar">
-            <div class="logo">
-                <a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a>
+<!-- THE PROBLEM -->
+<section class="sec">
+  <div class="container">
+    <div class="problem-intro">
+      <span class="sec-label">The Problem</span>
+      <h2 class="sec-title">The current scientific publishing crisis</h2>
+      <p>Academic publishing is a multi-billion dollar industry built on publicly funded research — where scientists write for free, review for free, and then pay to access the results of their own work. RICAI exists to build an alternative.</p>
+    </div>
+    <div class="crisis-grid">
+      <div class="crisis-card">
+        <i class="fas fa-dollar-sign"></i>
+        <h3>Exorbitant Article Processing Charges</h3>
+        <p>Traditional open-access models rely on APCs that force investigators to spend $1,500–$12,000 per article to publish their outputs. This systematically excludes independent researchers, early-career scientists, and institutions in the Global South — the exact communities RICAI serves.</p>
+        <div class="crisis-stat"><i class="fas fa-arrow-up" style="margin-right:5px"></i>Avg. APC in top journals: $3,000–$12,000</div>
+      </div>
+      <div class="crisis-card">
+        <i class="fas fa-lock"></i>
+        <h3>Knowledge Locked Behind Paywalls</h3>
+        <p>Commercial publishing networks profit from public-funded research by locking peer-reviewed findings behind premium subscription walls. A researcher in Latin America or Sub-Saharan Africa often cannot access the very literature their field is built on — unless their institution pays millions per year in subscription fees.</p>
+        <div class="crisis-stat"><i class="fas fa-users" style="margin-right:5px"></i>70%+ of researchers lack full journal access</div>
+      </div>
+      <div class="crisis-card">
+        <i class="fas fa-handshake-slash"></i>
+        <h3>Uncompensated Peer Review</h3>
+        <p>The entire evaluation infrastructure of science depends on the uncompensated intellectual labor of academic reviewers — who read, critique, and validate manuscripts for free — while commercial publishers retain full financial control and charge both sides of the transaction.</p>
+        <div class="crisis-stat"><i class="fas fa-clock" style="margin-right:5px"></i>15M+ hours of unpaid review work annually</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SOLUTION -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:44px">
+      <span class="sec-label">The Solution</span>
+      <h2 class="sec-title">A true Diamond Open Access platform</h2>
+    </div>
+    <div class="solution-wrap">
+      <div class="solution-grid-bg"></div>
+      <div class="solution-inner">
+        <div class="solution-left">
+          <div class="solution-badge">Upcoming Initiative</div>
+          <h2>The <em>RICAI Journal</em> — built different</h2>
+          <p style="margin-bottom:18px">To resolve these systemic barriers, RICAI is developing its own independent editorial framework. This upcoming journal will operate under a strict <strong style="color:var(--teal)">Diamond Open Access</strong> model — meaning it will be completely free of charge for both authors and readers, forever.</p>
+          <p style="font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.8">By eliminating processing fees and institutional gatekeeping, the RICAI Journal aims to establish a peer-reviewed repository where methodological rigor and scientific clarity are the sole criteria for publication — not your institution's prestige or your access to funding.</p>
+        </div>
+        <div class="solution-right">
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-item-icon" style="background:rgba(38,198,218,.15)"><i class="fas fa-ban" style="color:var(--teal)"></i></div>
+              <div><h4>Zero Article Processing Charges</h4><p>Authors never pay to publish. No submission fees, no APC, no hidden costs — ever.</p></div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#team">Our Team</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="advisory.html">Advisory</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="journal-hero">
-        <div class="container">
-            <h1>RICAI journal initiative</h1>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            
-            <!-- EL PROBLEMA: El diagnóstico del sistema tradicional -->
-            <h2 class="problem-heading">The current scientific publishing crisis</h2>
-            <div class="publishing-crisis-grid">
-                
-                <!-- Factor 1 -->
-                <div class="crisis-card">
-                    <i class="fas fa-dollar-sign"></i>
-                    <h3>Exorbitant APC costs</h3>
-                    <p>Traditional open-access models rely heavily on Article Processing Charges (APCs) that force investigators to spend thousands of dollars to publish their outputs, systematically excluding independent researchers and regional institutions.</p>
-                </div>
-
-                <!-- Factor 2 -->
-                <div class="crisis-card">
-                    <i class="fas fa-lock"></i>
-                    <h3>Knowledge gatekeeping</h3>
-                    <p>Commercial publishing networks profit off public-funded research, locking rigorous findings behind premium paywalls or high subscription costs, restricting the universal flow of peer-reviewed data.</p>
-                </div>
-
-                <!-- Factor 3 -->
-                <div class="crisis-card">
-                    <i class="fas fa-handshake-slash"></i>
-                    <h3>Uncompensated peer review</h3>
-                    <p>The evaluation infrastructure depends entirely on the uncompensated intellectual hours of academic reviewers, while centralized corporate publishing frameworks retain full financial and structural control.</p>
-                </div>
-
-            </div> <!-- Fin del grid de crisis -->
-
-            <!-- LA SOLUCIÓN: Anuncio institucional del Journal de RICAI -->
-            <div class="journal-status-box">
-                <span class="status-badge">Upcoming Initiative</span>
-                <h2><i class="fas fa-book-open" style="color: var(--ricai-turquoise);"></i> A true Diamond Open Access platform</h2>
-                <p>
-To resolve these systemic barriers, RICAI is developing its own independent editorial framework. This upcoming journal will operate under a strict <strong>Diamond Open Access</strong> model, meaning it will be completely free of charge for both authors and readers. By eliminating processing fees and institutional gatekeeping, the platform aims to establish a peer-reviewed repository where methodological rigor and scientific clarity are the sole criteria for publication.
-                </p>
-                
-                <div class="journal-features">
-                    <span>No author fees (Zero APC)</span>
-                    <span>No reader paywalls</span>
-                    <span>Transparent peer review</span>
-                    <span>Decentralized editorial board</span>
-                </div>
+            <div class="feature-item">
+              <div class="feature-item-icon" style="background:rgba(102,187,106,.15)"><i class="fas fa-unlock" style="color:var(--green)"></i></div>
+              <div><h4>Zero Reader Paywalls</h4><p>Every article is immediately and permanently free to read, download, and share worldwide.</p></div>
             </div>
-
+            <div class="feature-item">
+              <div class="feature-item-icon" style="background:rgba(255,167,38,.15)"><i class="fas fa-eye" style="color:var(--orange)"></i></div>
+              <div><h4>Transparent Peer Review</h4><p>Open review process where methodology and scientific clarity — not prestige — determine publication.</p></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-item-icon" style="background:rgba(236,64,122,.12)"><i class="fas fa-network-wired" style="color:var(--magenta)"></i></div>
+              <div><h4>Decentralized Editorial Board</h4><p>International reviewers from diverse institutional backgrounds — no single institution controls the process.</p></div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <h3 style="color: white; font-family: 'Montserrat'; margin: 0 0 10px 0;">RICAI</h3>
-            <p style="margin: 5px 0;">The Independent and Open Science Research Network</p>
-            <p style="margin: 5px 0;">Contact us: <a href="mailto:ricaiscience@gmail.com">ricaiscience@gmail.com</a></p>
-            <p style="margin: 20px 0 0 0; font-size: 0.85em; color: #cbd5e0;">&copy; 2026 RICAI. All rights reserved.</p>
+<!-- EDITORIAL PRINCIPLES -->
+<section class="sec">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:44px">
+      <span class="sec-label">Editorial Philosophy</span>
+      <h2 class="sec-title">What the RICAI Journal stands for</h2>
+      <p class="sec-lead" style="max-width:540px;margin:0 auto">These principles are non-negotiable — they define what makes the RICAI Journal different from every commercial alternative.</p>
+    </div>
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-icon" style="background:rgba(38,198,218,.1)"><i class="fas fa-balance-scale" style="color:var(--teal)"></i></div>
+        <div>
+          <h4>Merit-Only Publication</h4>
+          <p>Articles are accepted or rejected based exclusively on methodological rigor, scientific clarity, and contribution to knowledge. Institutional affiliation, funding source, and author prestige play no role in editorial decisions.</p>
         </div>
-    </footer>
+      </div>
+      <div class="principle-card">
+        <div class="principle-icon" style="background:rgba(102,187,106,.1)"><i class="fas fa-globe-americas" style="color:var(--green)"></i></div>
+        <div>
+          <h4>Global South Priority</h4>
+          <p>We actively seek research from underrepresented regions. The scientific community has a geographic bias problem — we treat diversity of research origin as a quality indicator, not an afterthought.</p>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-icon" style="background:rgba(255,167,38,.1)"><i class="fas fa-code-branch" style="color:var(--orange)"></i></div>
+        <div>
+          <h4>Reproducibility &amp; Open Data</h4>
+          <p>All published research must adhere to open data and reproducibility standards. Code, datasets, and methodological protocols are published alongside articles whenever possible.</p>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-icon" style="background:rgba(92,74,181,.1)"><i class="fas fa-shield-alt" style="color:#5c4ab5"></i></div>
+        <div>
+          <h4>Independence from Commercial Interests</h4>
+          <p>No advertising, no sponsored content, no influence from pharmaceutical companies, agribusiness, or any commercial entity. Editorial independence is structural, not a policy — it is built into how the journal is funded and governed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="sec-label">Development Roadmap</span>
+      <h2 class="sec-title">Where we are and where we're going</h2>
+      <p class="sec-lead" style="max-width:520px;margin:0 auto">The RICAI Journal is being built in phases. Here is the current state and what comes next.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--green);box-shadow:0 0 0 4px rgba(102,187,106,.2)"><i class="fas fa-check" style="font-size:.85rem"></i></div>
+        <div class="tl-content">
+          <h4>Phase 1 — Institutional Framework</h4>
+          <p>RICAI's open science identity, mission, and editorial values formally defined. Network infrastructure established with active researchers across 11 countries. Diamond OA model selected and committed to.</p>
+          <span class="tl-tag" style="background:rgba(102,187,106,.12);color:#2e7d32">Completed</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--orange);box-shadow:0 0 0 4px rgba(255,167,38,.2)">02</div>
+        <div class="tl-content">
+          <h4>Phase 2 — Editorial Board Formation</h4>
+          <p>Recruiting expert reviewers and editors across RICAI's 5 research clusters and 17 lines. Establishing scope, submission guidelines, and peer review protocols. Building the infrastructure for transparent, decentralized editorial governance.</p>
+          <span class="tl-tag" style="background:rgba(255,167,38,.12);color:#c36a00">In Progress</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--blue);box-shadow:0 0 0 4px rgba(29,58,97,.2)">03</div>
+        <div class="tl-content">
+          <h4>Phase 3 — Platform Development</h4>
+          <p>Building the submission, review, and publication platform. Open-source, accessible on any device, fully multilingual. Integration with ORCID, CrossRef DOI assignment, and major indexing databases.</p>
+          <span class="tl-tag" style="background:rgba(29,58,97,.08);color:var(--blue)">Upcoming</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--teal);box-shadow:0 0 0 4px rgba(38,198,218,.2)">04</div>
+        <div class="tl-content">
+          <h4>Phase 4 — First Issue &amp; Official Launch</h4>
+          <p>Publication of the inaugural issue, featuring peer-reviewed outputs from RICAI's core research projects. Full public launch with indexing applications submitted to DOAJ, PubMed Central, and Scopus.</p>
+          <span class="tl-tag" style="background:rgba(38,198,218,.1);color:#007a8c">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET INVOLVED / WAITLIST -->
+<section class="sec">
+  <div class="container">
+    <div class="waitlist-box">
+      <div class="waitlist-bg"></div>
+      <div class="waitlist-inner">
+        <span class="sec-label" style="color:var(--teal);display:block;margin-bottom:12px">Be Part of It</span>
+        <h3>Help us build the journal open science deserves</h3>
+        <p>The RICAI Journal is being built by the community, for the community. Whether you want to submit research, join the editorial board, or simply stay informed — there is a role for you.</p>
+        <div class="waitlist-options">
+          <div class="waitlist-option">
+            <i class="fas fa-pen-nib" style="color:var(--teal)"></i>
+            <h4>Join the Editorial Board</h4>
+            <p>Experienced researchers interested in peer review, editorial roles, or helping define scope and standards.</p>
+            <a href="mailto:ricaiscience@gmail.com?subject=RICAI Journal - Editorial Board Interest" class="btn-teal" style="font-size:.82rem;padding:10px 20px"><i class="fas fa-envelope"></i> Express Interest</a>
+          </div>
+          <div class="waitlist-option">
+            <i class="fas fa-bell" style="color:var(--orange)"></i>
+            <h4>Stay Updated</h4>
+            <p>Join the RICAI network to receive all journal launch announcements, call for papers, and submission windows directly.</p>
+            <a href="index.html#contact" class="btn-p" style="font-size:.82rem;padding:10px 20px"><i class="fas fa-rocket"></i> Join RICAI</a>
+          </div>
+        </div>
+        <p style="margin-top:28px;font-size:.82rem;color:rgba(255,255,255,.4)">All journal updates go to registered RICAI members first. No spam — only meaningful announcements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo">
+        <p>The Independent and Open Science Research Network. Democratizing scientific discovery through collaboration, openness, and independence.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/researchnetworkricai" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/ricai-research-network/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="about.html">About RICAI</a></li>
+          <li><a href="projects.html">Research Projects</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="advisory.html">Advisory Services</a></li>
+          <li><a href="Journal.html">RICAI Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank">Apply as Researcher</a></li>
+          <li><a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank">Join as Member</a></li>
+          <li><a href="projects.html">Open Project Calls</a></li>
+          <li><a href="mailto:ricaiscience@gmail.com">ricaiscience@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 RICAI — The Independent and Open Science Research Network. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
+

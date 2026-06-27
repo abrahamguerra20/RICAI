@@ -1,289 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Expertise | RICAI Network</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Expertise | RICAI Network</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --blue:#1d3a61;--blue-dark:#102542;--blue-mid:#1e4a80;
+  --teal:#26c6da;--orange:#ffa726;--yellow:#fdd835;
+  --magenta:#ec407a;--green:#66bb6a;--white:#fff;
+  --off:#f6f8fb;--gray-light:#eef1f6;--text:#1a2233;--muted:#556070;
+  --c1:#1d9e75;--c2:#1e4a80;--c3:#c9820a;--c4:#c2185b;--c5:#5c4ab5;
+}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-        :root {
-            --ricai-blue: #1d3a61;
-            --ricai-yellow: #fdd835;
-            --ricai-turquoise: #26c6da;
-            --ricai-magenta: #ec407a;
-            --ricai-green: #66bb6a;
-            --ricai-orange: #ffa726;
-            --primary-color: var(--ricai-blue);
-            --secondary-color: var(--ricai-turquoise); 
-            --accent-color: var(--ricai-orange);
-            --text-color: #333;
-            --light-gray: #f8f9fa;
-            --white: #fff;
-        }
+.top-bar{background:var(--yellow);color:var(--blue-dark);text-align:center;padding:10px 20px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem}
+.top-bar a{color:var(--blue-dark);text-decoration:underline;margin-left:10px;font-weight:800}
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: var(--white);
-            color: var(--text-color);
-        }
+header{background:var(--white);position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--gray-light);box-shadow:0 2px 12px rgba(29,58,97,.07)}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo img{height:58px;width:auto;display:block}
+.net-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;border-left:3px solid var(--orange);padding-left:14px;line-height:1.3;max-width:220px}
+nav ul{list-style:none;display:flex;align-items:center;gap:2px}
+nav ul li a{color:var(--blue);text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.82rem;padding:7px 12px;border-radius:7px;transition:background .18s;letter-spacing:.2px}
+nav ul li a:hover{background:var(--gray-light)}
+nav ul li a.active{background:var(--gray-light);color:var(--orange)}
+.btn-join{background:var(--orange)!important;color:var(--white)!important;border-radius:50px!important;margin-left:8px;padding:8px 20px!important;box-shadow:0 3px 14px rgba(255,167,38,.38)}
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.breadcrumb{background:var(--off);border-bottom:1px solid var(--gray-light);padding:12px 0}
+.breadcrumb ul{list-style:none;display:flex;align-items:center;gap:8px;font-size:.8rem}
+.breadcrumb li{color:var(--muted)}
+.breadcrumb li a{color:var(--blue);text-decoration:none;font-weight:600}
+.breadcrumb li a:hover{color:var(--orange)}
+.breadcrumb li.sep{color:var(--gray-light);font-size:.7rem}
 
-        .grant-alert-bar {
-            background-color: var(--ricai-yellow);
-            color: var(--ricai-blue);
-            text-align: center;
-            padding: 12px 0;
-            font-weight: 700;
-            font-size: 0.95em;
-            position: relative;
-            z-index: 1001;
-        }
-        .grant-alert-bar i { margin-right: 10px; }
-        .grant-alert-bar a { color: var(--ricai-blue); font-weight: 800; text-decoration: underline; }
+.page-hero{position:relative;background:linear-gradient(135deg,rgba(10,25,47,.97) 0%,rgba(16,37,66,.94) 55%,rgba(30,74,128,.88) 100%),url('RICAI_IA_WALLPAPER.png') center/cover no-repeat;color:var(--white);padding:90px 0 72px;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(38,198,218,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(38,198,218,.05) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.hero-inner{position:relative;z-index:2;text-align:center}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:.7rem;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:22px;padding:6px 16px;border:1px solid rgba(38,198,218,.28);border-radius:50px;background:rgba(38,198,218,.07)}
+.page-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.12;margin-bottom:16px;letter-spacing:-.4px}
+.page-hero h1 .t{color:var(--teal)}
+.page-hero h1 .o{color:var(--orange)}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.78);max-width:600px;margin:0 auto}
 
-        header {
-            background: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 15px rgba(29, 58, 97, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { height: 65px; width: auto; }
+.sec{padding:88px 0}
+.sec-alt{background:var(--off)}
+.sec-label{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--orange);display:block;margin-bottom:10px}
+.sec-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.7rem,3vw,2.45rem);font-weight:800;color:var(--blue);line-height:1.15;margin-bottom:14px;letter-spacing:-.3px}
+.sec-lead{font-size:1rem;color:var(--muted);line-height:1.82}
 
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
-        nav ul li { margin: 0 15px; }
-        nav ul li a { color: var(--ricai-blue); text-decoration: none; font-weight: 700; transition: 0.3s; }
-        nav ul li a:hover { color: var(--ricai-orange); }
+/* REACH BAR */
+.reach-bar{background:var(--blue-dark);border-radius:18px;padding:28px 36px;margin-bottom:64px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
+.reach-stat-n{font-family:'Montserrat',sans-serif;font-size:2.1rem;font-weight:800;color:var(--teal);line-height:1}
+.reach-stat-n.orange{color:var(--orange)}
+.reach-stat-l{font-size:.7rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-top:4px}
+.reach-flags{display:flex;flex-wrap:wrap;gap:10px;font-size:1.85rem;justify-content:center}
 
-        .expertise-hero {
-            background: linear-gradient(rgba(29, 58, 97, 0.9), rgba(29, 58, 97, 0.9)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
-            color: var(--white);
-            padding: 100px 0 60px;
-            text-align: center;
-        }
-        .expertise-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3em; margin-bottom: 10px; }
-        
-        .section-padding { padding: 80px 0; }
-        
-        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.15em; color: #555; }
+/* CLUSTER NAV TABS */
+.cluster-tabs{display:flex;flex-wrap:wrap;gap:0;margin-bottom:48px;border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;background:var(--off)}
+.cluster-tab{flex:1;min-width:140px;padding:13px 16px;cursor:pointer;border:none;background:transparent;font-family:'Montserrat',sans-serif;font-size:.77rem;font-weight:700;color:var(--muted);text-align:center;letter-spacing:.3px;transition:background .18s,color .18s;border-right:1px solid var(--gray-light);display:flex;flex-direction:column;align-items:center;gap:6px;line-height:1.3}
+.cluster-tab:last-child{border-right:none}
+.cluster-tab:hover{background:var(--white);color:var(--blue)}
+.cluster-tab.active{background:var(--white);color:var(--blue)}
+.cluster-tab .tab-dot{width:8px;height:8px;border-radius:50%;margin-bottom:2px;transition:transform .18s}
+.cluster-tab.active .tab-dot{transform:scale(1.3)}
+.cluster-tab .tab-count{font-size:.65rem;color:var(--muted);font-weight:600;letter-spacing:.5px}
+.cluster-tab.active .tab-count{color:var(--orange)}
 
-        /* Global Reach Flags Cluster */
-        .global-reach-box {
-            text-align: center;
-            background: var(--light-gray);
-            padding: 25px;
-            border-radius: 50px;
-            max-width: 700px;
-            margin: 0 auto 60px;
-            border: 1px solid rgba(29, 58, 97, 0.1);
-        }
-        .global-reach-box h4 { font-family: 'Montserrat', sans-serif; margin: 0 0 15px 0; color: var(--ricai-blue); text-transform: uppercase; font-size: 0.85em; letter-spacing: 1px; }
-        .flag-cluster { display: flex; justify-content: center; gap: 20px; font-size: 2.2em; }
+/* CLUSTER HEADER */
+.cluster-header{display:flex;align-items:center;gap:16px;margin-bottom:28px;padding:20px 28px;border-radius:14px;border-left:5px solid}
+.cluster-header-icon{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.cluster-header h2{font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;color:var(--blue);margin-bottom:3px}
+.cluster-header p{font-size:.85rem;color:var(--muted);line-height:1.6}
 
-        /* Unified Grid for all 12 Cards - Ensures 3-column layout on desktops */
-        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
-        
-        .expertise-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid rgba(29, 58, 97, 0.08);
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .expertise-card:hover { transform: translateY(-5px); border-color: var(--ricai-orange); }
-        
-        .expertise-card i { font-size: 2.5em; margin-bottom: 20px; display: block; }
-        .expertise-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.4em; }
-        
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
-        .tech-tags span { background: var(--light-gray); color: var(--ricai-blue); padding: 5px 12px; border-radius: 15px; font-size: 0.8em; font-weight: 600; border: 1px solid rgba(29, 58, 97, 0.1); }
+/* EXPERTISE GRID */
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.exp-card{background:var(--white);border:1px solid var(--gray-light);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden}
+.exp-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.exp-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(29,58,97,.11)}
+.exp-icon-wrap{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:16px}
+.exp-card h3{font-family:'Montserrat',sans-serif;color:var(--blue);font-size:.97rem;font-weight:800;margin-bottom:9px;line-height:1.3}
+.exp-card p{font-size:.855rem;color:var(--muted);line-height:1.72;flex:1}
+.exp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px;padding-top:14px;border-top:1px solid var(--gray-light)}
+.exp-tags span{background:var(--off);color:var(--blue);padding:3px 9px;border-radius:50px;font-size:.69rem;font-weight:600;border:1px solid var(--gray-light)}
 
-        /* Open Horizons Invitation Section */
-        .open-horizons-section { background-color: #f1f5f9; border-top: 4px dashed var(--ricai-orange); padding: 50px 40px; border-radius: 25px; margin-top: 60px; text-align: center; }
-        .open-horizons-section h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.6em; margin-top: 0; }
-        .open-horizons-section p { max-width: 850px; margin: 0 auto; color: #555; font-size: 1.05em; }
+/* CLUSTER PANEL */
+.cluster-panel{display:none}
+.cluster-panel.active{display:block}
 
-        footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
-    </style>
+/* OPEN HORIZONS */
+.horizons{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));border-radius:22px;padding:52px 48px;text-align:center;position:relative;overflow:hidden;margin-top:60px}
+.horizons-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(38,198,218,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(38,198,218,.05) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+.horizons-inner{position:relative;z-index:2}
+.horizons h3{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:14px}
+.horizons p{font-size:.95rem;color:rgba(255,255,255,.72);max-width:640px;margin:0 auto 28px;line-height:1.82}
+
+.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:var(--white);padding:13px 28px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;box-shadow:0 4px 18px rgba(255,167,38,.4);transition:transform .2s,box-shadow .2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,167,38,.5)}
+.btn-gl{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);color:var(--white);padding:13px 22px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.9rem;border:1px solid rgba(255,255,255,.22);transition:background .18s;margin-left:10px}
+.btn-gl:hover{background:rgba(255,255,255,.18)}
+
+footer{background:#07111f;color:rgba(255,255,255,.58);padding:58px 0 34px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:58px;margin-bottom:46px}
+.footer-brand img{height:46px;margin-bottom:14px;display:block}
+.footer-brand p{font-size:.855rem;line-height:1.8;max-width:270px}
+.footer-col h5{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:1.3px;margin-bottom:14px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.855rem;transition:color .18s}
+.footer-col ul li a:hover{color:var(--teal)}
+.footer-social{display:flex;gap:11px;margin-top:18px}
+.footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:.9rem;text-decoration:none;transition:background .18s,color .18s}
+.footer-social a:hover{background:var(--teal);color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;text-align:center;font-size:.78rem}
+
+@media(max-width:960px){
+  .reach-bar{grid-template-columns:1fr;gap:18px;text-align:center}
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
+  .cluster-tab{min-width:100px;font-size:.7rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:680px){
+  nav ul{display:none}
+  .net-name{display:none}
+  .exp-grid{grid-template-columns:1fr}
+  .cluster-tabs{flex-direction:column}
+  .cluster-tab{border-right:none;border-bottom:1px solid var(--gray-light)}
+  .horizons{padding:36px 24px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+}
+</style>
 </head>
 <body>
 
-    <div class="grant-alert-bar">
-        <i class="fas fa-lightbulb"></i> DO YOU BELIEVE OPEN SCIENCE IS THE KEY TO GLOBAL PROGRESS? <a href="index.html#contact" style="margin-left: 10px;">Join the RICAI community today</a>
+<div class="top-bar">
+  <i class="fas fa-flask" style="margin-right:8px"></i>
+  Open call: Genome-Based Revision of Chroococcales —
+  <a href="projects.html#open-call">Apply now →</a>
+</div>
+
+<header>
+  <div class="container navbar">
+    <div class="logo"><a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a></div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="expertise.html" class="active">Expertise</a></li>
+        <li><a href="advisory.html">Advisory</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="index.html#contact" class="btn-join">Join Now</a></li>
+      </ul>
+    </nav>
+    <div class="net-name">The Independent and Open Science Research Network</div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home" style="font-size:.75rem"></i> Home</a></li>
+      <li class="sep">›</li>
+      <li>Network Expertise</li>
+    </ul>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-pill"><i class="fas fa-atom" style="font-size:.75rem"></i> Knowledge Matrix</div>
+    <h1>5 clusters, <span class="t">17</span> research <span class="o">lines</span></h1>
+    <p>A multidisciplinary matrix built to grow — spanning life sciences, computation, agriculture, health, and open science infrastructure. These are the lines RICAI pursues, present and future.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+
+    <!-- REACH BAR -->
+    <div class="reach-bar">
+      <div>
+        <div class="reach-stat-n">11</div>
+        <div class="reach-stat-l">Countries in the network</div>
+      </div>
+      <div class="reach-flags">🇨🇴 🇧🇷 🇮🇹 🇺🇸 🇵🇷 🇵🇰 🇮🇩 🇰🇷 🇵🇱 🇵🇪 🇪🇨</div>
+      <div style="text-align:right">
+        <div class="reach-stat-n orange">17</div>
+        <div class="reach-stat-l">Active research lines</div>
+      </div>
     </div>
 
-    <header>
-        <div class="container navbar">
-            <div class="logo">
-                <a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#team">Our Team</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="consultancy.html">Consultancy</a></li>
-                </ul>
-            </nav>
+    <!-- CLUSTER TABS -->
+    <div class="cluster-tabs" id="clusterTabs">
+      <button class="cluster-tab active" onclick="showCluster('c1',this)">
+        <span class="tab-dot" style="background:var(--c1)"></span>
+        Life Sciences
+        <span class="tab-count">4 lines</span>
+      </button>
+      <button class="cluster-tab" onclick="showCluster('c2',this)">
+        <span class="tab-dot" style="background:var(--c2)"></span>
+        Computational
+        <span class="tab-count">3 lines</span>
+      </button>
+      <button class="cluster-tab" onclick="showCluster('c3',this)">
+        <span class="tab-dot" style="background:var(--c3)"></span>
+        Agricultural
+        <span class="tab-count">4 lines</span>
+      </button>
+      <button class="cluster-tab" onclick="showCluster('c4',this)">
+        <span class="tab-dot" style="background:var(--c4)"></span>
+        Health &amp; Biomedical
+        <span class="tab-count">4 lines</span>
+      </button>
+      <button class="cluster-tab" onclick="showCluster('c5',this)">
+        <span class="tab-dot" style="background:var(--c5)"></span>
+        Open Science
+        <span class="tab-count">4 lines</span>
+      </button>
+    </div>
+
+    <!-- ── CLUSTER 1: LIFE SCIENCES ── -->
+    <div class="cluster-panel active" id="c1">
+      <div class="cluster-header" style="background:rgba(29,158,117,.06);border-color:var(--c1)">
+        <div class="cluster-icon" style="width:46px;height:46px;border-radius:11px;background:rgba(29,158,117,.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">
+          <i class="fas fa-dna" style="color:var(--c1)"></i>
         </div>
-    </header>
-
-<section class="expertise-hero">
-        <div class="container">
-            <h1>Scientific Expertise</h1>
-            <p>Convergences of specialized knowledge, open data processing, and global research integration.</p>
+        <div>
+          <h2 style="font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;color:var(--blue);margin-bottom:3px">Life Sciences</h2>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.6">From molecular biology and genomics to ecology and applied biotechnology — the foundational sciences that define RICAI's biological core.</p>
         </div>
-    </section>
+      </div>
+      <div class="exp-grid">
 
-    <section class="section-padding">
-        <div class="container">
-            <p class="intro-text">
-                RICAI operates as a decentralized network that transcends traditional academic boundaries. Scientific excellence within this ecosystem is not confined to a single institution or geographic hub; rather, it functions as a borderless synergy driven by researchers collaborating globally to address complex analytical challenges.
-            </p>
+        <div class="exp-card" style="border-color:rgba(29,158,117,.2)" onmouseover="this.style.borderColor='#1d9e75'" onmouseout="this.style.borderColor='rgba(29,158,117,.2)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c1)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(29,158,117,.1)"><i class="fas fa-laptop-code" style="color:var(--c1)"></i></div>
+          <h3>Computational Biology</h3>
+          <p>Bioinformatics pipelines for high-throughput sequencing, genome and transcriptome assembly, phylogenomics, comparative genomics, pangenomics, metagenomics, and metatranscriptomics. From raw reads to evolutionary and ecological interpretation across microbial and plant systems.</p>
+          <div class="exp-tags">
+            <span>Genome Assembly</span><span>Phylogenomics</span><span>Metagenomics</span><span>Metatranscriptomics</span><span>Pangenomics</span><span>ANI / AAI</span>
+          </div>
+        </div>
 
-            <!-- Cross-Border Clusters Box -->
-<div class="global-reach-box">
-                <h4>International Collaboration</h4>
-                <div class="flag-cluster" title="Colombia, Brazil, Italy, Spain, United States, Poland, Puerto Rico, Pakistan, Indonesia, South Korea">
-                    <span>🇨🇴</span><span>🇧🇷</span><span>🇮🇹</span><span>🇪🇸</span><span>🇺🇸</span><span>🇵🇱</span><span>🇵🇷</span><span>🇵🇰</span><span>🇮🇩</span><span>🇰🇷</span>
-                </div>
-            </div>
+        <div class="exp-card" style="border-color:rgba(29,158,117,.2)" onmouseover="this.style.borderColor='#1d9e75'" onmouseout="this.style.borderColor='rgba(29,158,117,.2)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c1)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(29,158,117,.1)"><i class="fas fa-globe-americas" style="color:var(--c1)"></i></div>
+          <h3>Microbiology &amp; Environmental Sciences</h3>
+          <p>Microbial ecology across aquatic and terrestrial environments, environmental biotechnology, and the study of microbial community dynamics, biodiversity, and biological responses to environmental change and contamination.</p>
+          <div class="exp-tags">
+            <span>Microbial Ecology</span><span>Aquatic Microbiology</span><span>Bioremediation</span><span>One Health</span><span>Biodiversity</span>
+          </div>
+        </div>
 
-            <!-- Single Unified Grid Container (12 Cards - Perfectly Balanced Rows) -->
-            <div class="expertise-grid">
-                
-                <!-- 1. Bioinformatics -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-turquoise);">
-                    <div>
-                        <i class="fas fa-terminal" style="color: var(--ricai-turquoise);"></i>
-                        <h3>Bioinformatics</h3>
-                        <p>Design, execution, and standardization of customized bioinformatic pipelines. Process datasets to evaluate complex data across both prokaryotic and complex eukaryotic organisms.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Pangenomics</span><span>Metagenomics</span><span>Metatranscriptomics</span><span>Comparative genomics</span><span>Phylogenetics</span><span>Gene mining</span>
-                    </div>
-                </div>
+        <div class="exp-card" style="border-color:rgba(29,158,117,.2)" onmouseover="this.style.borderColor='#1d9e75'" onmouseout="this.style.borderColor='rgba(29,158,117,.2)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c1)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(29,158,117,.1)"><i class="fas fa-sitemap" style="color:var(--c1)"></i></div>
+          <h3>Evolutionary Biology &amp; Taxonomy</h3>
+          <p>Systematic revision of microbial and plant lineages, phylogenetic reconstruction, speciation dynamics, and the formal description of novel taxa using genomic and morphological evidence. Bridging classical taxonomy with modern molecular tools.</p>
+          <div class="exp-tags">
+            <span>Systematic Revision</span><span>Phylogenetics</span><span>Novel Taxa</span><span>OGRI</span><span>Morphoanatomy</span>
+          </div>
+        </div>
 
-                                <!-- 4. Agricultural Sciences & Biotech -->
-<div class="expertise-card" style="border-top: 4px solid var(--ricai-green);">
-                    <div>
-                        <i class="fas fa-seedling" style="color: var(--ricai-green);"></i>
-                        <h3>Agricultural Sciences &amp; Biotech</h3>
-                        <p>Comprehensive studies focused on the enhancement, sustainability, and resilience of agroecosystems. Research horizons encompass plant breeding genetics, molecular plant-pathogen interactions, agricultural productivity optimization, postharvest preservation, and the strategic development of bio-based solutions for global food systems.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Crop Resilience</span><span>Plant Breeding</span><span>Agroecosystems</span><span>Postharvest Systems</span><span>Bioprospecting</span>
-                    </div>
-                </div>
+        <div class="exp-card" style="border-color:rgba(29,158,117,.2)" onmouseover="this.style.borderColor='#1d9e75'" onmouseout="this.style.borderColor='rgba(29,158,117,.2)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c1)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(29,158,117,.1)"><i class="fas fa-flask" style="color:var(--c1)"></i></div>
+          <h3>Applied Microbial Biotechnology</h3>
+          <p>Translating microbial biology into practical applications — plant growth-promoting rhizobacteria (PGPR), DNA extraction protocols, iron nanoparticle-based methods, nutrient-solubilizing bacteria, and biotechnological prospection of underexplored microbial diversity.</p>
+          <div class="exp-tags">
+            <span>PGPR</span><span>Nanoparticles</span><span>Bioactive Compounds</span><span>Biotech Prospection</span><span>DNA Extraction</span>
+          </div>
+        </div>
 
-                <!-- 3. Biomedical & Molecular Sciences -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-magenta);">
-                    <div>
-                        <i class="fas fa-flask" style="color: var(--ricai-magenta);"></i>
-                        <h3>Biomedical &amp; Molecular Sciences</h3>
-                        <p>Investigation of cellular mechanics, pathogen dynamics, and translational barriers. The network's synergy encompasses molecular diagnostics, immune response analysis across diverse biological systems, and epidemiological frameworks.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>CRISPR Systems</span><span>One Health Frameworks</span><span>Nanoparticles</span><span>Optical Spectroscopy</span><span>Microbiota Modulation</span>
-                    </div>
-                </div>
+      </div>
+    </div>
 
-                <!-- 5. Environmental & Ecological Sciences -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-yellow);">
-                    <div>
-                        <i class="fas fa-globe-americas" style="color: var(--ricai-yellow);"></i>
-                        <h3>Environmental &amp; Ecological Sciences</h3>
-                        <p>Assessment of ecosystem dynamics, microbial ecology, and environmental biotechnology. Exploring community-level interactions, biological responses to contamination, and ecological systems modeling.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Microbial Ecology</span><span>Environmental Biotech</span><span>Ecosystem Modeling</span><span>Biochemical Assays</span>
-                    </div>
-                </div>
+    <!-- ── CLUSTER 2: COMPUTATIONAL ── -->
+    <div class="cluster-panel" id="c2">
+      <div class="cluster-header" style="background:rgba(30,74,128,.05);border-color:var(--c2)">
+        <div class="cluster-icon" style="width:46px;height:46px;border-radius:11px;background:rgba(30,74,128,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">
+          <i class="fas fa-code" style="color:var(--c2)"></i>
+        </div>
+        <div>
+          <h2 style="font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;color:var(--blue);margin-bottom:3px">Computational &amp; Data Sciences</h2>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.6">Algorithmic thinking, data-driven methods, and open digital infrastructure — the computational backbone that powers RICAI's research and platforms.</p>
+        </div>
+      </div>
+      <div class="exp-grid">
 
-                <!-- 6. Strategic Management & Economics -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-orange);">
-                    <div>
-                        <i class="fas fa-chart-line" style="color: var(--ricai-orange);"></i>
-                        <h3>Strategic Management &amp; Economics</h3>
-                        <p>Scientific discovery reaches true scalability through structural market integration. Embracing supply chain analytics, corporate management systems, and strategic identity frameworks to drive value creation.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Supply Chain</span><span>Agribusiness Marketing</span><span>Branding Systems</span><span>Value Creation</span><span>Competitiveness</span>
-                    </div>
-                </div>
+        <div class="exp-card" style="border-color:rgba(30,74,128,.15)" onmouseover="this.style.borderColor='#1e4a80'" onmouseout="this.style.borderColor='rgba(30,74,128,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c2)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(30,74,128,.08)"><i class="fas fa-brain" style="color:var(--c2)"></i></div>
+          <h3>Data Science &amp; Machine Learning</h3>
+          <p>Statistical modeling, ML algorithms, predictive analytics, and reproducible data visualization applied to biological, agricultural, and health datasets. Includes NIR spectroscopy modeling, R and Python workflows, and high-dimensional data interpretation.</p>
+          <div class="exp-tags">
+            <span>Machine Learning</span><span>NIR Modeling</span><span>R &amp; Python</span><span>Statistical Analysis</span><span>Data Visualization</span>
+          </div>
+        </div>
 
-                <!-- 7. Open Science Governance & Intellectual Property -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-yellow);">
-                    <div>
-                        <i class="fas fa-gavel" style="color: var(--ricai-yellow);"></i>
-                        <h3>Open Science Policy &amp; Law</h3>
-                        <p>Studies on the legal structures that protect and democratize public knowledge. Work in this domain explores modern copyright systems, open-access licensing models, international bioethics standards, and regulatory frameworks required to manage collaborative data sharing across borders safely.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Open Licensing</span><span>Bioethics</span><span>Data Governance</span><span>Copyright Law</span>
-                    </div>
-                </div>
+        <div class="exp-card" style="border-color:rgba(30,74,128,.15)" onmouseover="this.style.borderColor='#1e4a80'" onmouseout="this.style.borderColor='rgba(30,74,128,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c2)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(30,74,128,.08)"><i class="fas fa-server" style="color:var(--c2)"></i></div>
+          <h3>Software &amp; Open Source Development</h3>
+          <p>Design and development of digital platforms, open-source pipelines, scientific data repositories, and web architectures built for public science. Ensuring research tools are accessible, maintainable, and globally deployable.</p>
+          <div class="exp-tags">
+            <span>Web Development</span><span>Open Source</span><span>Data Repositories</span><span>API Design</span><span>GitHub</span>
+          </div>
+        </div>
 
-<!-- 8. Software Engineering & Open Source Systems -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-turquoise);">
-                    <div>
-                        <i class="fas fa-server" style="color: var(--ricai-turquoise);"></i>
-                        <h3>Software &amp; Open Source Systems</h3>
-                        <p>Development and implementation of digital platforms, data repositories, and web architectures designed for public science. Work in this area focuses on optimizing data sharing interfaces, building collaborative storage code, and ensuring that independent digital platforms remain global, secure, and accessible.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Web Development</span><span>Open Source</span><span>Database Systems</span><span>Data Repositories</span>
-                    </div>
-                </div>
+        <div class="exp-card" style="border-color:rgba(30,74,128,.15)" onmouseover="this.style.borderColor='#1e4a80'" onmouseout="this.style.borderColor='rgba(30,74,128,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c2)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(30,74,128,.08)"><i class="fas fa-robot" style="color:var(--c2)"></i></div>
+          <h3>Artificial Intelligence in Science</h3>
+          <p>Application of AI and large language models to accelerate scientific discovery — from automated literature mining and hypothesis generation to AI-assisted experimental design and workflow automation in research contexts.</p>
+          <div class="exp-tags">
+            <span>LLMs in Research</span><span>AI-driven Discovery</span><span>Workflow Automation</span><span>Literature Mining</span>
+          </div>
+        </div>
 
-<!-- 9. Science Communication & Digital Engagement -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-magenta);">
-                    <div>
-                        <i class="fas fa-bullhorn" style="color: var(--ricai-magenta);"></i>
-                        <h3>Science Communication &amp; Engagement</h3>
-                        <p>Translation of complex scientific data into clear, accessible, and high-impact digital content. Work in this domain focuses on public outreach, digital media strategy, and responsible science journalism, bridging the gap between specialized research laboratories and public or community understanding.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Science Journalism</span><span>Digital Strategy</span><span>Public Outreach</span><span>Knowledge Sharing</span>
-                    </div>
-                </div>
+      </div>
+    </div>
 
-<!-- 2. Computational & Data Sciences -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-blue);">
-                    <div>
-                        <i class="fas fa-code" style="color: var(--ricai-blue);"></i>
-                        <h3>Computational &amp; Data Sciences</h3>
-                        <p>Development of robust algorithmic workflows, automated data processing models, and reproducible data visualizations. This area focuses on statistical optimization, machine learning applications, and turning high-dimensional, multi-disciplinary datasets into structured, interpretable patterns.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>Data Analytics</span><span>Machine Learning</span><span>R Programming</span><span>Python Analytics</span><span>Statistical Modeling</span>
-                    </div>
-                </div>
-                
-<!-- 10. Public Health & Epidemiology -->
-                <div class="expertise-card" style="border-top: 4px solid var(--ricai-green);">
-                    <div>
-                        <i class="fas fa-heartbeat" style="color: var(--ricai-green);"></i>
-                        <h3>Public Health &amp; Epidemiology</h3>
-                        <p>Studies on health determinants, distribution dynamics, and infectious or metabolic phenomena across diverse populations. Work in this area bridges environmental conditions, biological data, and population-level trends to support research under the comprehensive One Health framework.</p>
-                    </div>
-                    <div class="tech-tags">
-                        <span>One Health</span><span>Population Health</span><span>Disease Dynamics</span><span>Epidemiological Data</span>
-                    </div>
-                </div>
+    <!-- ── CLUSTER 3: AGRICULTURAL ── -->
+    <div class="cluster-panel" id="c3">
+      <div class="cluster-header" style="background:rgba(201,130,10,.06);border-color:var(--c3)">
+        <div class="cluster-icon" style="width:46px;height:46px;border-radius:11px;background:rgba(201,130,10,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">
+          <i class="fas fa-seedling" style="color:var(--c3)"></i>
+        </div>
+        <div>
+          <h2 style="font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;color:var(--blue);margin-bottom:3px">Agricultural &amp; Food Sciences</h2>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.6">From field to fork — integrating plant biology, precision technology, food science, and market strategy to advance sustainable and data-driven agriculture.</p>
+        </div>
+      </div>
+      <div class="exp-grid">
+
+        <div class="exp-card" style="border-color:rgba(201,130,10,.2)" onmouseover="this.style.borderColor='#c9820a'" onmouseout="this.style.borderColor='rgba(201,130,10,.2)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c3)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(201,130,10,.1)"><i class="fas fa-tractor" style="color:var(--c3)"></i></div>
+          <h3>Agrotech &amp; Precision Agriculture</h3>
+          <p>Data-driven approaches to crop management — NIR spectroscopy for non-destructive quality assessment, postharvest physiological profiling, climate modeling for pre-planting decisions, and smart farming technologies that optimize yield and reduce waste.</p>
+          <div class="exp-tags">
+            <span>NIR Spectroscopy</span><span>Postharvest</span><span>Smart Farming</span><span>Crop Modeling</span><span>Quality Assessment</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(201,130,10,.2)" onmouseover="this.style.borderColor='#c9820a'" onmouseout="this.style.borderColor='rgba(201,130,10,.2)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c3)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(201,130,10,.1)"><i class="fas fa-leaf" style="color:var(--c3)"></i></div>
+          <h3>Plant Biology &amp; Crop Genetics</h3>
+          <p>Plant-pathogen interactions, genomic tools for crop improvement, abiotic and biotic stress tolerance mechanisms, biofortification strategies, and morphoanatomical studies integrated with molecular biology to decode plant resilience and productivity.</p>
+          <div class="exp-tags">
+            <span>Plant Genomics</span><span>Stress Tolerance</span><span>Biofortification</span><span>Plant-Pathogen</span><span>Molecular Biology</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(201,130,10,.2)" onmouseover="this.style.borderColor='#c9820a'" onmouseout="this.style.borderColor='rgba(201,130,10,.2)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c3)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(201,130,10,.1)"><i class="fas fa-apple-alt" style="color:var(--c3)"></i></div>
+          <h3>Food Science &amp; Nutrition</h3>
+          <p>Post-harvest biochemistry and physiology, probiotic therapy and gut microbiota research, nutritional modeling, and the science of food quality across the value chain — from harvest to consumption.</p>
+          <div class="exp-tags">
+            <span>Postharvest Biochemistry</span><span>Probiotics</span><span>Nutritional Modeling</span><span>Food Quality</span><span>Microbiota</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(201,130,10,.2)" onmouseover="this.style.borderColor='#c9820a'" onmouseout="this.style.borderColor='rgba(201,130,10,.2)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c3)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(201,130,10,.1)"><i class="fas fa-chart-line" style="color:var(--c3)"></i></div>
+          <h3>Agribusiness &amp; Supply Chain</h3>
+          <p>Market integration of agricultural innovation — supply chain analytics, agri-economics, value chain optimization, corporate management systems, and marketing strategy that bridges scientific discovery and commercial scalability.</p>
+          <div class="exp-tags">
+            <span>Supply Chain</span><span>Agri-Economics</span><span>Market Strategy</span><span>Value Chain</span><span>Competitiveness</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CLUSTER 4: HEALTH ── -->
+    <div class="cluster-panel" id="c4">
+      <div class="cluster-header" style="background:rgba(194,24,91,.05);border-color:var(--c4)">
+        <div class="cluster-icon" style="width:46px;height:46px;border-radius:11px;background:rgba(194,24,91,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">
+          <i class="fas fa-heartbeat" style="color:var(--c4)"></i>
+        </div>
+        <div>
+          <h2 style="font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;color:var(--blue);margin-bottom:3px">Health &amp; Biomedical Sciences</h2>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.6">From molecular immunology to population health — a comprehensive cluster covering the full spectrum from bench research to public health policy and clinical application.</p>
+        </div>
+      </div>
+      <div class="exp-grid">
+
+        <div class="exp-card" style="border-color:rgba(194,24,91,.15)" onmouseover="this.style.borderColor='#c2185b'" onmouseout="this.style.borderColor='rgba(194,24,91,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c4)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(194,24,91,.08)"><i class="fas fa-shield-virus" style="color:var(--c4)"></i></div>
+          <h3>Immunology &amp; Translational Medicine</h3>
+          <p>Innate and adaptive immune regulation, single-cell transcriptomics, CRISPR-based systems, and fungal and viral infection biology — translating molecular discoveries into clinical insights and therapeutic strategies.</p>
+          <div class="exp-tags">
+            <span>CRISPR</span><span>scRNA-seq</span><span>Innate Immunity</span><span>Infection Biology</span><span>Translational Research</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(194,24,91,.15)" onmouseover="this.style.borderColor='#c2185b'" onmouseout="this.style.borderColor='rgba(194,24,91,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c4)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(194,24,91,.08)"><i class="fas fa-pills" style="color:var(--c4)"></i></div>
+          <h3>Neuropharmacology &amp; Clinical Sciences</h3>
+          <p>Neuromodulatory mechanisms, endocannabinoid system pharmacology, substance use disorders, harm reduction frameworks, and evidence-based clinical guidelines for territorialized social and health interventions.</p>
+          <div class="exp-tags">
+            <span>Cannabinoids</span><span>Endocannabinoid</span><span>Harm Reduction</span><span>Drug Policy</span><span>Clinical Evidence</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(194,24,91,.15)" onmouseover="this.style.borderColor='#c2185b'" onmouseout="this.style.borderColor='rgba(194,24,91,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c4)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(194,24,91,.08)"><i class="fas fa-globe" style="color:var(--c4)"></i></div>
+          <h3>Public Health &amp; Epidemiology</h3>
+          <p>Health determinants, disease distribution and dynamics, infectious and metabolic phenomena across populations — integrating environmental, biological, and social data under the One Health framework for global health equity.</p>
+          <div class="exp-tags">
+            <span>One Health</span><span>Disease Dynamics</span><span>Population Health</span><span>Global Health</span><span>Epidemiology</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(194,24,91,.15)" onmouseover="this.style.borderColor='#c2185b'" onmouseout="this.style.borderColor='rgba(194,24,91,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c4)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(194,24,91,.08)"><i class="fas fa-bacteria" style="color:var(--c4)"></i></div>
+          <h3>Microbiome &amp; Probiotic Research</h3>
+          <p>Gut microbiota composition, personalized probiotic therapy, microbiota modulation strategies, metabolic modeling, and the intersection of the human microbiome with nutrition, immunity, and chronic disease.</p>
+          <div class="exp-tags">
+            <span>Gut Microbiota</span><span>Probiotic Therapy</span><span>Metabolic Modeling</span><span>Microbiome</span><span>Personalized Medicine</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CLUSTER 5: OPEN SCIENCE ── -->
+    <div class="cluster-panel" id="c5">
+      <div class="cluster-header" style="background:rgba(92,74,181,.05);border-color:var(--c5)">
+        <div class="cluster-icon" style="width:46px;height:46px;border-radius:11px;background:rgba(92,74,181,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">
+          <i class="fas fa-unlock-alt" style="color:var(--c5)"></i>
+        </div>
+        <div>
+          <h2 style="font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;color:var(--blue);margin-bottom:3px">Open Science &amp; Knowledge Systems</h2>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.6">The infrastructure, policy, communication, and education layer that makes science truly open — RICAI's core identity expressed as a research line in itself.</p>
+        </div>
+      </div>
+      <div class="exp-grid">
+
+        <div class="exp-card" style="border-color:rgba(92,74,181,.15)" onmouseover="this.style.borderColor='#5c4ab5'" onmouseout="this.style.borderColor='rgba(92,74,181,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c5)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(92,74,181,.08)"><i class="fas fa-gavel" style="color:var(--c5)"></i></div>
+          <h3>Open Science Policy &amp; Scholarly Publishing</h3>
+          <p>Legal and governance frameworks for public knowledge — Diamond Open Access models, open-access licensing, bioethics standards, data governance, and regulatory structures for cross-border scientific collaboration and equitable publishing.</p>
+          <div class="exp-tags">
+            <span>Diamond OA</span><span>Open Licensing</span><span>Bioethics</span><span>Data Governance</span><span>Scholarly Policy</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(92,74,181,.15)" onmouseover="this.style.borderColor='#5c4ab5'" onmouseout="this.style.borderColor='rgba(92,74,181,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c5)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(92,74,181,.08)"><i class="fas fa-bullhorn" style="color:var(--c5)"></i></div>
+          <h3>Science Communication &amp; Digital Engagement</h3>
+          <p>Translating complex scientific knowledge into clear, accessible content for diverse audiences — public outreach, science journalism, digital media strategy, and building the bridges between research laboratories and communities worldwide.</p>
+          <div class="exp-tags">
+            <span>Science Journalism</span><span>Digital Strategy</span><span>Public Outreach</span><span>Social Media</span><span>Science Literacy</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(92,74,181,.15)" onmouseover="this.style.borderColor='#5c4ab5'" onmouseout="this.style.borderColor='rgba(92,74,181,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c5)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(92,74,181,.08)"><i class="fas fa-pen-nib" style="color:var(--c5)"></i></div>
+          <h3>Scientific Writing &amp; Academic Development</h3>
+          <p>Research manuscript preparation, grant and scholarship writing, statement of purpose coaching, CV design, academic cold-outreach strategy, and the structured mentoring that turns scientific potential into published, recognized careers.</p>
+          <div class="exp-tags">
+            <span>Manuscript Writing</span><span>Grant Applications</span><span>CV Design</span><span>Academic Mentoring</span><span>Career Strategy</span>
+          </div>
+        </div>
+
+        <div class="exp-card" style="border-color:rgba(92,74,181,.15)" onmouseover="this.style.borderColor='#5c4ab5'" onmouseout="this.style.borderColor='rgba(92,74,181,.15)'">
+          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--c5)"></div>
+          <div class="exp-icon-wrap" style="background:rgba(92,74,181,.08)"><i class="fas fa-graduation-cap" style="color:var(--c5)"></i></div>
+          <h3>Open Education &amp; Scientific Literacy</h3>
+          <p>Design and deployment of open-access educational resources, decentralized training pathways, and collaborative learning strategies that reduce barriers to advanced scientific knowledge globally — especially in underrepresented regions.</p>
+          <div class="exp-tags">
+            <span>Open Resources</span><span>Decentralized Learning</span><span>Scientific Literacy</span><span>Knowledge Access</span><span>Global Education</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HORIZONS -->
+    <div class="horizons">
+      <div class="horizons-bg"></div>
+      <div class="horizons-inner">
+        <span class="sec-label" style="color:var(--teal);display:block;margin-bottom:12px">Growing Organically</span>
+        <h3>These 17 lines are a starting point, not a ceiling</h3>
+        <p>RICAI is structured to expand as the network grows. Every researcher who joins brings a unique methodological background, continuously integrating new disciplines and expanding what open science can cover. If your line isn't listed here yet, it soon will be.</p>
+        <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+          <a href="index.html#contact" class="btn-p"><i class="fas fa-user-plus"></i> Bring Your Expertise</a>
+          <a href="about.html" class="btn-gl">How RICAI works</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo">
+        <p>The Independent and Open Science Research Network. Democratizing scientific discovery through collaboration, openness, and independence.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/researchnetworkricai" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/ricai-research-network/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="about.html">About RICAI</a></li>
+          <li><a href="projects.html">Research Projects</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="advisory.html">Advisory Services</a></li>
+          <li><a href="Journal.html">RICAI Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank">Apply as Researcher</a></li>
+          <li><a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank">Join as Member</a></li>
+          <li><a href="projects.html">Open Project Calls</a></li>
+          <li><a href="mailto:ricaiscience@gmail.com">ricaiscience@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 RICAI — The Independent and Open Science Research Network. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function showCluster(id, btn) {
+  document.querySelectorAll('.cluster-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cluster-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
 
 <!-- 11. Open Education & Pedagogical Innovation -->
                 <div class="expertise-card" style="border-top: 4px solid var(--ricai-blue);">

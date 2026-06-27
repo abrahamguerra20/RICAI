@@ -1,308 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Projects | RICAI Network</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Projects | RICAI Network</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --blue:#1d3a61;--blue-dark:#102542;--blue-mid:#1e4a80;
+  --teal:#26c6da;--orange:#ffa726;--yellow:#fdd835;
+  --magenta:#ec407a;--green:#66bb6a;--white:#fff;
+  --off:#f6f8fb;--gray-light:#eef1f6;--text:#1a2233;--muted:#556070;
+}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-        :root {
-            --ricai-blue: #1d3a61;
-            --ricai-yellow: #fdd835;
-            --ricai-turquoise: #26c6da;
-            --ricai-magenta: #ec407a;
-            --ricai-green: #66bb6a;
-            --ricai-orange: #ffa726;
-            --primary-color: var(--ricai-blue);
-            --secondary-color: var(--ricai-turquoise); 
-            --accent-color: var(--ricai-orange);
-            --text-color: #333;
-            --light-gray: #f8f9fa;
-            --white: #fff;
-        }
+/* TOP BAR */
+.top-bar{background:var(--yellow);color:var(--blue-dark);text-align:center;padding:10px 20px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem}
+.top-bar a{color:var(--blue-dark);text-decoration:underline;margin-left:10px;font-weight:800}
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: var(--white);
-            color: var(--text-color);
-        }
+/* HEADER */
+header{background:var(--white);position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--gray-light);box-shadow:0 2px 12px rgba(29,58,97,.07)}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo img{height:58px;width:auto;display:block}
+.net-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;border-left:3px solid var(--orange);padding-left:14px;line-height:1.3;max-width:220px}
+nav ul{list-style:none;display:flex;align-items:center;gap:2px}
+nav ul li a{color:var(--blue);text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.82rem;padding:7px 12px;border-radius:7px;transition:background .18s,color .18s;letter-spacing:.2px}
+nav ul li a:hover{background:var(--gray-light)}
+nav ul li a.active{background:var(--gray-light);color:var(--orange)}
+.btn-join{background:var(--orange)!important;color:var(--white)!important;border-radius:50px!important;margin-left:8px;padding:8px 20px!important;box-shadow:0 3px 14px rgba(255,167,38,.38)}
+.btn-join:hover{transform:translateY(-1px)}
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+/* BREADCRUMB */
+.breadcrumb{background:var(--off);border-bottom:1px solid var(--gray-light);padding:12px 0}
+.breadcrumb ul{list-style:none;display:flex;align-items:center;gap:8px;font-size:.8rem}
+.breadcrumb li{color:var(--muted)}
+.breadcrumb li a{color:var(--blue);text-decoration:none;font-weight:600}
+.breadcrumb li a:hover{color:var(--orange)}
+.breadcrumb li.sep{color:var(--gray-light);font-size:.7rem}
 
-        .grant-alert-bar {
-            background-color: var(--ricai-yellow);
-            color: var(--ricai-blue);
-            text-align: center;
-            padding: 12px 0;
-            font-weight: 700;
-            font-size: 0.95em;
-            position: relative;
-            z-index: 1001;
-        }
-        .grant-alert-bar i { margin-right: 10px; }
-        .grant-alert-bar a { color: var(--ricai-blue); font-weight: 800; text-decoration: underline; }
+/* PAGE HERO */
+.page-hero{position:relative;background:linear-gradient(135deg,rgba(10,25,47,.97) 0%,rgba(16,37,66,.94) 55%,rgba(30,74,128,.88) 100%),url('RICAI_IA_WALLPAPER.png') center/cover no-repeat;color:var(--white);padding:90px 0 72px;overflow:hidden}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(38,198,218,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(38,198,218,.05) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.page-hero-inner{position:relative;z-index:2;text-align:center}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:.7rem;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:22px;padding:6px 16px;border:1px solid rgba(38,198,218,.28);border-radius:50px;background:rgba(38,198,218,.07)}
+.page-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.12;margin-bottom:16px;letter-spacing:-.4px}
+.page-hero h1 .t{color:var(--teal)}
+.page-hero h1 .o{color:var(--orange)}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.78);max-width:560px;margin:0 auto}
 
-        header {
-            background: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 15px rgba(29, 58, 97, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { height: 65px; width: auto; }
+/* SECTION COMMONS */
+.sec{padding:88px 0}
+.sec-alt{background:var(--off)}
+.sec-label{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--orange);display:block;margin-bottom:10px}
+.sec-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.7rem,3vw,2.45rem);font-weight:800;color:var(--blue);line-height:1.15;margin-bottom:14px;letter-spacing:-.3px}
+.sec-lead{font-size:1rem;color:var(--muted);line-height:1.82}
 
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
-        nav ul li { margin: 0 15px; }
-        nav ul li a { color: var(--ricai-blue); text-decoration: none; font-weight: 700; transition: 0.3s; }
-        nav ul li a:hover { color: var(--ricai-orange); }
+/* BADGES */
+.badge{display:inline-block;padding:5px 13px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px}
+.b-call{background:rgba(255,167,38,.13);color:#c36a00}
+.b-active{background:rgba(102,187,106,.13);color:#2e7d32}
+.b-soon{background:rgba(38,198,218,.13);color:#007a8c}
+.b-upcoming{background:rgba(29,58,97,.1);color:var(--blue)}
 
-        .projects-hero {
-            background: linear-gradient(rgba(29, 58, 97, 0.9), rgba(29, 58, 97, 0.9)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
-            color: var(--white);
-            padding: 100px 0 60px;
-            text-align: center;
-        }
-        .projects-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3em; margin-bottom: 10px; }
-        
-        .section-padding { padding: 80px 0; }
-        
-        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.15em; color: #555; }
+/* OPEN CALL BANNER */
+.open-call-banner{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue-mid) 100%);border-radius:20px;padding:44px 48px;margin-bottom:64px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center}
+.open-call-banner::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(38,198,218,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(38,198,218,.06) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.ocb-inner{position:relative;z-index:2}
+.ocb-inner h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:var(--white);margin-bottom:10px;line-height:1.25}
+.ocb-inner p{font-size:.92rem;color:rgba(255,255,255,.75);line-height:1.78;max-width:580px;margin-bottom:22px}
+.ocb-meta{position:relative;z-index:2;flex-shrink:0;text-align:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px 28px;min-width:170px}
+.ocb-meta-n{font-family:'Montserrat',sans-serif;font-size:2.4rem;font-weight:800;color:var(--teal);line-height:1}
+.ocb-meta-l{font-size:.72rem;color:rgba(255,255,255,.58);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-top:4px}
+.ocb-reqs{margin-top:18px;display:flex;flex-direction:column;gap:7px}
+.ocb-req{font-size:.82rem;color:rgba(255,255,255,.65);display:flex;align-items:flex-start;gap:8px}
+.ocb-req i{color:var(--teal);margin-top:2px;font-size:.8rem;flex-shrink:0}
+.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:var(--white);padding:13px 28px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;box-shadow:0 4px 18px rgba(255,167,38,.4);transition:transform .2s,box-shadow .2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,167,38,.5)}
+.btn-g-light{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.1);color:var(--white);padding:13px 24px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.9rem;border:1px solid rgba(255,255,255,.22);transition:background .18s;margin-left:10px}
+.btn-g-light:hover{background:rgba(255,255,255,.18)}
 
-        /* Core Projects / Launch Status Box */
-        .launch-status-box {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            border-left: 6px solid var(--ricai-turquoise);
-            border-radius: 20px;
-            padding: 50px 40px;
-            text-align: left;
-            max-width: 900px;
-            margin: 0 auto 60px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-        }
-        .launch-status-box h2 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.8em; display: flex; align-items: center; gap: 15px; }
-        .launch-status-box p { font-size: 1.05em; color: #475569; margin: 15px 0; text-align: justify; }
-        .launch-status-box ul { color: #475569; font-size: 0.95em; padding-left: 20px; margin-bottom: 25px; }
-        .launch-status-box ul li { margin-bottom: 8px; }
-        
-        .status-badge {
-            display: inline-block;
-            background-color: var(--ricai-blue);
-            color: var(--ricai-yellow);
-            padding: 6px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-        .status-badge.open { background-color: var(--ricai-turquoise); color: var(--ricai-blue); }
+/* PROJECT ROWS — CORE PROJECTS */
+.projects-stack{display:flex;flex-direction:column;gap:22px}
+.proj-row{background:var(--white);border:1px solid var(--gray-light);border-radius:16px;padding:32px 36px;display:grid;grid-template-columns:1fr 260px;gap:28px;align-items:start;transition:box-shadow .2s,border-color .2s}
+.proj-row:hover{box-shadow:0 10px 32px rgba(29,58,97,.1);border-color:var(--teal)}
+.proj-row.featured{border-left:4px solid var(--orange)}
+.proj-content h3{font-family:'Montserrat',sans-serif;font-size:1.08rem;font-weight:800;color:var(--blue);margin-bottom:10px;line-height:1.35}
+.proj-content p{font-size:.89rem;color:var(--muted);line-height:1.78}
+.proj-content .proj-area{margin-top:14px;font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.proj-content .proj-area i{margin-right:5px;color:var(--teal)}
+.proj-sidebar{display:flex;flex-direction:column;gap:10px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+.proj-tags span{background:var(--off);color:var(--blue);padding:4px 11px;border-radius:50px;font-size:.72rem;font-weight:600;border:1px solid var(--gray-light)}
+.proj-progress{background:var(--off);border-radius:10px;padding:14px 16px;margin-top:4px}
+.proj-progress-label{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:flex;justify-content:space-between}
+.proj-progress-bar{height:5px;background:var(--gray-light);border-radius:50px;overflow:hidden}
+.proj-progress-fill{height:100%;border-radius:50px;transition:width .6s ease}
 
-        /* Fixed Grid Layouts for Symmetry (2 columns) */
-        .tracks-heading { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.8em; margin-bottom: 30px; margin-top: 50px; }
-        
-        .projects-grid-double { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-        .projects-grid-single { display: grid; grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
-        
-        .track-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 35px;
-            border: 1px solid rgba(29, 58, 97, 0.08);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .track-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--ricai-turquoise);
-        }
-        .track-card h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); margin-top: 0; font-size: 1.15em; line-height: 1.4; min-height: 70px; }
-        .track-card p { font-size: 0.9em; color: #64748b; text-align: justify; margin-bottom: 20px; line-height: 1.6; }
-        
-        .track-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px; border-top: 1px solid #f1f5f9; font-size: 0.8em; font-weight: 600; color: var(--ricai-blue); }
-        .track-meta span.indicator { color: var(--ricai-orange); display: flex; align-items: center; gap: 5px; }
-        .track-meta span.indicator.active { color: var(--ricai-green); }
-        .track-meta span.indicator.selection { color: var(--ricai-turquoise); }
+/* SECTION DIVIDER LABEL */
+.divider{display:flex;align-items:center;gap:16px;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--muted);margin:0 0 36px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--gray-light)}
 
-        /* External Submissions Box */
-        .external-submissions-section { 
-            background-color: var(--light-gray); 
-            border: 1px solid rgba(29, 58, 97, 0.1); 
-            padding: 40px; 
-            border-radius: 20px; 
-            max-width: 850px; 
-            margin: 60px auto 0;
-        }
-        .external-submissions-section h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.6em; margin-top: 0; }
-        .external-submissions-section p { max-width: 750px; margin: 10px auto 0; color: #555; font-size: 1em; }
+/* UPCOMING GRID */
+.upcoming-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.upcoming-card{background:var(--white);border:1px solid var(--gray-light);border-radius:16px;padding:28px;transition:box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
+.upcoming-card:hover{box-shadow:0 8px 28px rgba(29,58,97,.09);border-color:var(--blue)}
+.upcoming-card h3{font-family:'Montserrat',sans-serif;font-size:.97rem;font-weight:700;color:var(--blue);margin-bottom:10px;line-height:1.38;flex:1}
+.upcoming-card p{font-size:.862rem;color:var(--muted);line-height:1.75}
+.upcoming-card .proj-area{margin-top:14px;font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.upcoming-card .proj-area i{margin-right:5px;color:var(--teal)}
 
-        /* Footer Action */
-        .notify-section { text-align: center; margin-top: 40px; padding: 40px; background-color: var(--ricai-blue); color: white; border-radius: 25px; }
-        .notify-section h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5em; margin-top: 0; }
-        .notify-section p { max-width: 600px; margin: 10px auto 25px; color: #cbd5e0; }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--ricai-orange);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 167, 38, 0.3);
-        }
-        .cta-button:hover { background-color: var(--ricai-blue); color: var(--white); border: 2px solid var(--ricai-orange); transform: translateY(-2px); }
+/* HOW TO JOIN A PROJECT */
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.process-step{background:var(--white);border:1px solid var(--gray-light);border-radius:16px;padding:28px 24px;text-align:center;transition:box-shadow .2s,border-color .2s}
+.process-step:hover{box-shadow:0 8px 26px rgba(29,58,97,.09);border-color:var(--teal)}
+.step-num{width:46px;height:46px;border-radius:50%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1rem;color:var(--white);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.process-step h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.97rem;color:var(--blue);margin-bottom:8px}
+.process-step p{font-size:.855rem;color:var(--muted);line-height:1.65}
 
-        footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
-        footer a { color: var(--ricai-turquoise); font-weight: bold; text-decoration: none; }
-        
-        @media (max-width: 992px) { .projects-grid-double { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { nav ul { display: none; } .projects-hero h1 { font-size: 2.2em; } }
-    </style>
+/* CTA BOX */
+.cta-box{background:var(--off);border:2px dashed rgba(255,167,38,.4);border-radius:20px;padding:48px 40px;text-align:center;margin-top:56px}
+.cta-box h3{font-family:'Montserrat',sans-serif;font-size:1.35rem;font-weight:800;color:var(--blue);margin-bottom:12px}
+.cta-box p{color:var(--muted);font-size:.92rem;max-width:580px;margin:0 auto 26px;line-height:1.8}
+
+/* FOOTER */
+footer{background:#07111f;color:rgba(255,255,255,.58);padding:58px 0 34px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:58px;margin-bottom:46px}
+.footer-brand img{height:46px;margin-bottom:14px;display:block}
+.footer-brand p{font-size:.855rem;line-height:1.8;max-width:270px}
+.footer-col h5{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:1.3px;margin-bottom:14px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.855rem;transition:color .18s}
+.footer-col ul li a:hover{color:var(--teal)}
+.footer-social{display:flex;gap:11px;margin-top:18px}
+.footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:.9rem;text-decoration:none;transition:background .18s,color .18s}
+.footer-social a:hover{background:var(--teal);color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;text-align:center;font-size:.78rem}
+
+@media(max-width:960px){
+  .open-call-banner{grid-template-columns:1fr;gap:24px}
+  .ocb-meta{text-align:left;min-width:unset}
+  .proj-row{grid-template-columns:1fr}
+  .upcoming-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:680px){
+  nav ul{display:none}
+  .net-name{display:none}
+  .open-call-banner{padding:28px 24px}
+  .process-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+}
+</style>
 </head>
 <body>
 
-    <div class="grant-alert-bar">
-        <i class="fas fa-lightbulb"></i> ADVOCATING FOR DECENTRALIZED KNOWLEDGE AND INDEPENDENT SCIENTIFIC PROGRESS. <a href="index.html#contact" style="margin-left: 10px;">Join the RICAI community today</a>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <i class="fas fa-flask" style="margin-right:8px"></i>
+  Open call: Genome-Based Revision of Chroococcales —
+  <a href="#open-call">Apply now →</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo"><a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a></div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="advisory.html">Advisory</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="index.html#contact" class="btn-join">Join Now</a></li>
+      </ul>
+    </nav>
+    <div class="net-name">The Independent and Open Science Research Network</div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home" style="font-size:.75rem"></i> Home</a></li>
+      <li class="sep">›</li>
+      <li>Research Projects</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="container page-hero-inner">
+    <div class="hero-pill"><i class="fas fa-dna" style="font-size:.75rem"></i> Open Science Research</div>
+    <h1>Research that <span class="t">crosses</span><br>every <span class="o">border</span></h1>
+    <p>Structured, peer-driven projects integrating complex datasets into open digital repositories — led by independent investigators worldwide.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="sec">
+  <div class="container">
+
+    <!-- OPEN CALL HIGHLIGHT -->
+    <div class="open-call-banner" id="open-call">
+      <div class="ocb-inner">
+        <span class="badge b-call" style="margin-bottom:16px">🔬 Active Open Call</span>
+        <h2>PROJ01-TaxRE-01<br>Chroococcales Taxonomic Revision</h2>
+        <p>We officially launched the application phase for a genome-based restructuring of the cyanobacterial order Chroococcales. Using Overall Genome Relatedness Indices across 513 processed genomes, this project has the potential to describe more than 4 new families, 7 new genera, and 60+ novel species — and we need collaborators.</p>
+        <div class="ocb-reqs">
+          <div class="ocb-req"><i class="fas fa-check-circle"></i> Complete the general RICAI Membership onboarding form</div>
+          <div class="ocb-req"><i class="fas fa-check-circle"></i> Fill out the Project application form linked below</div>
+          <div class="ocb-req"><i class="fas fa-check-circle"></i> Bioinformatics or genomics background recommended</div>
+        </div>
+        <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://forms.gle/qUimUHMREeV8b5ms6" target="_blank" class="btn-p"><i class="fas fa-file-alt"></i> Access Application Form</a>
+          <a href="index.html#contact" class="btn-g-light">Join RICAI First</a>
+        </div>
+      </div>
+      <div class="ocb-meta">
+        <div class="ocb-meta-n">513</div>
+        <div class="ocb-meta-l">Genomes processed</div>
+        <div style="margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px">
+          <div class="ocb-meta-n" style="font-size:1.8rem;color:var(--orange)">60+</div>
+          <div class="ocb-meta-l">Potential novel species</div>
+        </div>
+        <div style="margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px">
+          <div class="ocb-meta-n" style="font-size:1.8rem;color:var(--yellow)">4+</div>
+          <div class="ocb-meta-l">New families expected</div>
+        </div>
+      </div>
     </div>
 
-    <header>
-        <div class="container navbar">
-            <div class="logo">
-                <a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#team">Our Team</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="advisory.html">Advisory</a></li>
-                    <li><a href="Journal.html">Journal</a></li>
-                </ul>
-            </nav>
+    <!-- CORE ACTIVE PROJECTS -->
+    <div class="divider">Core Research Projects</div>
+    <div class="projects-stack">
+
+      <!-- PROJECT 1 -->
+      <div class="proj-row featured">
+        <div class="proj-content">
+          <span class="badge b-call">Open Call</span>
+          <h3>Genome-Based Taxonomic Revision of the Order Chroococcales</h3>
+          <p>A comprehensive systematic revision of 513 cyanobacterial genomes resolving widespread polyphyly through OGRIs including ANI, AAI, and advanced phylogenomics. Using <em>Candidatus</em> Atelocyanobacterium (UCYN-A) as a biological model, this initiative explores the metabolic streamlining behind the evolutionary transition into nitroplasts — potentially reshaping our understanding of nitrogen fixation in marine ecosystems.</p>
+          <div class="proj-area"><i class="fas fa-dna"></i> Phylogenomics &amp; Taxonomy</div>
         </div>
-    </header>
-
-    <section class="projects-hero">
-        <div class="container">
-            <h1>Research Projects</h1>
+        <div class="proj-sidebar">
+          <div class="proj-tags">
+            <span>ANI / AAI</span><span>OGRI</span><span>Phylogenomics</span><span>UCYN-A</span><span>Nitroplast</span>
+          </div>
+          <div class="proj-progress">
+            <div class="proj-progress-label"><span>Genome processing</span><span style="color:var(--teal)">100%</span></div>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:100%;background:var(--teal)"></div></div>
+            <div class="proj-progress-label" style="margin-top:10px"><span>Analysis</span><span style="color:var(--orange)">In progress</span></div>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:55%;background:var(--orange)"></div></div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section class="section-padding">
-        <div class="container">
-            <p class="intro-text">
-                RICAI's operational model relies on structured, peer-reviewed projects led by independent investigators worldwide. The network functions by establishing open workflows required to integrate complex datasets into public digital repositories.
-            </p>
-
-<div class="launch-status-box">
-                <span class="status-badge open">Active Open Call</span>
-                <h2><i class="fas fa-bullhorn" style="color: var(--ricai-turquoise);"></i> Project Call: PROJ01-TaxRE-01</h2>
-                <p>
-                    RICAI has officially launched the application phase for its genome-based restructuring of the cyanobacterial order Chroococcales. Traditional morphological features often hinder evolutionary tracking due to structural convergence. This initiative leverages Overall Genome Relatedness Indices (OGRIs) across 513 processed genomes to build a definitive taxonomic framework, exploring the metabolic streamlining behind the organelle transition into nitroplasts using <i>Candidatus</i> Atelocyanobacterium (UCYN-A) as a biological model.
-                </p>
-                <p style="font-weight: 700; color: var(--ricai-blue); margin-bottom: 5px;">Collaboration Requirements:</p>
-                <ul>
-                    <li>Applicants must complete the general RICAI Membership onboarding form.</li>
-                    <li>Fill out the Project application form.</li>
-                </ul>
-                <a href="https://forms.gle/qUimUHMREeV8b5ms6" target="_blank" class="cta-button"><i class="fas fa-file-signature" style="margin-right: 8px;"></i> Access Application Form</a>
-            </div>
-
-            <h2 class="tracks-heading">Core Research Projects</h2>
-            <div class="projects-grid-double">
-                
-                <div class="track-card" style="border-top-color: var(--ricai-turquoise);">
-                    <h3>Genome-Based Taxonomic Revision of the Order Chroococcales</h3>
-                    <p>A comprehensive systematic revision of 513 cyanobacterial genomes resolving widespread polyphyly through Overall Genome Relatedness Indices (OGRI), including ANI, AAI, and advanced phylogenomics. Using the nitrogen-fixing endosymbiont <i>Candidatus</i> Atelocyanobacterium (UCYN-A) as a biological model, this initiative explores the metabolic streamlining behind the evolutionary transition into nitroplasts. The established genomic backbone opens the door to potentially describing more than 4 new families, 7 new genera, and over 60 novel species.</p>
-                    <div class="track-meta">
-                        <span>Phylogenomics &amp; Taxonomy</span>
-                        <span class="indicator selection"><i class="fas fa-user-check"></i> Selection Process</span>
-                    </div>
-                </div>
-
-                <div class="track-card" style="border-top-color: var(--ricai-magenta);">
-                    <h3>Microbial Diversity in Latin America: Underexploration and Opportunities for the Biotechnological Industry</h3>
-                    <p>A comprehensive critical review compiling global repository metrics to expose severe gaps in regional microbiology tracking. The initiative maps species submission data and compiled genomes isolated from Latin American environments within the NCBI Assembly Database, directly contrasting these geographical statistics against North American, European, and Asian public scientific funding and international patent registries to highlight unexplored biotechnological horizons.</p>
-                    <div class="track-meta">
-                        <span>Bioinformatics &amp; Ecology</span>
-                        <span class="indicator active"><i class="fas fa-check-circle"></i> Active Project</span>
-                    </div>
-                </div>
-
-                <div class="track-card" style="border-top-color: var(--ricai-yellow);">
-                    <h3>Cannabinoids as a Harm Reduction Strategy: Clinical Implications and Public Health Perspectives</h3>
-                    <p>A systematic narrative review evaluating the neuromodulatory mechanisms and pharmacology of cannabinoids (specifically CBD) within the context of substance use disorders. This project uncovers structural interactions within host endocannabinoid receptors to benchmark substitution parameters against complementary effects, aiming to structure evidence-based operational guidelines for territorialized social care interventions.</p>
-                    <div class="track-meta">
-                        <span>Neuropharmacology &amp; Medicine</span>
-                        <span class="indicator active"><i class="fas fa-check-circle"></i> Active Project</span>
-                    </div>
-                </div>
-
-                <div class="track-card" style="border-top-color: var(--ricai-green);">
-                    <h3>Agrotech Horizons: Technological Transformations from Cultivation to Commercialization</h3>
-                    <p>An active collaborative publishing pipeline structuring a multi-chapter reference textbook mapping advanced data analytics and microbial applications across the agricultural value chain. Moving systematically from pre-planting climate modeling to non-destructive NIR postharvest physiological profiling, each chapter establishes standardized baselines for localized connectivity networks, economics, and risk limits.</p>
-                    <div class="track-meta">
-                        <span>Agricultural Agrotech</span>
-                        <span class="indicator active"><i class="fas fa-check-circle"></i> Active Project</span>
-                    </div>
-                </div>
-
-            </div> <h2 class="tracks-heading">Upcoming Institutional Projects</h2>
-            <div class="projects-grid-single">
-                
-                <div class="track-card" style="border-top-color: var(--ricai-blue);">
-                    <h3>Exploring the <i>Candidatus</i> Liberibacter asiaticus pangenome</h3>
-                    <p>A large-scale comparative genomic framework leveraging 178 high-quality genomes of <i>Ca.</i> Liberibacter asiaticus (CLas), the unculturable agent behind Huanglongbing (HLB) in global citriculture. This study models core evolutionary strategies, flagellar motility apparatus, and accessory virulence traits, mapping genomic islands and low-fluidity adaptive loops. Since traditional microbiology faces severe barriers with this obligate intracellular pathogen, this pangenomic blueprint targets novel diagnostic and therapeutic biomarkers.</p>
-                    <div class="track-meta">
-                        <span>Comparative Genomics</span>
-                        <span class="indicator"><i class="fas fa-clock"></i> Launching Soon</span>
-                    </div>
-                </div>
-
-            </div> <div class="external-submissions-section" style="border-left: 6px solid var(--ricai-turquoise);">
-                <span class="status-badge" style="background-color: #cbd5e1; color: #334155; margin-bottom: 15px;">Upcoming call</span>
-                <h3 style="font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 1.6em; margin-top: 0; margin-bottom: 10px;">Independent Project Proposals</h3>
-                <p style="color: #475569; font-size: 1.05em; margin: 0; text-align: justify;">
-                    RICAI is establishing the peer-review and validation protocols required to scale its collaborative architecture. Once the core institutional tracks complete their initial deployment, a formal call will open for external investigators to host, evaluate, and integrate autonomous research methodologies within the network's decentralized ecosystem.
-                </p>
-            </div>
-
-            <div class="notify-section">
-                <h3>Stay updated on call openings</h3>
-                <p>Formal project profiles, task assignments, and collaboration guidelines will be dispatched directly to registered network associates as soon as the launch phase completes.</p>
-                <a href="index.html#contact" class="cta-button">Join the RICAI Network</a>
-            </div>
-
+      <!-- PROJECT 2 -->
+      <div class="proj-row">
+        <div class="proj-content">
+          <span class="badge b-active">Active</span>
+          <h3>Microbial Diversity in Latin America: Underexploration and Biotechnological Opportunities</h3>
+          <p>A comprehensive critical review compiling global repository metrics to expose severe gaps in regional microbiology tracking. The initiative maps species submission data and compiled genomes isolated from Latin American environments within the NCBI Assembly Database, contrasting these figures against North American, European, and Asian scientific funding and patent registries — making the invisible inequality in global science visible and citable.</p>
+          <div class="proj-area"><i class="fas fa-leaf"></i> Bioinformatics &amp; Ecology</div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <h3 style="color: white; font-family: 'Montserrat'; margin: 0 0 10px 0;">RICAI</h3>
-            <p style="margin: 5px 0;">The Independent and Open Science Research Network</p>
-            <p style="margin: 5px 0;">Contact us: <a href="mailto:ricaiscience@gmail.com">ricaiscience@gmail.com</a></p>
-            <p style="margin: 20px 0 0 0; font-size: 0.85em; color: #cbd5e0;">&copy; 2026 RICAI. All rights reserved.</p>
+        <div class="proj-sidebar">
+          <div class="proj-tags">
+            <span>NCBI</span><span>Metagenomics</span><span>Biotech</span><span>LatAm</span><span>Biodiversity</span>
+          </div>
+          <div class="proj-progress">
+            <div class="proj-progress-label"><span>Data collection</span><span style="color:var(--green)">Done</span></div>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:100%;background:var(--green)"></div></div>
+            <div class="proj-progress-label" style="margin-top:10px"><span>Writing</span><span style="color:var(--orange)">Active</span></div>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:70%;background:var(--orange)"></div></div>
+          </div>
         </div>
-    </footer>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="proj-row">
+        <div class="proj-content">
+          <span class="badge b-active">Active</span>
+          <h3>Cannabinoids as a Harm Reduction Strategy: Clinical Implications and Public Health Perspectives</h3>
+          <p>A systematic narrative review evaluating the neuromodulatory mechanisms and pharmacology of cannabinoids — specifically CBD — within the context of substance use disorders. This project uncovers structural interactions within host endocannabinoid receptors to benchmark substitution parameters against complementary effects, aiming to build evidence-based operational guidelines for territorialized social care interventions.</p>
+          <div class="proj-area"><i class="fas fa-brain"></i> Neuropharmacology &amp; Medicine</div>
+        </div>
+        <div class="proj-sidebar">
+          <div class="proj-tags">
+            <span>CBD</span><span>Endocannabinoid</span><span>Pharmacology</span><span>Public Health</span><span>Harm Reduction</span>
+          </div>
+          <div class="proj-progress">
+            <div class="proj-progress-label"><span>Literature review</span><span style="color:var(--green)">Done</span></div>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:100%;background:var(--green)"></div></div>
+            <div class="proj-progress-label" style="margin-top:10px"><span>Drafting</span><span style="color:var(--orange)">Active</span></div>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:60%;background:var(--orange)"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="proj-row">
+        <div class="proj-content">
+          <span class="badge b-active">Active</span>
+          <h3>Agrotech Horizons: Technological Transformations from Cultivation to Commercialization</h3>
+          <p>A collaborative publishing pipeline structuring a multi-chapter reference textbook mapping advanced data analytics and microbial applications across the agricultural value chain. Moving systematically from pre-planting climate modeling to non-destructive NIR postharvest physiological profiling, each chapter establishes standardized baselines for localized connectivity networks, economics, and risk parameters.</p>
+          <div class="proj-area"><i class="fas fa-seedling"></i> Agricultural Sciences &amp; Agrotech</div>
+        </div>
+        <div class="proj-sidebar">
+          <div class="proj-tags">
+            <span>NIR</span><span>Machine Learning</span><span>Postharvest</span><span>Textbook</span><span>Agronomy</span>
+          </div>
+          <div class="proj-progress">
+            <div class="proj-progress-label"><span>Chapters outlined</span><span style="color:var(--green)">Done</span></div>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:100%;background:var(--green)"></div></div>
+            <div class="proj-progress-label" style="margin-top:10px"><span>Writing chapters</span><span style="color:var(--orange)">Active</span></div>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:45%;background:var(--orange)"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- UPCOMING PROJECTS -->
+    <div class="divider" style="margin-top:72px">Upcoming Projects</div>
+    <div class="upcoming-grid">
+      <div class="upcoming-card">
+        <span class="badge b-soon">Launching Soon</span>
+        <h3>Exploring the <em>Candidatus</em> Liberibacter asiaticus Pangenome</h3>
+        <p>A large-scale comparative genomic framework leveraging 178 high-quality genomes of CLas — the unculturable intracellular pathogen behind Huanglongbing (HLB), the most devastating disease in global citriculture. The pangenomic blueprint targets novel diagnostic biomarkers and therapeutic entry points where traditional microbiology has historically failed.</p>
+        <div class="proj-area"><i class="fas fa-microscope"></i> Comparative Genomics</div>
+        <div class="proj-tags" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid var(--gray-light)">
+          <span style="background:var(--off);color:var(--blue);padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:600;border:1px solid var(--gray-light)">178 Genomes</span>
+          <span style="background:var(--off);color:var(--blue);padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:600;border:1px solid var(--gray-light)">HLB</span>
+          <span style="background:var(--off);color:var(--blue);padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:600;border:1px solid var(--gray-light)">Pangenomics</span>
+          <span style="background:var(--off);color:var(--blue);padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:600;border:1px solid var(--gray-light)">Citriculture</span>
+        </div>
+      </div>
+      <div class="upcoming-card">
+        <span class="badge b-upcoming">Future Call</span>
+        <h3>Independent Project Proposals — Open External Submission</h3>
+        <p>RICAI is establishing the peer-review and validation protocols required to scale its collaborative architecture. Once core institutional tracks complete their initial deployment, a formal call will open for external investigators to host, evaluate, and integrate autonomous research methodologies within the network's decentralized ecosystem.</p>
+        <div class="proj-area"><i class="fas fa-network-wired"></i> Open to All Disciplines</div>
+        <div style="margin-top:auto;padding-top:18px;border-top:1px solid var(--gray-light);margin-top:18px">
+          <p style="font-size:.8rem;color:var(--muted)"><i class="fas fa-bell" style="color:var(--orange);margin-right:6px"></i>Registered members receive all call announcements first. <a href="index.html#contact" style="color:var(--blue);font-weight:700;text-decoration:none">Join now to stay in the loop →</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW TO JOIN A PROJECT -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="sec-label">Get Involved</span>
+      <h2 class="sec-title">How to join a RICAI project</h2>
+      <p class="sec-lead" style="max-width:520px;margin:0 auto">The process is designed to be open, clear, and fast — from application to active collaboration.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num" style="background:var(--teal)">01</div>
+        <h4>Join the Network</h4>
+        <p>Apply as an Associated Researcher or Member using the general RICAI onboarding form. This grants you access to all project calls, member resources, and the community directory.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num" style="background:var(--orange)">02</div>
+        <h4>Apply to an Open Call</h4>
+        <p>Each active project has a dedicated application form with specific collaboration requirements. Review the project scope, confirm your expertise matches, and submit your application.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num" style="background:var(--blue)">03</div>
+        <h4>Onboard &amp; Collaborate</h4>
+        <p>Once accepted, you receive task assignments, workflow documentation, and access to the project's shared repositories. All work follows open, reproducible standards from day one.</p>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>Ready to contribute to open science?</h3>
+      <p>Project calls are sent directly to registered RICAI members. Join the network to receive all future announcements and participate in the next generation of independent research.</p>
+      <a href="index.html#contact" class="btn-p"><i class="fas fa-rocket"></i> Join the Network</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo">
+        <p>The Independent and Open Science Research Network. Democratizing scientific discovery through collaboration, openness, and independence.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/researchnetworkricai" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/ricai-research-network/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="about.html">About RICAI</a></li>
+          <li><a href="projects.html">Research Projects</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="advisory.html">Advisory Services</a></li>
+          <li><a href="Journal.html">RICAI Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank">Apply as Researcher</a></li>
+          <li><a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank">Join as Member</a></li>
+          <li><a href="https://forms.gle/qUimUHMREeV8b5ms6" target="_blank">Project Application</a></li>
+          <li><a href="mailto:ricaiscience@gmail.com">ricaiscience@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 RICAI — The Independent and Open Science Research Network. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
+

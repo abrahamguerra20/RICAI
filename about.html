@@ -1,209 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About RICAI | Strategic Identity & Core Values</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RICAI | Independent and Open Science Research Network</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --blue:#1d3a61;
+  --blue-dark:#102542;
+  --blue-mid:#1e4a80;
+  --teal:#26c6da;
+  --orange:#ffa726;
+  --yellow:#fdd835;
+  --magenta:#ec407a;
+  --green:#66bb6a;
+  --white:#fff;
+  --off:#f6f8fb;
+  --gray-light:#eef1f6;
+  --text:#1a2233;
+  --muted:#556070;
+}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-        :root {
-            --ricai-blue: #1d3a61;
-            --ricai-yellow: #fdd835;
-            --ricai-turquoise: #26c6da;
-            --ricai-magenta: #ec407a;
-            --ricai-green: #66bb6a;
-            --ricai-orange: #ffa726;
-            --primary-color: var(--ricai-blue);
-            --secondary-color: var(--ricai-turquoise); 
-            --accent-color: var(--ricai-orange);
-            --text-color: #333;
-            --light-gray: #f8f9fa;
-            --white: #fff;
-        }
+/* ─── TOP BAR ─── */
+.top-bar{background:var(--yellow);color:var(--blue-dark);text-align:center;padding:10px 20px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.2px}
+.top-bar a{color:var(--blue-dark);text-decoration:underline;margin-left:10px;font-weight:800}
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: var(--white);
-            color: var(--text-color);
-        }
+/* ─── HEADER ─── */
+header{background:var(--white);position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--gray-light);box-shadow:0 2px 12px rgba(29,58,97,.07)}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo img{height:58px;width:auto;display:block}
+.net-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.75rem;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;border-left:3px solid var(--orange);padding-left:14px;line-height:1.3;max-width:220px}
+nav ul{list-style:none;display:flex;align-items:center;gap:2px}
+nav ul li a{color:var(--blue);text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.82rem;padding:7px 12px;border-radius:7px;transition:background .18s,color .18s;letter-spacing:.2px}
+nav ul li a:hover{background:var(--gray-light)}
+.btn-join{background:var(--orange)!important;color:var(--white)!important;border-radius:50px!important;margin-left:8px;padding:8px 20px!important;box-shadow:0 3px 14px rgba(255,167,38,.38);transition:transform .18s,box-shadow .18s!important}
+.btn-join:hover{transform:translateY(-1px);box-shadow:0 7px 22px rgba(255,167,38,.48)!important;background:var(--orange)!important}
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+/* ─── HERO ─── */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;background:linear-gradient(135deg,rgba(10,25,47,.96) 0%,rgba(16,37,66,.93) 55%,rgba(30,74,128,.87) 100%),url('RICAI_IA_WALLPAPER.png') center/cover no-repeat;overflow:hidden;color:var(--white)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(38,198,218,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(38,198,218,.055) 1px,transparent 1px);background-size:56px 56px;animation:gridMove 28s linear infinite;pointer-events:none}
+@keyframes gridMove{0%{background-position:0 0}100%{background-position:56px 56px}}
+.hero-glow{position:absolute;top:-160px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(38,198,218,.14) 0%,transparent 68%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding:100px 0 90px;max-width:780px}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;font-family:'Montserrat',sans-serif;font-size:.72rem;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:28px;padding:7px 18px;border:1px solid rgba(38,198,218,.28);border-radius:50px;background:rgba(38,198,218,.07)}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.3rem,5vw,3.8rem);font-weight:800;line-height:1.1;margin-bottom:22px;letter-spacing:-.5px}
+.hero h1 .t{color:var(--teal)}
+.hero h1 .o{color:var(--orange)}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.82);max-width:600px;line-height:1.82;margin-bottom:12px}
+.hero-tag{font-family:'Montserrat',sans-serif;font-size:.78rem;color:rgba(255,255,255,.32);letter-spacing:2px;margin-bottom:42px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:var(--white);padding:14px 32px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;box-shadow:0 4px 20px rgba(255,167,38,.42);transition:transform .2s,box-shadow .2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,167,38,.52)}
+.btn-g{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.09);color:var(--white);padding:14px 28px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.95rem;border:1px solid rgba(255,255,255,.22);transition:background .18s}
+.btn-g:hover{background:rgba(255,255,255,.16)}
 
-        header {
-            background: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 15px rgba(29, 58, 97, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { height: 65px; width: auto; }
+/* ─── STATS BAR ─── */
+.stats-bar{background:var(--white);border-bottom:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(29,58,97,.05)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:26px 20px;text-align:center;border-right:1px solid var(--gray-light)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Montserrat',sans-serif;font-size:2.1rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:5px}
+.stat-n sup{color:var(--orange);font-size:1.2rem}
+.stat-l{font-size:.75rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.6px}
 
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
-        nav ul li { margin: 0 15px; }
-        nav ul li a { color: var(--ricai-blue); text-decoration: none; font-weight: 700; transition: 0.3s; }
-        nav ul li a:hover { color: var(--ricai-orange); }
+/* ─── SECTIONS COMMONS ─── */
+.sec{padding:92px 0}
+.sec-alt{background:var(--off)}
+.sec-label{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--orange);display:block;margin-bottom:10px}
+.sec-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--blue);line-height:1.15;margin-bottom:14px;letter-spacing:-.3px}
+.sec-lead{font-size:1.02rem;color:var(--muted);line-height:1.82}
+.divider{display:flex;align-items:center;gap:16px;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--muted);margin:60px 0 36px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--gray-light)}
 
-        /* Hero de la página About */
-        .about-hero {
-            background: linear-gradient(rgba(29, 58, 97, 0.9), rgba(29, 58, 97, 0.9)), url('RICAI_IA_WALLPAPER.png') no-repeat center center/cover;
-            color: var(--white);
-            padding: 100px 0 60px;
-            text-align: center;
-        }
-        .about-hero h1 { font-family: 'Montserrat', sans-serif; font-size: 2.8em; margin-bottom: 10px; }
-        
-        .section-padding { padding: 80px 0; }
-        
-        /* Sección del "Por qué" */
-        .gap-section { 
-            background-color: var(--light-gray); 
-            border-left: 5px solid var(--ricai-orange); 
-            padding: 40px; 
-            margin-bottom: 60px;
-            border-radius: 0 20px 20px 0;
-        }
-        
-        h2 { font-family: 'Montserrat', sans-serif; color: var(--ricai-blue); font-size: 2.2em; margin-bottom: 30px; }
-        h3 { font-family: 'Montserrat', sans-serif; color: var(--ricai-orange); font-size: 1.5em; margin-top: 0; }
+/* ─── WHY ─── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.why-cards{display:flex;flex-direction:column;gap:14px}
+.why-card{background:var(--white);border:1px solid var(--gray-light);border-radius:14px;padding:22px 26px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow .2s,border-color .2s}
+.why-card:hover{box-shadow:0 8px 28px rgba(29,58,97,.1);border-color:var(--teal)}
+.why-icon{width:42px;height:42px;border-radius:9px;background:var(--blue-dark);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.why-card h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.93rem;color:var(--blue);margin-bottom:3px}
+.why-card p{font-size:.855rem;color:var(--muted);line-height:1.65}
+.sec-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;margin-top:22px;padding:10px 20px;border:2px solid var(--gray-light);border-radius:50px;transition:border-color .18s,background .18s}
+.sec-link:hover{border-color:var(--blue);background:var(--off)}
 
-        /* Grid de Misión y Visión */
-        .mission-vision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
-        .info-card { 
-            background: var(--white); 
-            padding: 40px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            border-top: 5px solid var(--ricai-turquoise); 
-        }
+/* ─── PROJECTS ─── */
+.row-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:42px;flex-wrap:wrap;gap:16px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.proj-card{background:var(--white);border:1px solid var(--gray-light);border-radius:14px;padding:28px;display:flex;flex-direction:column;transition:box-shadow .2s,border-color .2s}
+.proj-card:hover{box-shadow:0 8px 28px rgba(29,58,97,.1);border-color:var(--blue)}
+.badge{display:inline-block;padding:4px 12px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px}
+.b-call{background:rgba(255,167,38,.13);color:#c36a00}
+.b-active{background:rgba(102,187,106,.13);color:#2e7d32}
+.b-soon{background:rgba(38,198,218,.13);color:#00838f}
+.proj-card h3{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:700;color:var(--blue);margin-bottom:10px;line-height:1.35;flex:1}
+.proj-card p{font-size:.855rem;color:var(--muted);line-height:1.68}
+.proj-area{margin-top:16px;font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid var(--gray-light)}
+.proj-tags span{background:var(--off);color:var(--blue);padding:3px 10px;border-radius:50px;font-size:.73rem;font-weight:600;border:1px solid var(--gray-light)}
 
-        /* Grid de Principios */
-        .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
-        .principle-item { text-align: center; padding: 30px; transition: 0.3s; }
-        .principle-item:hover { transform: translateY(-5px); }
-        .principle-item i { font-size: 2.5em; color: var(--ricai-orange); margin-bottom: 15px; }
-        .principle-item h4 { font-family: 'Montserrat', sans-serif; margin-bottom: 10px; color: var(--ricai-blue); }
+/* ─── NEWS ─── */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.news-card{background:var(--white);border:1px solid var(--gray-light);border-radius:14px;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.news-card:hover{box-shadow:0 8px 28px rgba(29,58,97,.1);transform:translateY(-3px)}
+.news-top{height:88px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.news-body{padding:22px}
+.news-date{font-family:'Montserrat',sans-serif;font-size:.68rem;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;display:block;margin-bottom:8px;font-weight:600}
+.news-body h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;color:var(--blue);margin-bottom:8px;line-height:1.38}
+.news-body p{font-size:.83rem;color:var(--muted);line-height:1.65}
 
-        /* Pitch Box: El cierre con el logo corregido */
-        .pitch-box { 
-            background: var(--ricai-blue); 
-            color: var(--white); 
-            padding: 60px 40px; 
-            border-radius: 30px; 
-            text-align: center; 
-            margin-top: 80px;
-            box-shadow: 0 15px 40px rgba(29, 58, 97, 0.3);
-        }
-        .pitch-logo-container {
-            background: white;
-            padding: 15px 30px;
-            border-radius: 15px; /* Bordes suaves para no cortar el logo */
-            display: inline-block;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .pitch-logo-container img {
-            max-width: 220px; /* Tamaño optimizado */
-            height: auto;
-            display: block;
-        }
-        .pitch-box h2 { color: var(--ricai-orange); margin-bottom: 20px; font-size: 2em; }
-        .pitch-box p { font-size: 1.25em; line-height: 1.6; max-width: 900px; margin: 0 auto; font-style: italic; opacity: 0.95; }
+/* ─── TEAM ─── */
+.team-head{text-align:center;margin-bottom:54px}
+.lead-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.assoc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.m-card{background:var(--white);border:1px solid var(--gray-light);border-radius:22px;padding:30px 22px;text-align:center;transition:transform .22s,box-shadow .22s,border-color .22s}
+.m-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(29,58,97,.12);border-color:var(--teal)}
+.m-photo{width:106px;height:106px;border-radius:50%;object-fit:cover;border:4px solid var(--blue);display:block;margin:0 auto 14px}
+.m-card.sm .m-photo{width:80px;height:80px;border-width:3px}
+.flags{display:inline-flex;gap:4px;background:var(--gray-light);padding:4px 11px;border-radius:50px;margin-bottom:10px;font-size:.9rem}
+.m-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.97rem;color:var(--blue);margin-bottom:4px;line-height:1.3}
+.m-card.sm .m-name{font-size:.87rem}
+.m-role{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;color:var(--orange);display:block;margin-bottom:12px}
+.m-bio{font-size:.855rem;color:var(--muted);line-height:1.65;text-align:left;margin-bottom:16px}
+.m-card.sm .m-bio{font-size:.8rem}
+.m-links{display:flex;justify-content:center;gap:11px;padding-top:13px;border-top:1px solid var(--gray-light)}
+.m-links a{font-size:1.08rem;opacity:.68;transition:opacity .18s,transform .18s;text-decoration:none}
+.m-links a:hover{opacity:1;transform:scale(1.22)}
 
-        footer { background-color: #0a192f; color: #cbd5e0; text-align: center; padding: 40px 20px; margin-top: 80px; }
-    </style>
+/* ─── JOIN ─── */
+.join-sec{background:var(--blue-dark);padding:92px 0}
+.join-inner{text-align:center;margin-bottom:50px}
+.join-inner .sec-label{color:var(--orange)}
+.join-inner .sec-title{color:var(--white)}
+.join-inner .sec-lead{color:rgba(255,255,255,.68);max-width:510px;margin:0 auto}
+.join-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:800px;margin:0 auto}
+.join-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);border-radius:22px;padding:38px 30px;text-align:center;transition:background .2s,border-color .2s}
+.join-card:hover{background:rgba(255,255,255,.09);border-color:var(--orange)}
+.join-icon{font-size:2.2rem;color:var(--orange);display:block;margin-bottom:18px}
+.join-card h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.08rem;color:var(--white);margin-bottom:10px}
+.join-card p{font-size:.875rem;color:rgba(255,255,255,.62);margin-bottom:24px;line-height:1.65}
+
+/* ─── FOOTER ─── */
+footer{background:#07111f;color:rgba(255,255,255,.58);padding:58px 0 34px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:58px;margin-bottom:46px}
+.footer-brand img{height:46px;margin-bottom:14px;display:block}
+.footer-brand p{font-size:.855rem;line-height:1.8;max-width:270px}
+.footer-col h5{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:1.3px;margin-bottom:14px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.855rem;transition:color .18s}
+.footer-col ul li a:hover{color:var(--teal)}
+.footer-social{display:flex;gap:11px;margin-top:18px}
+.footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:.9rem;text-decoration:none;transition:background .18s,color .18s}
+.footer-social a:hover{background:var(--teal);color:var(--white)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;text-align:center;font-size:.78rem}
+.footer-bot a{color:var(--teal);text-decoration:none}
+
+@media(max-width:960px){
+  .why-grid{grid-template-columns:1fr;gap:40px}
+  .proj-grid{grid-template-columns:repeat(2,1fr)}
+  .news-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(3){border-top:1px solid var(--gray-light)}
+  .assoc-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media(max-width:680px){
+  nav ul{display:none}
+  .net-name{display:none}
+  .hero h1{font-size:2rem}
+  .hero-inner{padding:80px 0 70px}
+  .lead-grid{grid-template-columns:1fr}
+  .assoc-grid{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
+  .join-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="container navbar">
-            <div class="logo">
-                <a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#team">Our Team</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="consultancy.html">Consultancy</a></li>
-                </ul>
-            </nav>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <i class="fas fa-flask" style="margin-right:8px"></i>
+  Open call: Genome-Based Revision of Chroococcales —
+  <a href="projects.html">Apply now →</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo"><a href="index.html"><img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo"></a></div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="expertise.html">Expertise</a></li>
+        <li><a href="advisory.html">Advisory</a></li>
+        <li><a href="Journal.html">Journal</a></li>
+        <li><a href="#contact" class="btn-join">Join Now</a></li>
+      </ul>
+    </nav>
+    <div class="net-name">The Independent and Open Science Research Network</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-pill"><span class="hero-dot"></span>Open &amp; Independent Science Network</div>
+      <h1>Where <span class="t">talent</span> defines<br>scientific <span class="o">potential</span></h1>
+      <p class="hero-sub">A global research network breaking barriers of geography and funding. We connect driven scientists with tools, mentorship, and collaborators to produce world-class research — regardless of institutional affiliation.</p>
+      <p class="hero-tag">// TALENT IS EQUALLY DISTRIBUTED. OPPORTUNITY IS NOT.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-p"><i class="fas fa-rocket"></i> Join the Network</a>
+        <a href="projects.html" class="btn-g"><i class="fas fa-flask"></i> See Active Projects</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat"><div class="stat-n">15<sup>+</sup></div><div class="stat-l">Active Researchers</div></div>
+      <div class="stat"><div class="stat-n">10<sup>+</sup></div><div class="stat-l">Countries Represented</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Active Research Projects</div></div>
+      <div class="stat"><div class="stat-n">1</div><div class="stat-l">Diamond OA Journal Coming</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY RICAI -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <span class="sec-label">Why RICAI</span>
+        <h2 class="sec-title">Science shouldn't depend on where you were born</h2>
+        <p class="sec-lead">The traditional academic system is exclusionary by design. RICAI was built to change that — giving every researcher access to the network, skills, and mentorship that elite institutions take for granted.</p>
+        <a href="about.html" class="sec-link">Read our story <i class="fas fa-arrow-right" style="font-size:.75rem"></i></a>
+      </div>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-globe-americas"></i></div>
+          <div><h4>Open Science</h4><p>Knowledge is a public good. We share methods, data, and results openly — accelerating discovery for everyone, everywhere.</p></div>
         </div>
-    </header>
-
-    <section class="about-hero">
-        <div class="container">
-            <h1>RICAI: Strategic Identity</h1>
-            <p>Democratizing scientific discovery through collaboration and independence.</p>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-network-wired"></i></div>
+          <div><h4>Decentralized Collaboration</h4><p>No central institution controls who participates. Researchers from any country can lead projects and publish.</p></div>
         </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            
-            <div class="gap-section">
-                <h3>The "Why": Addressing the Gap in Modern Science</h3>
-                <p>The traditional academic system is fundamentally exclusionary. Countless brilliant students and "Young Scientists" possess the technical skills to innovate but are hindered by a lack of institutional backing, restricted access to laboratory funding, or a total absence of guidance regarding international scholarship applications and publishing.</p>
-                <p><strong>RICAI exists to disrupt this cycle.</strong> We believe that scientific potential should be defined by talent and dedication, not by geographic location or financial privilege. We bridge the gap between academic ambition and professional reality by providing the network, the data, and the mentorship necessary to succeed in a globalized scientific landscape.</p>
-            </div>
-
-            <div class="mission-vision-grid">
-                <div class="info-card">
-                    <h2>Our Mission</h2>
-                    <p>To empower the next generation of researchers through a decentralized, independent, and open collaboration network. RICAI facilitates the production of high-impact scientific knowledge, fosters the development of advanced technical skills (such as Bioinformatics and Data Science), and provides expert coaching for international career mobility.</p>
-                </div>
-                <div class="info-card" style="border-top-color: var(--ricai-orange);">
-                    <h2>Our Vision</h2>
-                    <p>To become the world’s leading ecosystem for Open and Independent Science, where any researcher, regardless of their resources or affiliation, has access to the tools, mentorship, and funding strategies required to generate ethical and transformative knowledge.</p>
-                </div>
-            </div>
-
-            <h2 style="text-align: center; margin-top: 100px;">Core Principles (The RICAI Way)</h2>
-            <div class="principles-grid">
-                <div class="principle-item">
-                    <i class="fas fa-unlock-alt"></i>
-                    <h4>Open Science</h4>
-                    <p>Knowledge must be a public good, shared freely to accelerate discovery.</p>
-                </div>
-                <div class="principle-item">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h4>Independence</h4>
-                    <p>Research should not be stifled by institutional bureaucracy or lack of local funding.</p>
-                </div>
-                <div class="principle-item">
-                    <i class="fas fa-users"></i>
-                    <h4>Collaboration</h4>
-                    <p>Scientific breakthroughs happen when young energy meets expert experience.</p>
-                </div>
-                <div class="principle-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h4>Career Equity</h4>
-                    <p>We provide the "hidden curriculum" to ensure a level playing field for global opportunities.</p>
-                </div>
-            </div>
-
-            <div class="pitch-box">
-                <div class="pitch-logo-container">
-                    <img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo Institutional">
-                </div>
-                <p>"RICAI democratizes scientific discovery. We connect aspiring researchers with open-access data and expert mentorship to produce peer-reviewed publications and secure international funding. Whether you are a student looking for your first publication or an expert seeking motivated collaborators, RICAI is the center of your scientific future."</p>
-            </div>
-            
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div><h4>Career Mentorship</h4><p>Access to the "hidden curriculum" — scholarships, international mobility strategies, and publishing guidance.</p></div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 RICAI. All rights reserved. | The Independent and Open Science Research Network</p>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-book-open"></i></div>
+          <div><h4>Diamond Open Access Journal</h4><p>Zero fees for authors, zero paywalls for readers. Rigorous peer review, independent of commercial publishers.</p></div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS PREVIEW -->
+<section class="sec">
+  <div class="container">
+    <div class="row-head">
+      <div>
+        <span class="sec-label">Research Projects</span>
+        <h2 class="sec-title" style="margin-bottom:0">What we're working on</h2>
+      </div>
+      <a href="projects.html" class="btn-p" style="font-size:.85rem;padding:11px 22px">All Projects <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <span class="badge b-call">Open Call</span>
+        <h3>Genome-Based Taxonomic Revision of Chroococcales</h3>
+        <p>Restructuring 513 cyanobacterial genomes using OGRIs to resolve widespread polyphyly — potentially describing 4+ new families and 60+ novel species.</p>
+        <div class="proj-area"><i class="fas fa-dna"></i> Phylogenomics &amp; Taxonomy</div>
+        <div class="proj-tags"><span>513 Genomes</span><span>ANI/AAI</span><span>Phylogenomics</span></div>
+      </div>
+      <div class="proj-card">
+        <span class="badge b-active">Active</span>
+        <h3>Microbial Diversity Gaps in Latin America</h3>
+        <p>Mapping underexplored microbial species in Latin American environments against global databases to reveal untapped biotechnological horizons.</p>
+        <div class="proj-area"><i class="fas fa-leaf"></i> Bioinformatics &amp; Ecology</div>
+        <div class="proj-tags"><span>NCBI</span><span>Metagenomics</span><span>Biotech</span></div>
+      </div>
+      <div class="proj-card">
+        <span class="badge b-active">Active</span>
+        <h3>Cannabinoids as a Harm Reduction Strategy</h3>
+        <p>Systematic review of CBD pharmacology and neuromodulatory mechanisms within the context of substance use disorder treatment.</p>
+        <div class="proj-area"><i class="fas fa-brain"></i> Neuropharmacology &amp; Medicine</div>
+        <div class="proj-tags"><span>CBD</span><span>Pharmacology</span><span>Public Health</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK UPDATES -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:6px"><span class="sec-label">Network Updates</span></div>
+    <h2 class="sec-title" style="text-align:center">Latest from RICAI</h2>
+    <p class="sec-lead" style="text-align:center;max-width:520px;margin:0 auto">New members, project milestones, and open science news from the network.</p>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-top" style="background:linear-gradient(135deg,#102542,#1e4a80)">🧬</div>
+        <div class="news-body">
+          <span class="news-date">June 2026</span>
+          <h4>PROJ01-TaxRE-01 Application Phase Now Open</h4>
+          <p>The collaboration call for the genome-based restructuring of Chroococcales is now live. Apply through the official form.</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-top" style="background:linear-gradient(135deg,#1a3a5c,#1e6a7a)">👥</div>
+        <div class="news-body">
+          <span class="news-date">June 2026</span>
+          <h4>New Associated Researchers Join the Network</h4>
+          <p>We welcome our newest members expanding RICAI's expertise in environmental microbiology, plant physiology, and immunology.</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-top" style="background:linear-gradient(135deg,#0a192f,#1d3a61)">📖</div>
+        <div class="news-body">
+          <span class="news-date">May 2026</span>
+          <h4>Diamond OA Journal: Development Underway</h4>
+          <p>We are building a zero-fee, zero-paywall publishing platform. Interested in the editorial board? Reach out directly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="sec">
+  <div class="container">
+    <div class="team-head">
+      <span class="sec-label">Our Team</span>
+      <h2 class="sec-title">The people behind RICAI</h2>
+      <p class="sec-lead" style="max-width:540px;margin:0 auto">Researchers from 10+ countries, united by the conviction that talent is global and science should be too.</p>
+    </div>
+
+    <div class="divider">Leadership</div>
+    <div class="lead-grid">
+      <div class="m-card">
+        <img class="m-photo" src="0.jpeg" alt="Abraham Guerra">
+        <div class="flags">🇨🇴🇧🇷🇮🇹</div>
+        <div class="m-name">Abraham David Guerra Ospino</div>
+        <span class="m-role">CEO &amp; Founder</span>
+        <p class="m-bio">Specialist in bioinformatics and microbial biotechnology integrating high-throughput sequencing with ecological modeling. Currently at UNIPD, Italy, completing a Master's at UNESP, Brazil.</p>
+        <div class="m-links">
+          <a href="https://abrahamguerra20.github.io/Science-page" style="color:#ec407a" title="Website"><i class="fas fa-globe"></i></a>
+          <a href="https://www.linkedin.com/in/abrahamguerrao/" style="color:#1d3a61" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.researchgate.net/profile/Abraham-Guerra-3" style="color:#26c6da" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+          <a href="https://scholar.google.com/citations?user=qR2aHr8AAAAJ" style="color:#ffa726" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://orcid.org/0000-0003-4684-9440" style="color:#66bb6a" title="ORCID"><i class="fab fa-orcid"></i></a>
+        </div>
+      </div>
+      <div class="m-card">
+        <img class="m-photo" src="00.jpeg" alt="Nilo Ricardo">
+        <div class="flags">🇧🇷</div>
+        <div class="m-name">Nilo Corrêa de Mello Júnior Ricardo</div>
+        <span class="m-role">Lead Researcher &amp; Coordinator</span>
+        <p class="m-bio">Agronomist and PhD candidate at UNESP in Data Science and postharvest physiology. Applies NIR spectroscopy and machine learning to predict fruit quality and optimize harvest timing.</p>
+        <div class="m-links">
+          <a href="https://orcid.org/0000-0002-5786-231X" style="color:#66bb6a"><i class="fab fa-orcid"></i></a>
+          <a href="https://www.linkedin.com/in/nilo-ricardo-j%C3%BAnior-879862b7/" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.researchgate.net/profile/Nilo-Ricardo" style="color:#26c6da"><i class="fab fa-researchgate"></i></a>
+          <a href="https://scholar.google.com/citations?user=tJkU1OEAAAAJ" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a>
+        </div>
+      </div>
+      <div class="m-card">
+        <img class="m-photo" src="000.jpeg" alt="Maria Velez-Brochero">
+        <div class="flags">🇨🇴🇺🇸</div>
+        <div class="m-name">Maria Velez-Brochero</div>
+        <span class="m-role">Lead Researcher</span>
+        <p class="m-bio">Ph.D. candidate at Rutgers Medical School in translational immunology. ASM Future Leaders Fellow 2026. Studies innate immune regulation using single-cell transcriptomics and CRISPR systems.</p>
+        <div class="m-links">
+          <a href="https://www.linkedin.com/in/mariavelez0310" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.researchgate.net/profile/Maria-Velez-Brochero" style="color:#26c6da"><i class="fab fa-researchgate"></i></a>
+          <a href="https://scholar.google.com/citations?user=o4HpAuAAAAAJ&hl=en" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://orcid.org/0000-0003-4684-9440" style="color:#66bb6a"><i class="fab fa-orcid"></i></a>
+        </div>
+      </div>
+      <div class="m-card">
+        <img class="m-photo" src="0000.jpeg" alt="Samanta Carvalho">
+        <div class="flags">🇧🇷🇵🇱</div>
+        <div class="m-name">Samanta Gabriela Medeiros Carvalho</div>
+        <span class="m-role">Lead Researcher</span>
+        <p class="m-bio">PhD in Genetics and Plant Breeding. Specialist in bioinformatics pipelines for DNA sequencing and phylogenetic analysis, integrating morphoanatomical studies with advanced genomics.</p>
+        <div class="m-links">
+          <a href="https://www.linkedin.com/in/samanta-carvalho-b9685277" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a>
+          <a href="https://scholar.google.com/citations?user=GZ7A_S8AAAAJ" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">Associated Researchers</div>
+    <div class="assoc-grid">
+      <div class="m-card sm"><img class="m-photo" src="1.png" alt="Lizeth Fernanda"><div class="flags">🇨🇴🇧🇷</div><div class="m-name">Lizeth Fernanda Banguero Micolta</div><span class="m-role">Associate Researcher</span><p class="m-bio">Biologist (Univ. of Caldas), GEBIOME. Molecular biology and epidemiology within the One Health framework.</p><div class="m-links"><a href="https://www.linkedin.com/in/lizeth-fernanda-banguero-micolta-915282286/" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a><a href="https://www.researchgate.net/profile/Lizeth-Banguero-Micolta" style="color:#26c6da"><i class="fab fa-researchgate"></i></a><a href="https://scholar.google.com/citations?hl=es&user=0zxihMgAAAAJ" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="2.jpeg" alt="Natally Vidal"><div class="flags">🇵🇷🇨🇴</div><div class="m-name">Natally S. Vidal Figueroa</div><span class="m-role">Associate Researcher</span><p class="m-bio">Biologist and Master's student at UPRM integrating bioremediation and nanotechnology in biochemical microbiological analysis.</p><div class="m-links"><a href="https://www.linkedin.com/in/natally-s-vidal-figueroa-1931012a2/" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="3.jpeg" alt="Jaqueline Galiardo"><div class="flags">🇧🇷</div><div class="m-name">Jaqueline Cristina Galiardo</div><span class="m-role">Associate Researcher</span><p class="m-bio">Doctoral candidate at UNESP investigating personalized probiotic therapy and microbiota modulation.</p><div class="m-links"><a href="https://www.researchgate.net/profile/Jaqueline_Galiardo" style="color:#26c6da"><i class="fab fa-researchgate"></i></a><a href="https://scholar.google.com/citations?user=_UCpH_cAAAAJ" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="4.jpg" alt="Dana Páez"><div class="flags">🇨🇴</div><div class="m-name">Dana Páez Niño</div><span class="m-role">Associate Researcher</span><p class="m-bio">Microbiologist specializing in biotechnology and DNA extraction via iron nanoparticles. Research on <em>Utricularia gibba</em>.</p><div class="m-links"><a href="https://www.linkedin.com/in/dana-p%C3%A1ez-ni%C3%B1o-3aaa37225" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="5.png" alt="Elisângela Pulcini"><div class="flags">🇧🇷</div><div class="m-name">Elisângela Pulcini Jacob</div><span class="m-role">Associate Researcher</span><p class="m-bio">Master's candidate at UNESP/FCAV in Supply Chain Management and agribusiness marketing strategy.</p><div class="m-links"><a href="https://www.linkedin.com/in/elisangela-pulcini-jacob" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a><a href="https://www.researchgate.net/profile/Elisangela-Jacob" style="color:#26c6da"><i class="fab fa-researchgate"></i></a><a href="https://scholar.google.com.br/citations?user=06SsKuIAAAAJ" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="6.jpeg" alt="Shahzad Shoukat"><div class="flags">🇵🇰🇮🇩🇰🇷🇧🇷🇺🇸</div><div class="m-name">Shahzad Shoukat</div><span class="m-role">Associate Researcher</span><p class="m-bio">Doctoral researcher at CAUNESP with trajectory across 5 countries, specializing in aquatic microbiology.</p><div class="m-links"><a href="https://orcid.org/0000-0002-0663-0615" style="color:#66bb6a"><i class="fab fa-orcid"></i></a><a href="https://www.linkedin.com/in/shahzad-shoukat-b4014014a/" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a><a href="https://scholar.google.com/citations?user=thouIqwAAAAJ" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a><a href="https://www.researchgate.net/profile/Shahzad-Shoukat-4" style="color:#26c6da"><i class="fab fa-researchgate"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="7.jpeg" alt="Susana Ospina"><div class="flags">🇨🇴</div><div class="m-name">Susana Ospina</div><span class="m-role">Associate Researcher</span><p class="m-bio">Microbiologist with applied research experience in agricultural and biotechnology sectors.</p><div class="m-links"><a href="https://orcid.org/0000-0002-6848-8634" style="color:#66bb6a"><i class="fab fa-orcid"></i></a><a href="https://www.linkedin.com/in/susana-ospina-768003207/" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a><a href="https://www.researchgate.net/profile/Susana-Maldonado-3" style="color:#26c6da"><i class="fab fa-researchgate"></i></a><a href="https://scholar.google.com/citations?user=O-Ypp5gAAAAJ&hl=es" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="8.jpeg" alt="Jamiles Carvalho"><div class="flags">🇧🇷</div><div class="m-name">Jamiles Carvalho G. de Souza Henrique</div><span class="m-role">Associate Researcher</span><p class="m-bio">Agricultural Engineer and Doctoral Researcher at UFPB, specializing in post-harvest biochemistry and physiology.</p><div class="m-links"><a href="https://orcid.org/0000-0002-0999-2478" style="color:#66bb6a"><i class="fab fa-orcid"></i></a><a href="https://www.linkedin.com/in/jamiles-carvalho-05a120192/" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a><a href="https://www.researchgate.net/profile/Jamiles-Henrique" style="color:#26c6da"><i class="fab fa-researchgate"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="9.jpg" alt="Luis Angel Chicoma"><div class="flags">🇵🇪🇧🇷🇪🇸</div><div class="m-name">Luis Angel Chicoma Rojas</div><span class="m-role">Associate Researcher</span><p class="m-bio">PhD candidate at UNESP and CBGP collaborator integrating bioinformatics with molecular bioprospecting for plant growth promotion.</p><div class="m-links"><a href="https://orcid.org/0000-0002-1244-0316" style="color:#66bb6a"><i class="fab fa-orcid"></i></a><a href="https://www.linkedin.com/in/luis-angel-chicoma-rojas-985b26167" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a><a href="https://www.researchgate.net/profile/Luis-Angel-Chicoma-Rojas" style="color:#26c6da"><i class="fab fa-researchgate"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="10.jpeg" alt="Fabio Guzmán"><div class="flags">🇨🇴</div><div class="m-name">Fabio Andrés Guzmán Viloria</div><span class="m-role">Associate Researcher</span><p class="m-bio">Microbiologist in environmental microbiology and microbial ecology with structural bioinformatics approaches.</p><div class="m-links"><a href="https://www.linkedin.com/in/fabio-guzman-v" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="11.jpeg" alt="Luis Felipe Lata"><div class="flags">🇪🇨</div><div class="m-name">Luis Felipe Lata</div><span class="m-role">Associate Researcher</span><p class="m-bio">Professor at Univ. Técnica de Machala. Research on induced systemic resistance, abiotic stress, and agronomic biofortification.</p><div class="m-links"><a href="https://www.linkedin.com/in/luis-felipe-lata-932311b6/" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a><a href="https://www.researchgate.net/profile/Luis-Lata-2" style="color:#26c6da"><i class="fab fa-researchgate"></i></a><a href="https://scholar.google.com/citations?user=Sbca320AAAAJ&hl=en" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a><a href="https://orcid.org/0000-0002-6882-0035" style="color:#66bb6a"><i class="fab fa-orcid"></i></a></div></div>
+      <div class="m-card sm"><img class="m-photo" src="12_1.jpeg" alt="Joseph David Leon"><div class="flags">🇨🇴</div><div class="m-name">Joseph David Leon Insignares</div><span class="m-role">Associate Researcher</span><p class="m-bio">Microbiology researcher (Univ. Libre de Colombia) in scientific writing, clinical immunology, and translational research.</p><div class="m-links"><a href="https://www.linkedin.com/in/joseph-d-leon-insignares-8035202b1" style="color:#1d3a61"><i class="fab fa-linkedin"></i></a><a href="https://scholar.google.com/citations?user=v8Qbq_kAAAAJ&hl=es" style="color:#ffa726"><i class="fas fa-graduation-cap"></i></a><a href="https://orcid.org/0009-0008-3509-9107" style="color:#66bb6a"><i class="fab fa-orcid"></i></a></div></div>
+    </div>
+
+    <!-- JOIN CTA within team section -->
+    <div style="background:var(--off);border:2px dashed var(--gray-light);border-radius:18px;padding:40px;text-align:center;margin-top:56px">
+      <span class="sec-label">Grow the Network</span>
+      <h3 style="font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:800;color:var(--blue);margin-bottom:10px">Are you the next RICAI member?</h3>
+      <p style="color:var(--muted);font-size:.9rem;max-width:520px;margin:0 auto 24px;line-height:1.75">We're actively growing. If your research vision aligns with open science, independent collaboration, and democratizing knowledge — apply below.</p>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+        <a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank" class="btn-p" style="font-size:.88rem;padding:12px 26px">Apply as Researcher</a>
+        <a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank" class="btn-g" style="font-size:.88rem;padding:12px 26px;background:rgba(29,58,97,.07);color:var(--blue);border-color:var(--gray-light)">Join as Member</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN SECTION -->
+<section id="contact" class="join-sec">
+  <div class="container">
+    <div class="join-inner">
+      <span class="sec-label">Be Part of It</span>
+      <h2 class="sec-title">Your science belongs here</h2>
+      <p class="sec-lead">Whether you're a researcher ready to lead or a student eager to contribute, RICAI has a place for you.</p>
+    </div>
+    <div class="join-grid">
+      <div class="join-card">
+        <span class="join-icon"><i class="fas fa-microscope"></i></span>
+        <h3>Associated Researcher</h3>
+        <p>For active scientists who want to lead projects, publish, and build their international profile within our network.</p>
+        <a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank" class="btn-p">Apply as Researcher</a>
+      </div>
+      <div class="join-card">
+        <span class="join-icon"><i class="fas fa-users"></i></span>
+        <h3>Associated Member</h3>
+        <p>For students and professionals who want to engage with Open Science, participate in projects, and access mentorship.</p>
+        <a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank" class="btn-p">Join as Member</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="LOGO_VECTORIZADO_SIGLAS.png" alt="RICAI Logo">
+        <p>The Independent and Open Science Research Network. Democratizing scientific discovery through collaboration, openness, and independence.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/researchnetworkricai" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/ricai-research-network/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="about.html">About RICAI</a></li>
+          <li><a href="projects.html">Research Projects</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="advisory.html">Advisory Services</a></li>
+          <li><a href="Journal.html">RICAI Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="https://forms.gle/b8o9G5ZB7G2nJo8S8" target="_blank">Apply as Researcher</a></li>
+          <li><a href="https://forms.gle/VVGoPr1DkPYfEvkz7" target="_blank">Join as Member</a></li>
+          <li><a href="projects.html">Open Project Calls</a></li>
+          <li><a href="mailto:ricaiscience@gmail.com">ricaiscience@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 RICAI — The Independent and Open Science Research Network. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
